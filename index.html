@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jump Sporting Goods</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/d105c3cb1d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <header>
+    <a href="home.html" class="home-link"><i class="fas fa-home"></i> Back to Home</a>
+    <img src="logo.png" alt="Jump Sporting Goods Logo" class="logo" />
+    <h1>Jump Sporting Goods</h1>
+    <div class="cart-icon">
+      <i class="fas fa-shopping-cart"></i>
+      <span class="cart-count">0</span>
+    </div>
+  </header>
+
+  <div class="container">
+    <aside class="sidebar">
+      <h3>Our Customers</h3>
+      <nav class="customer-menu">
+        <div class="customer-category" id="schools">
+          <h4><i class="fas fa-graduation-cap"></i> Education</h4>
+          <ul>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Dryden Elementary School</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Dryden High School</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> River Valley Middle School</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> St. Mary's Academy</a></li>
+          </ul>
+        </div>
+        <div class="customer-category" id="emergency">
+          <h4><i class="fas fa-fire-extinguisher"></i> Emergency Services</h4>
+          <ul>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Dryden Fire Department</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> County Fire Rescue</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Dryden Police Department</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> County Sheriff's Office</a></li>
+          </ul>
+        </div>
+        <div class="customer-category" id="municipal">
+          <h4><i class="fas fa-landmark"></i> Municipal & Government</h4>
+          <ul>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> City Parks & Recreation</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> County Corrections</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Public Works Department</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Dryden Town Hall</a></li>
+          </ul>
+        </div>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <section class="hero">
+        <h2>Your Source for Custom Dryden Apparel</h2>
+        <p>High-quality custom sublimated shirts, hats, cups, stickers, and sports equipment designed for the Dryden community.</p>
+      </section>  <section class="products">
+    <h2>Our Shirts</h2>
+
+    <div class="product" id="product-1">
+      <img src="thumbody-shirt.png" alt="Thumbody From Dryden Shirt" />
+      <h3>Thumbody from Dryden Shirt</h3>
+      <p class="price">$25.00</p>
+      
+      <label for="color-1">Color:</label>
+      <select id="color-1">
+        <option>Grey</option>
+      </select>
+
+      <label for="size-1">Size:</label>
+      <select id="size-1">
+        <option>SM</option><option>MD</option><option>LG</option>
+        <option>XL</option><option>2XL</option>
+        <option>3XL</option><option>4XL</option><option>5XL</option>
+      </select>
+
+      <label for="quantity-1">Quantity:</label>
+      <input type="number" id="quantity-1" value="1" min="1" max="99">
+
+      <button><i class="fas fa-cart-plus"></i> Add to Cart</button>
+    </div>
+
+    <div class="product" id="product-2">
+      <img src="jump-logo-tee.png" alt="Jump Sporting Goods Logo Tee" />
+      <h3>Jump Logo Tee</h3>
+      <p class="price">$25.00</p>
+      
+      <label for="color-2">Color:</label>
+      <select id="color-2">
+        <option>Black</option>
+        <option>Navy</option>
+        <option>Grey</option>
+      </select>
+
+      <label for="size-2">Size:</label>
+      <select id="size-2">
+        <option>SM</option><option>MD</option><option>LG</option>
+        <option>XL</option><option>2XL</option>
+        <option>3XL</option><option>4XL</option><option>5XL</option>
+      </select>
+
+      <label for="quantity-2">Quantity:</label>
+      <input type="number" id="quantity-2" value="1" min="1" max="99">
+
+      <button><i class="fas fa-cart-plus"></i> Add to Cart</button>
+    </div>
+
+    <div class="product" id="product-3">
+      <img src="dryden-pride-tee.png" alt="Dryden Pride Tee" />
+      <h3>Dryden Pride Tee</h3>
+      <p class="price">$25.00</p>
+      
+      <label for="color-3">Color:</label>
+      <select id="color-3">
+        <option>Grey</option>
+        <option>White</option>
+        <option>Black</option>
+      </select>
+
+      <label for="size-3">Size:</label>
+      <select id="size-3">
+        <option>SM</option><option>MD</option><option>LG</option>
+        <option>XL</option><option>2XL</option>
+        <option>3XL</option><option>4XL</option><option>5XL</option>
+      </select>
+
+      <label for="quantity-3">Quantity:</label>
+      <input type="number" id="quantity-3" value="1" min="1" max="99">
+
+      <button><i class="fas fa-cart-plus"></i> Add to Cart</button>
+    </div>
+
+    <div class="product" id="product-4">
+      <img src="first-responder-tee.png" alt="First Responders Support Tee" />
+      <h3>First Responders Support Tee</h3>
+      <p class="price">$25.00</p>
+      
+      <label for="color-4">Color:</label>
+      <select id="color-4">
+        <option>Black</option>
+        <option>Navy</option>
+        <option>Red</option>
+      </select>
+
+      <label for="size-4">Size:</label>
+      <select id="size-4">
+        <option>SM</option><option>MD</option><option>LG</option>
+        <option>XL</option><option>2XL</option>
+        <option>3XL</option><option>4XL</option><option>5XL</option>
+      </select>
+
+      <label for="quantity-4">Quantity:</label>
+      <input type="number" id="quantity-4" value="1" min="1" max="99">
+
+      <button><i class="fas fa-cart-plus"></i> Add to Cart</button>
+    </div>
+
+    <div class="product" id="product-5">
+      <img src="dryden-schools-tee.png" alt="Dryden Schools Spirit Tee" />
+      <h3>Dryden Schools Spirit Tee</h3>
+      <p class="price">$25.00</p>
+      
+      <label for="color-5">Color:</label>
+      <select id="color-5">
+        <option>Navy</option>
+        <option>Grey</option>
+        <option>White</option>
+      </select>
+
+      <label for="size-5">Size:</label>
+      <select id="size-5">
+        <option>SM</option><option>MD</option><option>LG</option>
+        <option>XL</option><option>2XL</option>
+        <option>3XL</option><option>4XL</option><option>5XL</option>
+      </select>
+
+      <label for="quantity-5">Quantity:</label>
+      <input type="number" id="quantity-5" value="1" min="1" max="99">
+
+      <button><i class="fas fa-cart-plus"></i> Add to Cart</button>
+    </div>
+
+    <div class="product" id="product-6">
+      <img src="va-strong-tee.png" alt="Virginia Strong Tee" />
+      <h3>Virginia Strong Tee</h3>
+      <p class="price">$25.00</p>
+      
+      <label for="color-6">Color:</label>
+      <select id="color-6">
+        <option>Grey</option>
+        <option>Black</option>
+        <option>Navy</option>
+      </select>
+
+      <label for="size-6">Size:</label>
+      <select id="size-6">
+        <option>SM</option><option>MD</option><option>LG</option>
+        <option>XL</option><option>2XL</option>
+        <option>3XL</option><option>4XL</option><option>5XL</option>
+      </select>
+
+      <label for="quantity-6">Quantity:</label>
+      <input type="number" id="quantity-6" value="1" min="1" max="99">
+
+      <button><i class="fas fa-cart-plus"></i> Add to Cart</button>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <h2><i class="fas fa-quote-left"></i> What Our Customers Say</h2>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <p>"Jump Sporting Goods provided amazing custom shirts for our entire department. Quality is top-notch and Eddie was great to work with!"</p>
+        <div class="testimonial-author">
+          <strong>Chief Mike Roberts</strong>
+          <span>Dryden Fire Department</span>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <p>"We ordered spirit wear for our students and parents loved it! Fast turnaround and the sublimation printing looks incredible."</p>
+        <div class="testimonial-author">
+          <strong>Sarah Johnson</strong>
+          <span>Dryden High School</span>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <p>"Local business with excellent service! Our entire team loves the custom designs. Highly recommend Jump for any apparel needs."</p>
+        <div class="testimonial-author">
+          <strong>Tom Miller</strong>
+          <span>County Sheriff's Office</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="coming-soon">
+    <h2>More Items Coming Soon</h2>
+    <ul>
+      <li>Hats</li>
+      <li>Cups</li>
+      <li>Sports Equipment</li>
+      <li>Car Window Stickers</li>
+    </ul>
+  </section>
+
+  <section class="contact">
+    <h2>Get In Touch</h2>
+    <div class="contact-info">
+      <div class="contact-item">
+        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+        <h3>Location</h3>
+        <p>164 Cross Creek<br>Dryden, VA 24243</p>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+        <h3>Phone</h3>
+        <p><a href="tel:276-870-6583">276-870-6583</a></p>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+        <h3>Email</h3>
+        <p><a href="mailto:jump2010@yahoo.com">jump2010@yahoo.com</a></p>
+      </div>
+    </div>
+  </section>
+    </main>
+  </div>
+
+  <footer>
+    <div class="social-links">
+      <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+    </div>
+    <p>© <span id="year"></span> Jump Sporting Goods — Dryden, VA</p>
+    <div class="payment-methods">
+      <i class="fab fa-cc-visa"></i>
+      <i class="fab fa-cc-mastercard"></i>
+      <i class="fab fa-cc-paypal"></i>
+      <i class="fab fa-cc-discover"></i>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
