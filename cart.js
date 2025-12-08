@@ -154,7 +154,7 @@ document.getElementById('checkout-form').addEventListener('submit', (e) => {
   
   // Redirect to home after a delay
   setTimeout(() => {
-    window.location.href = 'home.html';
+    window.location.href = 'index.html';
   }, 2000);
 });
 

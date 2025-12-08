@@ -98,6 +98,6 @@ document.getElementById('custom-order-form').addEventListener('submit', (e) => {
     document.getElementById('custom-order-form').reset();
     fileList.innerHTML = '';
     uploadedFiles = [];
-    window.location.href = 'home.html';
+    window.location.href = 'index.html';
   }, 2000);
 });
