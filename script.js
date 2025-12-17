@@ -150,6 +150,8 @@ document.addEventListener('DOMContentLoaded', () => {
     showAllLink.addEventListener('click', function(e) {
       e.preventDefault();
       showAllProducts();
+      // Remove active class from all customer links
+      document.querySelectorAll('.customer-filter').forEach(l => l.classList.remove('active'));
     }, false);
   }
 
@@ -157,6 +159,11 @@ document.addEventListener('DOMContentLoaded', () => {
   customerLinks.forEach(link => {
     link.addEventListener('click', function(e) {
       e.preventDefault();
+      // Remove active class from all links
+      customerLinks.forEach(l => l.classList.remove('active'));
+      // Add active class to clicked link
+      this.classList.add('active');
+      
       const customer = this.getAttribute('data-customer');
       if (customer) {
         filterByCustomer(customer);
