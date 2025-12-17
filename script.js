@@ -83,4 +83,84 @@ document.addEventListener('DOMContentLoaded', () => {
       addToCart(index + 1);
     });
   });
+
+  // Product filtering by customer
+  function showAllProducts() {
+    const products = document.querySelectorAll('.product');
+    const headers = document.querySelectorAll('.category-header');
+    const grids = document.querySelectorAll('.products-grid');
+    products.forEach(p => p.style.display = 'flex');
+    headers.forEach(h => h.style.display = 'block');
+    grids.forEach(g => g.style.display = 'grid');
+    setTimeout(() => {
+      const productsSection = document.querySelector('.products');
+      if (productsSection) {
+        productsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 50);
+  }
+
+  function filterByCustomer(customer) {
+    const products = document.querySelectorAll('.product');
+    const headers = document.querySelectorAll('.category-header');
+    const grids = document.querySelectorAll('.products-grid');
+    
+    // First hide everything
+    products.forEach(p => p.style.display = 'none');
+    headers.forEach(h => h.style.display = 'none');
+    grids.forEach(g => g.style.display = 'none');
+    
+    let firstVisibleHeader = null;
+    
+    // Show/hide category headers first
+    headers.forEach(h => {
+      const customerData = h.getAttribute('data-customer');
+      if (customerData && customerData.includes(customer)) {
+        h.style.display = 'block';
+        if (!firstVisibleHeader) firstVisibleHeader = h;
+      }
+    });
+    
+    // Show only products for this specific customer
+    products.forEach(p => {
+      const customerData = p.getAttribute('data-customer');
+      if (customerData && customerData.includes(customer)) {
+        p.style.display = 'flex';
+        // Show the parent grid
+        const parentGrid = p.closest('.products-grid');
+        if (parentGrid) parentGrid.style.display = 'grid';
+      }
+    });
+    
+    // Scroll to the first visible header or products section
+    setTimeout(() => {
+      if (firstVisibleHeader) {
+        firstVisibleHeader.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        const productsSection = document.querySelector('.products');
+        if (productsSection) {
+          productsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    }, 50);
+  }
+
+  const showAllLink = document.querySelector('.filter-link[data-filter="all"]');
+  if (showAllLink) {
+    showAllLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      showAllProducts();
+    }, false);
+  }
+
+  const customerLinks = document.querySelectorAll('.customer-filter');
+  customerLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const customer = this.getAttribute('data-customer');
+      if (customer) {
+        filterByCustomer(customer);
+      }
+    }, false);
+  });
 });

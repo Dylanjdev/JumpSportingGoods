@@ -22,32 +22,36 @@
   <div class="container">
     <aside class="sidebar">
       <h3>Our Customers</h3>
+      <div style="margin-bottom: 1rem;">
+        <a href="#" class="filter-link" data-filter="all" style="display: block; padding: 0.5rem; background: #007bff; color: white; text-align: center; border-radius: 5px; text-decoration: none; margin-bottom: 1rem;"><i class="fas fa-th"></i> Show All Products</a>
+      </div>
       <nav class="customer-menu">
         <div class="customer-category" id="schools">
           <h4><i class="fas fa-graduation-cap"></i> Education</h4>
           <ul>
-            <li><a href="#"><i class="fas fa-chevron-right"></i> Dryden Elementary School</a></li>
-            <li><a href="#"><i class="fas fa-chevron-right"></i> Dryden High School</a></li>
-            <li><a href="#"><i class="fas fa-chevron-right"></i> River Valley Middle School</a></li>
-            <li><a href="#"><i class="fas fa-chevron-right"></i> St. Mary's Academy</a></li>
+            <li><a href="#" class="customer-filter" data-customer="dryden-elementary"><i class="fas fa-chevron-right"></i> Dryden Elementary School</a></li>
+            <li><a href="#" class="customer-filter" data-customer="dryden-high"><i class="fas fa-chevron-right"></i> Dryden High School</a></li>
+            <li><a href="#" class="customer-filter" data-customer="river-valley"><i class="fas fa-chevron-right"></i> River Valley Middle School</a></li>
+            <li><a href="#" class="customer-filter" data-customer="st-marys"><i class="fas fa-chevron-right"></i> St. Mary's Academy</a></li>
           </ul>
         </div>
         <div class="customer-category" id="emergency">
           <h4><i class="fas fa-fire-extinguisher"></i> Emergency Services</h4>
           <ul>
-            <li><a href="#"><i class="fas fa-chevron-right"></i> Dryden Fire Department</a></li>
-            <li><a href="#"><i class="fas fa-chevron-right"></i> County Fire Rescue</a></li>
-            <li><a href="#"><i class="fas fa-chevron-right"></i> Dryden Police Department</a></li>
-            <li><a href="#"><i class="fas fa-chevron-right"></i> County Sheriff's Office</a></li>
+            <li><a href="#" class="customer-filter" data-customer="dryden-fire"><i class="fas fa-chevron-right"></i> Dryden Fire Department</a></li>
+            <li><a href="#" class="customer-filter" data-customer="county-fire"><i class="fas fa-chevron-right"></i> County Fire Rescue</a></li>
+            <li><a href="#" class="customer-filter" data-customer="dryden-police"><i class="fas fa-chevron-right"></i> Dryden Police Department</a></li>
+            <li><a href="#" class="customer-filter" data-customer="county-sheriff"><i class="fas fa-chevron-right"></i> County Sheriff's Office</a></li>
           </ul>
         </div>
         <div class="customer-category" id="municipal">
           <h4><i class="fas fa-landmark"></i> Municipal & Government</h4>
           <ul>
-            <li><a href="#"><i class="fas fa-chevron-right"></i> City Parks & Recreation</a></li>
-            <li><a href="#"><i class="fas fa-chevron-right"></i> County Corrections</a></li>
-            <li><a href="#"><i class="fas fa-chevron-right"></i> Public Works Department</a></li>
-            <li><a href="#"><i class="fas fa-chevron-right"></i> Dryden Town Hall</a></li>
+            <li><a href="#" class="customer-filter" data-customer="city-parks"><i class="fas fa-chevron-right"></i> City Parks & Recreation</a></li>
+            <li><a href="#" class="customer-filter" data-customer="county-corrections"><i class="fas fa-chevron-right"></i> County Corrections</a></li>
+            <li><a href="#" class="customer-filter" data-customer="dept-corrections"><i class="fas fa-chevron-right"></i> Department of Corrections</a></li>
+            <li><a href="#" class="customer-filter" data-customer="public-works"><i class="fas fa-chevron-right"></i> Public Works Department</a></li>
+            <li><a href="#" class="customer-filter" data-customer="dryden-town"><i class="fas fa-chevron-right"></i> Dryden Town Hall</a></li>
           </ul>
         </div>
       </nav>
@@ -60,7 +64,10 @@
       </section>  <section class="products">
     <h2>Our Shirts</h2>
 
-    <div class="product" id="product-1">
+    <h3 class="category-header" data-category="general">General Products</h3>
+
+    <div class="products-grid">
+    <div class="product" id="product-1" data-category="general">
       <img src="thumbody-shirt.png" alt="Thumbody From Dryden Shirt" />
       <h3>Thumbody from Dryden Shirt</h3>
       <p class="price">$25.00</p>
@@ -83,7 +90,7 @@
       <button><i class="fas fa-cart-plus"></i> Add to Cart</button>
     </div>
 
-    <div class="product" id="product-2">
+    <div class="product" id="product-2" data-category="general">
       <img src="jump-logo-tee.png" alt="Jump Sporting Goods Logo Tee" />
       <h3>Jump Logo Tee</h3>
       <p class="price">$25.00</p>
@@ -108,7 +115,7 @@
       <button><i class="fas fa-cart-plus"></i> Add to Cart</button>
     </div>
 
-    <div class="product" id="product-3">
+    <div class="product" id="product-3" data-category="general">
       <img src="dryden-pride-tee.png" alt="Dryden Pride Tee" />
       <h3>Dryden Pride Tee</h3>
       <p class="price">$25.00</p>
@@ -133,7 +140,36 @@
       <button><i class="fas fa-cart-plus"></i> Add to Cart</button>
     </div>
 
-    <div class="product" id="product-4">
+    <div class="product" id="product-6" data-category="general">
+      <img src="va-strong-tee.png" alt="Virginia Strong Tee" />
+      <h3>Virginia Strong Tee</h3>
+      <p class="price">$25.00</p>
+      
+      <label for="color-6">Color:</label>
+      <select id="color-6">
+        <option>Grey</option>
+        <option>Black</option>
+        <option>Navy</option>
+      </select>
+
+      <label for="size-6">Size:</label>
+      <select id="size-6">
+        <option>SM</option><option>MD</option><option>LG</option>
+        <option>XL</option><option>2XL</option>
+        <option>3XL</option><option>4XL</option><option>5XL</option>
+      </select>
+
+      <label for="quantity-6">Quantity:</label>
+      <input type="number" id="quantity-6" value="1" min="1" max="99">
+
+      <button><i class="fas fa-cart-plus"></i> Add to Cart</button>
+    </div>
+    </div>
+
+    <h3 id="emergency-services" class="category-header" data-customer="dryden-fire,county-fire,dryden-police,county-sheriff">Emergency Services</h3>
+
+    <div class="products-grid">
+    <div class="product" id="product-4" data-customer="dryden-fire,county-fire,dryden-police,county-sheriff">
       <img src="first-responder-tee.png" alt="First Responders Support Tee" />
       <h3>First Responders Support Tee</h3>
       <p class="price">$25.00</p>
@@ -157,8 +193,12 @@
 
       <button><i class="fas fa-cart-plus"></i> Add to Cart</button>
     </div>
+    </div>
 
-    <div class="product" id="product-5">
+    <h3 id="education" class="category-header" data-customer="dryden-elementary,dryden-high,river-valley,st-marys">Education</h3>
+
+    <div class="products-grid">
+    <div class="product" id="product-5" data-customer="dryden-elementary,dryden-high,river-valley,st-marys">
       <img src="dryden-schools-tee.png" alt="Dryden Schools Spirit Tee" />
       <h3>Dryden Schools Spirit Tee</h3>
       <p class="price">$25.00</p>
@@ -182,30 +222,49 @@
 
       <button><i class="fas fa-cart-plus"></i> Add to Cart</button>
     </div>
+    </div>
 
-    <div class="product" id="product-6">
-      <img src="va-strong-tee.png" alt="Virginia Strong Tee" />
-      <h3>Virginia Strong Tee</h3>
+    <h3 id="dept-corrections" class="category-header" data-customer="dept-corrections">Department of Corrections</h3>
+
+    <div class="products-grid">
+    <div class="product" id="product-7" data-customer="dept-corrections">
+      <img src="ShirtDOC.JPG" alt="Department of Corrections Shirt" />
+      <h3>Department of Corrections Shirt</h3>
       <p class="price">$25.00</p>
       
-      <label for="color-6">Color:</label>
-      <select id="color-6">
-        <option>Grey</option>
-        <option>Black</option>
-        <option>Navy</option>
+      <label for="color-7">Color:</label>
+      <select id="color-7">
+        <option>As Shown</option>
       </select>
 
-      <label for="size-6">Size:</label>
-      <select id="size-6">
+      <label for="size-7">Size:</label>
+      <select id="size-7">
         <option>SM</option><option>MD</option><option>LG</option>
         <option>XL</option><option>2XL</option>
         <option>3XL</option><option>4XL</option><option>5XL</option>
       </select>
 
-      <label for="quantity-6">Quantity:</label>
-      <input type="number" id="quantity-6" value="1" min="1" max="99">
+      <label for="quantity-7">Quantity:</label>
+      <input type="number" id="quantity-7" value="1" min="1" max="99">
 
       <button><i class="fas fa-cart-plus"></i> Add to Cart</button>
+    </div>
+
+    <div class="product" id="product-8" data-customer="dept-corrections">
+      <img src="ID-HolderDOC.jpg" alt="Department of Corrections ID Holder" />
+      <h3>Department of Corrections ID Holder</h3>
+      <p class="price">$8.00</p>
+      
+      <label for="color-8">Color:</label>
+      <select id="color-8">
+        <option>As Shown</option>
+      </select>
+
+      <label for="quantity-8">Quantity:</label>
+      <input type="number" id="quantity-8" value="1" min="1" max="99">
+
+      <button><i class="fas fa-cart-plus"></i> Add to Cart</button>
+    </div>
     </div>
   </section>
 
