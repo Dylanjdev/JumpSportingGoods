@@ -11,7 +11,7 @@
 
   <header>
     <a href="index.html" class="home-link"><i class="fas fa-home"></i> Back to Home</a>
-    <img src="logo.png" alt="Jump Sporting Goods Logo" class="logo" />
+    <img src="logo.png" alt="Jump Sporting Goods Logo" class="logo" loading="lazy" />
     <h1>Jump Sporting Goods</h1>
     <div class="cart-icon">
       <i class="fas fa-shopping-cart"></i>
@@ -87,7 +87,7 @@
 
     <div class="products-grid">
     <div class="product" id="product-1" data-category="general">
-      <img src="thumbody-shirt.png" alt="Thumbody From Dryden Shirt" />
+      <img src="thumbody-shirt.png" alt="Thumbody From Dryden Shirt" loading="lazy" />
       <h3>Thumbody from Dryden Shirt</h3>
       <p class="price">$25.00</p>
       
@@ -110,7 +110,7 @@
     </div>
 
     <div class="product" id="product-2" data-category="general">
-      <img src="jump-logo-tee.png" alt="Jump Sporting Goods Logo Tee" />
+      <img src="jump-logo-tee.png" alt="Jump Sporting Goods Logo Tee" loading="lazy" />
       <h3>Jump Logo Tee</h3>
       <p class="price">$25.00</p>
       
@@ -135,7 +135,7 @@
     </div>
 
     <div class="product" id="product-3" data-category="general">
-      <img src="dryden-pride-tee.png" alt="Dryden Pride Tee" />
+      <img src="dryden-pride-tee.png" alt="Dryden Pride Tee" loading="lazy" />
       <h3>Dryden Pride Tee</h3>
       <p class="price">$25.00</p>
       
@@ -160,7 +160,7 @@
     </div>
 
     <div class="product" id="product-6" data-category="general">
-      <img src="va-strong-tee.png" alt="Virginia Strong Tee" />
+      <img src="va-strong-tee.png" alt="Virginia Strong Tee" loading="lazy" />
       <h3>Virginia Strong Tee</h3>
       <p class="price">$25.00</p>
       
@@ -189,7 +189,7 @@
 
     <div class="products-grid">
     <div class="product" id="product-4" data-customer="dryden-fire,county-fire,dryden-police,county-sheriff">
-      <img src="first-responder-tee.png" alt="First Responders Support Tee" />
+      <img src="first-responder-tee.png" alt="First Responders Support Tee" loading="lazy" />
       <h3>First Responders Support Tee</h3>
       <p class="price">$25.00</p>
       
@@ -214,11 +214,11 @@
     </div>
     </div>
 
-    <h3 id="education" class="category-header" data-customer="dryden-elementary,dryden-high,river-valley,st-marys">Education</h3>
+    <h3 id="education" class="category-header" data-customer="dryden-high,river-valley,st-marys">Education</h3>
 
     <div class="products-grid">
-    <div class="product" id="product-5" data-customer="dryden-elementary,dryden-high,river-valley,st-marys">
-      <img src="dryden-schools-tee.png" alt="Dryden Schools Spirit Tee" />
+    <div class="product" id="product-5" data-customer="dryden-high,river-valley,st-marys">
+      <img src="dryden-schools-tee.png" alt="Dryden Schools Spirit Tee" loading="lazy" />
       <h3>Dryden Schools Spirit Tee</h3>
       <p class="price">$25.00</p>
       
@@ -241,13 +241,128 @@
 
       <button><i class="fas fa-cart-plus"></i> Add to Cart</button>
     </div>
+
+    <div class="product" id="product-flatwoods-elementary" data-customer="flatwoods-elementary">
+      <img src="FlatwoodsE.jpg" alt="Flatwoods Elementary School Shirt" loading="lazy" />
+      <h3>Flatwoods Elementary School Shirt</h3>
+      <p class="price">$25.00</p>
+      
+      <label for="color-flatwoods-elementary">Color:</label>
+      <select id="color-flatwoods-elementary">
+        <option>As Shown</option>
+      </select>
+
+      <label for="size-flatwoods-elementary">Size:</label>
+      <select id="size-flatwoods-elementary">
+        <option>SM</option><option>MD</option><option>LG</option>
+        <option>XL</option><option>2XL</option>
+        <option>3XL</option><option>4XL</option><option>5XL</option>
+      </select>
+
+      <label for="quantity-flatwoods-elementary">Quantity:</label>
+      <input type="number" id="quantity-flatwoods-elementary" value="1" min="1" max="99">
+
+      <button><i class="fas fa-cart-plus"></i> Add to Cart</button>
+    </div>
+
+    <div class="product" id="product-rose-hill-elementary" data-customer="rose-hill-elementary">
+      <img src="RoseHillE.jpg" alt="Rose Hill Elementary School Shirt" loading="lazy" />
+      <h3>Rose Hill Elementary School Shirt</h3>
+      <p class="price">$25.00</p>
+      
+      <label for="color-rose-hill-elementary">Color:</label>
+      <select id="color-rose-hill-elementary">
+        <option>As Shown</option>
+      </select>
+
+      <label for="size-rose-hill-elementary">Size:</label>
+      <select id="size-rose-hill-elementary">
+        <option>SM</option><option>MD</option><option>LG</option>
+        <option>XL</option><option>2XL</option>
+        <option>3XL</option><option>4XL</option><option>5XL</option>
+      </select>
+
+      <label for="quantity-rose-hill-elementary">Quantity:</label>
+      <input type="number" id="quantity-rose-hill-elementary" value="1" min="1" max="99">
+
+      <button><i class="fas fa-cart-plus"></i> Add to Cart</button>
+    </div>
+
+    <div class="product" id="product-st-charles-elementary" data-customer="st-charles-elementary">
+      <img src="St.CharlesE.jpg" alt="St. Charles Elementary School Shirt" loading="lazy" />
+      <h3>St. Charles Elementary School Shirt</h3>
+      <p class="price">$25.00</p>
+      
+      <label for="color-st-charles-elementary">Color:</label>
+      <select id="color-st-charles-elementary">
+        <option>As Shown</option>
+      </select>
+
+      <label for="size-st-charles-elementary">Size:</label>
+      <select id="size-st-charles-elementary">
+        <option>SM</option><option>MD</option><option>LG</option>
+        <option>XL</option><option>2XL</option>
+        <option>3XL</option><option>4XL</option><option>5XL</option>
+      </select>
+
+      <label for="quantity-st-charles-elementary">Quantity:</label>
+      <input type="number" id="quantity-st-charles-elementary" value="1" min="1" max="99">
+
+      <button><i class="fas fa-cart-plus"></i> Add to Cart</button>
+    </div>
+
+    <div class="product" id="product-dryden-elementary" data-customer="dryden-elementary">
+      <img src="DrydenE.jpg" alt="Dryden Elementary School Shirt" loading="lazy" />
+      <h3>Dryden Elementary School Shirt</h3>
+      <p class="price">$25.00</p>
+      
+      <label for="color-dryden-elementary">Color:</label>
+      <select id="color-dryden-elementary">
+        <option>As Shown</option>
+      </select>
+
+      <label for="size-dryden-elementary">Size:</label>
+      <select id="size-dryden-elementary">
+        <option>SM</option><option>MD</option><option>LG</option>
+        <option>XL</option><option>2XL</option>
+        <option>3XL</option><option>4XL</option><option>5XL</option>
+      </select>
+
+      <label for="quantity-dryden-elementary">Quantity:</label>
+      <input type="number" id="quantity-dryden-elementary" value="1" min="1" max="99">
+
+      <button><i class="fas fa-cart-plus"></i> Add to Cart</button>
+    </div>
+
+    <div class="product" id="product-elk-knob-elementary" data-customer="elk-knob-elementary">
+      <img src="ElkKnobE.jpg" alt="Elk Knob Elementary School Shirt" loading="lazy" />
+      <h3>Elk Knob Elementary School Shirt</h3>
+      <p class="price">$25.00</p>
+      
+      <label for="color-elk-knob-elementary">Color:</label>
+      <select id="color-elk-knob-elementary">
+        <option>As Shown</option>
+      </select>
+
+      <label for="size-elk-knob-elementary">Size:</label>
+      <select id="size-elk-knob-elementary">
+        <option>SM</option><option>MD</option><option>LG</option>
+        <option>XL</option><option>2XL</option>
+        <option>3XL</option><option>4XL</option><option>5XL</option>
+      </select>
+
+      <label for="quantity-elk-knob-elementary">Quantity:</label>
+      <input type="number" id="quantity-elk-knob-elementary" value="1" min="1" max="99">
+
+      <button><i class="fas fa-cart-plus"></i> Add to Cart</button>
+    </div>
     </div>
 
     <h3 id="dept-corrections" class="category-header" data-customer="dept-corrections">Department of Corrections</h3>
 
     <div class="products-grid">
     <div class="product" id="product-7" data-customer="dept-corrections">
-      <img src="ShirtDOC.JPG" alt="Department of Corrections Shirt" />
+      <img src="ShirtDOC.JPG" alt="Department of Corrections Shirt" loading="lazy" />
       <h3>Department of Corrections Shirt</h3>
       <p class="price">$25.00</p>
       
@@ -270,7 +385,7 @@
     </div>
 
     <div class="product" id="product-8" data-customer="dept-corrections">
-      <img src="ID-HolderDOC.jpg" alt="Department of Corrections ID Holder" />
+      <img src="ID-HolderDOC.jpg" alt="Department of Corrections ID Holder" loading="lazy" />
       <h3>Department of Corrections ID Holder</h3>
       <p class="price">$8.00</p>
       
@@ -290,7 +405,7 @@
 
     <div class="products-grid">
     <div class="product" id="product-religious-1" data-customer="religious-general">
-      <img src="placeholder-religious.png" alt="Faith-Based Shirt" />
+      <img src="placeholder-religious.png" alt="Faith-Based Shirt" loading="lazy" />
       <h3>Faith-Based Shirt</h3>
       <p class="price">$25.00</p>
       
@@ -319,7 +434,7 @@
 
     <div class="products-grid">
     <div class="product" id="product-sports-1" data-customer="travel-ball">
-      <img src="placeholder-travelball.png" alt="Travel Ball Shirt" />
+      <img src="placeholder-travelball.png" alt="Travel Ball Shirt" loading="lazy" />
       <h3>Travel Ball Shirt</h3>
       <p class="price">$25.00</p>
       
@@ -343,7 +458,7 @@
     </div>
 
     <div class="product" id="product-sports-2" data-customer="sports-general">
-      <img src="placeholder-sports.png" alt="Sports Shirt" />
+      <img src="placeholder-sports.png" alt="Sports Shirt" loading="lazy" />
       <h3>Sports Shirt</h3>
       <p class="price">$25.00</p>
       

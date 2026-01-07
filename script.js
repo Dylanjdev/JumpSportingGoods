@@ -68,6 +68,17 @@ document.addEventListener('DOMContentLoaded', () => {
     yearSpan.textContent = new Date().getFullYear();
   }
 
+  // Handle hash navigation from homepage
+  const hash = window.location.hash.substring(1);
+  if (hash) {
+    setTimeout(() => {
+      const section = document.getElementById(hash);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 100);
+  }
+
   // Add click handlers to cart icon
   const cartIcon = document.querySelector('.cart-icon');
   if (cartIcon) {
