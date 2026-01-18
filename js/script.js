@@ -8,14 +8,22 @@ function updateCartCount() {
 }
 
 // Add item to cart
-function addToCart(productId) {
-  const product = document.getElementById(`product-${productId}`);
+function addToCart(productElement) {
+  const product = productElement.closest('.product');
   const name = product.querySelector('h3').textContent;
   const price = parseFloat(product.querySelector('.price').textContent.replace('$', ''));
-  const color = product.querySelector(`#color-${productId}`).value;
-  const size = product.querySelector(`#size-${productId}`).value;
-  const quantity = parseInt(product.querySelector(`#quantity-${productId}`).value);
-  const image = product.querySelector('img').src;
+  const productId = product.id.replace('product-', '');
+  const colorSelect = product.querySelector(`#color-${productId}`);
+  const sizeSelect = product.querySelector(`#size-${productId}`);
+  const quantityInput = product.querySelector(`#quantity-${productId}`);
+  
+  const color = colorSelect ? colorSelect.value : 'N/A';
+  const size = sizeSelect ? sizeSelect.value : 'N/A';
+  const quantity = quantityInput ? parseInt(quantityInput.value) : 1;
+  
+  // Get the first visible image or the first image
+  let imageElement = product.querySelector('img.active') || product.querySelector('img');
+  const image = imageElement ? imageElement.src : '';
 
   // Check if item already exists in cart
   const existingItemIndex = cart.findIndex(item => 
@@ -88,10 +96,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Add handlers to all add to cart buttons
-  const buttons = document.querySelectorAll('.product button');
-  buttons.forEach((button, index) => {
+  const buttons = document.querySelectorAll('.product button:not(.flip-btn)');
+  buttons.forEach((button) => {
     button.addEventListener('click', () => {
-      addToCart(index + 1);
+      addToCart(button);
     });
   });
 
@@ -182,3 +190,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }, false);
   });
 });
+
+// Flip product image function
+function flipImage(button) {
+  const container = button.closest('.product-image-container');
+  const images = container.querySelectorAll('.flip-image');
+  const activeImage = container.querySelector('.flip-image.active');
+  const flipText = button.querySelector('.flip-text');
+  
+  images.forEach(img => {
+    if (img.classList.contains('active')) {
+      img.classList.remove('active');
+      img.style.display = 'none';
+    } else {
+      img.classList.add('active');
+      img.style.display = 'block';
+    }
+  });
+  
+  // Update button text
+  flipText.textContent = activeImage.dataset.side === 'front' ? 'Front' : 'Back';
+}

@@ -315,10 +315,28 @@ header h1 {
   width: 100%;
   border-radius: 0;
   box-shadow: none;
-  aspect-ratio: 1;
+  height: 280px;
   object-fit: contain;
+  object-position: center;
   background: #f8f8f8;
 }
+
+.product-image-container .flip-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  transition: opacity 0.3s ease;
+}
+
+.flip-btn:hover {
+  background: rgba(0,0,0,0.85) !important;
+  transform: scale(1.05);
+}
+
 
 .product h3 {
   color: #333;
