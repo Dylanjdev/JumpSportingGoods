@@ -680,6 +680,60 @@
     </div>
   </footer>
 
+  <!-- Fullscreen Image Overlay -->
+  <div id="fullscreenOverlay" class="fullscreen-overlay">
+    <span class="fullscreen-close">&times;</span>
+    <img id="fullscreenImage" src="" alt="Fullscreen Image">
+    <div class="fullscreen-hint">Click image to close</div>
+  </div>
+
+  <!-- Product Modal -->
+  <div id="productModal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <div class="modal-body">
+        <div class="modal-image-section">
+          <div class="modal-image-container">
+            <img id="modalImage" src="" alt="Product Image" class="modal-main-image">
+            <img id="modalImageBack" src="" alt="Product Image Back" class="modal-main-image" style="display: none;">
+            <div class="modal-image-hint">
+              <i class="fas fa-search-plus"></i> Click to view fullscreen
+            </div>
+            <button id="modalFlipBtn" class="modal-flip-btn" style="display: none;">
+              <i class="fas fa-sync-alt"></i> <span class="modal-flip-text">Back</span>
+            </button>
+          </div>
+        </div>
+        <div class="modal-details-section">
+          <h2 id="modalTitle"></h2>
+          <p class="modal-price" id="modalPrice"></p>
+          <div class="modal-description" id="modalDescription"></div>
+          
+          <div class="modal-options">
+            <div class="modal-option-group">
+              <label id="modalColorLabel">Color:</label>
+              <select id="modalColor"></select>
+            </div>
+            
+            <div class="modal-option-group">
+              <label id="modalSizeLabel">Size:</label>
+              <select id="modalSize"></select>
+            </div>
+            
+            <div class="modal-option-group">
+              <label>Quantity:</label>
+              <input type="number" id="modalQuantity" value="1" min="1" max="99">
+            </div>
+          </div>
+          
+          <button class="modal-add-to-cart" id="modalAddToCart">
+            <i class="fas fa-cart-plus"></i> Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="../js/script.js"></script>
 </body>
 </html>
