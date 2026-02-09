@@ -4,7 +4,10 @@ let cart = JSON.parse(localStorage.getItem('jumpCart')) || [];
 // Update cart count in header
 function updateCartCount() {
   const count = cart.reduce((total, item) => total + item.quantity, 0);
-  document.querySelector('.cart-count').textContent = count;
+  const countEl = document.querySelector('.cart-count');
+  if (countEl) {
+    countEl.textContent = count;
+  }
 }
 
 // Add item to cart

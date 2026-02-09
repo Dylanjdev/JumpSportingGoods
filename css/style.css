@@ -276,6 +276,7 @@ header h1 {
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 25px;
   margin-top: 20px;
+  margin-bottom: 40px;
 }
 
 .coming-soon {
@@ -304,6 +305,17 @@ header h1 {
   flex-direction: column;
   height: 100%;
   overflow: hidden;
+}
+
+/* Tidy layout for multiple Shopify widgets inside one product card */
+.product > div[id^="product-component-"] {
+  padding: 16px 20px 20px;
+}
+
+.product > div[id^="product-component-"] + div[id^="product-component-"] {
+  border-top: 1px solid #f0f0f0;
+  margin-top: 10px;
+  padding-top: 20px;
 }
 
 .product:hover {
