@@ -528,7 +528,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Add handlers to all add to cart buttons (original functionality)
-  const buttons = document.querySelectorAll('.product button:not(.flip-btn)');
+  const buttons = document.querySelectorAll('.product button:not(.flip-btn):not(.view-shirt-btn)');
   buttons.forEach((button) => {
     button.addEventListener('click', (e) => {
       e.stopPropagation();
