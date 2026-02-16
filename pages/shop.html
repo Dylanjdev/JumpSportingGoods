@@ -34,7 +34,7 @@
             <li><a href="#" class="customer-filter" data-customer="st-charles-elementary"><i class="fas fa-chevron-right"></i> St. Charles Elementary School</a></li>
             <li><a href="#" class="customer-filter" data-customer="flatwoods-elementary"><i class="fas fa-chevron-right"></i> Flatwoods Elementary School</a></li>
             <li><a href="#" class="customer-filter" data-customer="rose-hill-elementary"><i class="fas fa-chevron-right"></i> Rose Hill Elementary School</a></li>
-            <li><a href="#" class="customer-filter" data-customer="ely-dale-elementary"><i class="fas fa-chevron-right"></i> Ely Dale Elementary School</a></li>
+            <li><a href="#" class="customer-filter" data-customer="ely-dale-elementary"><i class="fas fa-chevron-right"></i> ElyDale Elementary School</a></li>
           </ul>
         </div>
         <div class="customer-category" id="religious">
@@ -250,11 +250,211 @@
         </div>
 
         <div class="products-grid" id="elydale-products-grid">
-          <h2 class="category-header" data-customer="ely-dale-elementary">Ely Dale Elementary School</h2>
+          <h2 class="category-header" data-customer="ely-dale-elementary">ElyDale Elementary School</h2>
 
           <div class="product" data-customer="ely-dale-elementary">
-            <h3>Coming Soon</h3>
-            <p>Merchandise for Ely Dale Elementary is coming soon.</p>
+            <button class="view-shirt-btn" data-image="../images/1stElyDale.webp" data-title="ElyDale Elementary Tee">
+              <i class="fas fa-eye"></i> View Shirt
+            </button>
+            <div id='product-component-1771214148142'></div>
+            <script type="text/javascript">
+            /*<![CDATA[*/
+            (function () {
+              var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+              if (window.ShopifyBuy) {
+                if (window.ShopifyBuy.UI) {
+                  ShopifyBuyInit();
+                } else {
+                  loadScript();
+                }
+              } else {
+                loadScript();
+              }
+              function loadScript() {
+                var script = document.createElement('script');
+                script.async = true;
+                script.src = scriptURL;
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+                script.onload = ShopifyBuyInit;
+              }
+              function ShopifyBuyInit() {
+                var client = ShopifyBuy.buildClient({
+                  domain: 'r8wbcp-ye.myshopify.com',
+                  storefrontAccessToken: '968f930c39778640f35f569d25e967b1',
+                });
+                ShopifyBuy.UI.onReady(client).then(function (ui) {
+                  ui.createComponent('product', {
+                    id: '7453534158919',
+                    node: document.getElementById('product-component-1771214148142'),
+                    moneyFormat: '%24%7B%7Bamount%7D%7D',
+                    options: {
+              "product": {
+                "styles": {
+                  "product": {
+                    "@media (min-width: 601px)": {
+                      "max-width": "100%",
+                      "margin-left": "0",
+                      "margin-bottom": "50px"
+                    },
+                    "text-align": "left"
+                  },
+                  "title": {
+                    "font-size": "26px",
+                    "color": "#000000"
+                  },
+                  "button": {
+                    "font-family": "Arial, sans-serif",
+                    ":hover": {
+                      "background-color": "#e60000"
+                    },
+                    "background-color": "#ff0000",
+                    ":focus": {
+                      "background-color": "#e60000"
+                    },
+                    "border-radius": "31px",
+                    "padding-left": "88px",
+                    "padding-right": "88px"
+                  },
+                  "price": {
+                    "font-size": "18px"
+                  },
+                  "compareAt": {
+                    "font-size": "15.299999999999999px"
+                  },
+                  "unitPrice": {
+                    "font-size": "15.299999999999999px"
+                  }
+                },
+                "layout": "horizontal",
+                "contents": {
+                  "img": false,
+                  "imgWithCarousel": true,
+                  "button": false,
+                  "buttonWithQuantity": true,
+                  "description": true
+                },
+                "width": "100%",
+                "text": {
+                  "button": "Add to cart"
+                }
+              },
+              "productSet": {
+                "styles": {
+                  "products": {
+                    "@media (min-width: 601px)": {
+                      "margin-left": "-20px"
+                    }
+                  }
+                }
+              },
+              "modalProduct": {
+                "contents": {
+                  "img": false,
+                  "imgWithCarousel": true,
+                  "button": false,
+                  "buttonWithQuantity": true
+                },
+                "styles": {
+                  "product": {
+                    "@media (min-width: 601px)": {
+                      "max-width": "100%",
+                      "margin-left": "0px",
+                      "margin-bottom": "0px"
+                    }
+                  },
+                  "button": {
+                    "font-family": "Arial, sans-serif",
+                    ":hover": {
+                      "background-color": "#e60000"
+                    },
+                    "background-color": "#ff0000",
+                    ":focus": {
+                      "background-color": "#e60000"
+                    },
+                    "border-radius": "31px",
+                    "padding-left": "88px",
+                    "padding-right": "88px"
+                  },
+                  "title": {
+                    "font-family": "Helvetica Neue, sans-serif",
+                    "font-weight": "bold",
+                    "font-size": "26px",
+                    "color": "#4c4c4c"
+                  },
+                  "price": {
+                    "font-family": "Helvetica Neue, sans-serif",
+                    "font-weight": "normal",
+                    "font-size": "18px",
+                    "color": "#4c4c4c"
+                  },
+                  "compareAt": {
+                    "font-family": "Helvetica Neue, sans-serif",
+                    "font-weight": "normal",
+                    "font-size": "15.299999999999999px",
+                    "color": "#4c4c4c"
+                  },
+                  "unitPrice": {
+                    "font-family": "Helvetica Neue, sans-serif",
+                    "font-weight": "normal",
+                    "font-size": "15.299999999999999px",
+                    "color": "#4c4c4c"
+                  }
+                },
+                "text": {
+                  "button": "Add to cart"
+                }
+              },
+              "option": {
+                "styles": {
+                  "label": {
+                    "font-family": "Gill Sans, sans-serif"
+                  },
+                  "select": {
+                    "font-family": "Gill Sans, sans-serif"
+                  }
+                }
+              },
+              "cart": {
+                "styles": {
+                  "button": {
+                    "font-family": "Arial, sans-serif",
+                    ":hover": {
+                      "background-color": "#e60000"
+                    },
+                    "background-color": "#ff0000",
+                    ":focus": {
+                      "background-color": "#e60000"
+                    },
+                    "border-radius": "31px"
+                  }
+                },
+                "text": {
+                  "total": "Subtotal",
+                  "button": "Checkout"
+                },
+                "popup": false
+              },
+              "toggle": {
+                "styles": {
+                  "toggle": {
+                    "font-family": "Arial, sans-serif",
+                    "background-color": "#ff0000",
+                    ":hover": {
+                      "background-color": "#e60000"
+                    },
+                    ":focus": {
+                      "background-color": "#e60000"
+                    }
+                  }
+                }
+              }
+            },
+                  });
+                });
+              }
+            })();
+            /*]]>*/
+            </script>
           </div>
         </div>
 
@@ -3556,11 +3756,10 @@
 
   <footer>
     <div class="social-links">
-      <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.facebook.com/jumpsportinggoods" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
     </div>
     <p>© <span id="year"></span> Jump Sporting Goods — Dryden, VA</p>
+    <p class="footer-credit">Built by <a href="https://smithdigitals.com/" target="_blank" rel="noopener noreferrer">Smith Digitals</a></p>
     <div class="payment-methods">
       <i class="fab fa-cc-visa"></i>
       <i class="fab fa-cc-mastercard"></i>

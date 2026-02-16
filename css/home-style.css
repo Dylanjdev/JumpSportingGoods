@@ -271,6 +271,24 @@ footer p {
   margin: 0;
 }
 
+.footer-credit {
+  margin-top: 10px;
+  color: #333;
+  font-weight: 600;
+  opacity: 1;
+}
+
+.footer-credit a {
+  color: #e31837;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.footer-credit a:hover {
+  color: #c01830;
+}
+
 /* Mobile Responsive */
 @media (max-width: 768px) {
   .welcome-header h1 {

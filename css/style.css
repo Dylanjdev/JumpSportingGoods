@@ -694,6 +694,21 @@ footer p {
   color: #999;
 }
 
+.footer-credit {
+  opacity: 1;
+}
+
+.footer-credit a {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.footer-credit a:hover {
+  color: #e31837;
+}
+
 .payment-methods {
   margin-top: 20px;
   display: flex;
