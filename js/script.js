@@ -285,17 +285,6 @@ document.addEventListener('DOMContentLoaded', () => {
     yearSpan.textContent = new Date().getFullYear();
   }
 
-  // Handle hash navigation from homepage
-  const hash = window.location.hash.substring(1);
-  if (hash) {
-    setTimeout(() => {
-      const section = document.getElementById(hash);
-      if (section) {
-        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    }, 100);
-  }
-
   // Add click handlers to cart icon
   const cartIcon = document.querySelector('.cart-icon');
   if (cartIcon) {
@@ -393,6 +382,35 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }, false);
   });
+
+  function navigateFromHash() {
+    const hash = window.location.hash.substring(1);
+    if (!hash) {
+      return;
+    }
+
+    const categorySection = document.getElementById(hash);
+    if (!categorySection) {
+      return;
+    }
+
+    const firstCustomerLink = categorySection.querySelector('.customer-filter[data-customer]');
+    if (firstCustomerLink) {
+      customerLinks.forEach(l => l.classList.remove('active'));
+      firstCustomerLink.classList.add('active');
+
+      const customer = firstCustomerLink.getAttribute('data-customer');
+      if (customer) {
+        filterByCustomer(customer);
+      }
+      return;
+    }
+
+    categorySection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  navigateFromHash();
+  window.addEventListener('hashchange', navigateFromHash);
 
   // Modal event listeners
   const modal = document.getElementById('productModal');
