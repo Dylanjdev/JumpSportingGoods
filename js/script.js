@@ -294,19 +294,21 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Product filtering code...
-  function showAllProducts() {
+  function showAllProducts(shouldScroll = true) {
     const products = document.querySelectorAll('.product');
     const headers = document.querySelectorAll('.category-header');
     const grids = document.querySelectorAll('.products-grid');
     products.forEach(p => p.style.display = 'flex');
     headers.forEach(h => h.style.display = 'block');
     grids.forEach(g => g.style.display = 'grid');
-    setTimeout(() => {
-      const productsSection = document.querySelector('.products');
-      if (productsSection) {
-        productsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    }, 50);
+    if (shouldScroll) {
+      setTimeout(() => {
+        const productsSection = document.querySelector('.products');
+        if (productsSection) {
+          productsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 50);
+    }
   }
 
   function filterByCustomer(customer) {
@@ -409,14 +411,14 @@ document.addEventListener('DOMContentLoaded', () => {
     return true;
   }
 
-  // Show all products on initial load
-  showAllProducts();
+  // Show all products on initial load (without auto-scrolling to first product section)
+  showAllProducts(false);
 
   const showAllLink = document.querySelector('.filter-link[data-filter="all"]');
   if (showAllLink) {
     showAllLink.addEventListener('click', function(e) {
       e.preventDefault();
-      showAllProducts();
+      showAllProducts(true);
       // Remove active class from all customer links
       document.querySelectorAll('.customer-filter').forEach(l => l.classList.remove('active'));
     }, false);
@@ -463,6 +465,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const hash = window.location.hash.substring(1);
     if (!hash) {
+      return;
+    }
+
+    if (hash === 'customers') {
+      const customersSection = document.getElementById('customers');
+      if (customersSection) {
+        customersSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
       return;
     }
 
