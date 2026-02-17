@@ -354,6 +354,61 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 50);
   }
 
+  function filterByCategory(categoryId) {
+    const products = document.querySelectorAll('.product');
+    const headers = document.querySelectorAll('.category-header');
+    const grids = document.querySelectorAll('.products-grid');
+    const categorySection = document.getElementById(categoryId);
+
+    if (!categorySection) {
+      return false;
+    }
+
+    const categoryCustomers = Array.from(
+      categorySection.querySelectorAll('.customer-filter[data-customer]')
+    ).map(link => link.getAttribute('data-customer'));
+
+    if (categoryCustomers.length === 0) {
+      return false;
+    }
+
+    products.forEach(p => p.style.display = 'none');
+    headers.forEach(h => h.style.display = 'none');
+    grids.forEach(g => g.style.display = 'none');
+    customerLinks.forEach(l => l.classList.remove('active'));
+
+    let firstVisibleHeader = null;
+
+    headers.forEach(h => {
+      const customerData = h.getAttribute('data-customer');
+      if (customerData && categoryCustomers.includes(customerData)) {
+        h.style.display = 'block';
+        if (!firstVisibleHeader) {
+          firstVisibleHeader = h;
+        }
+      }
+    });
+
+    products.forEach(p => {
+      const customerData = p.getAttribute('data-customer');
+      if (customerData && categoryCustomers.includes(customerData)) {
+        p.style.display = 'flex';
+        const parentGrid = p.closest('.products-grid');
+        if (parentGrid) {
+          parentGrid.style.display = 'grid';
+        }
+      }
+    });
+
+    setTimeout(() => {
+      if (firstVisibleHeader) {
+        firstVisibleHeader.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 50);
+
+    return true;
+  }
+
   // Show all products on initial load
   showAllProducts();
 
@@ -368,6 +423,23 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const customerLinks = document.querySelectorAll('.customer-filter');
+
+  function activateCustomer(customer) {
+    if (!customer) {
+      return false;
+    }
+
+    const matchingLink = document.querySelector(`.customer-filter[data-customer="${customer}"]`);
+    if (!matchingLink) {
+      return false;
+    }
+
+    customerLinks.forEach(l => l.classList.remove('active'));
+    matchingLink.classList.add('active');
+    filterByCustomer(customer);
+    return true;
+  }
+
   customerLinks.forEach(link => {
     link.addEventListener('click', function(e) {
       e.preventDefault();
@@ -384,25 +456,22 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   function navigateFromHash() {
+    const customerFromQuery = new URLSearchParams(window.location.search).get('customer');
+    if (activateCustomer(customerFromQuery)) {
+      return;
+    }
+
     const hash = window.location.hash.substring(1);
     if (!hash) {
       return;
     }
 
-    const categorySection = document.getElementById(hash);
-    if (!categorySection) {
+    if (filterByCategory(hash)) {
       return;
     }
 
-    const firstCustomerLink = categorySection.querySelector('.customer-filter[data-customer]');
-    if (firstCustomerLink) {
-      customerLinks.forEach(l => l.classList.remove('active'));
-      firstCustomerLink.classList.add('active');
-
-      const customer = firstCustomerLink.getAttribute('data-customer');
-      if (customer) {
-        filterByCustomer(customer);
-      }
+    const categorySection = document.getElementById(hash);
+    if (!categorySection) {
       return;
     }
 
