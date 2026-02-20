@@ -476,11 +476,35 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
+    const categorySection = document.getElementById(hash);
+    if (categorySection && categorySection.classList.contains('customer-category')) {
+      showAllProducts(false);
+      customerLinks.forEach(l => l.classList.remove('active'));
+
+      const firstCategoryLink = categorySection.querySelector('.customer-filter[data-customer]');
+      const firstCustomer = firstCategoryLink ? firstCategoryLink.getAttribute('data-customer') : null;
+      const firstHeader = firstCustomer
+        ? document.querySelector(`.category-header[data-customer="${firstCustomer}"]`)
+        : null;
+
+      setTimeout(() => {
+        if (firstHeader) {
+          firstHeader.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+          const productsSection = document.querySelector('.products');
+          if (productsSection) {
+            productsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      }, 50);
+
+      return;
+    }
+
     if (filterByCategory(hash)) {
       return;
     }
 
-    const categorySection = document.getElementById(hash);
     if (!categorySection) {
       return;
     }
