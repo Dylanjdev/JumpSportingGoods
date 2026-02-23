@@ -27,7 +27,19 @@
         <div class="customer-category" id="schools">
           <h4><i class="fas fa-graduation-cap"></i> Education</h4>
           <ul>
-            <li><a href="#" class="customer-filter" data-customer="lee-high"><i class="fas fa-chevron-right"></i> Lee High School</a></li>
+            <li class="customer-has-submenu">
+              <a href="#" class="customer-filter customer-submenu-toggle" data-customer="lee-high" data-submenu-target="lee-high-sports-submenu">
+                <i class="fas fa-chevron-right"></i> Lee High School <span class="submenu-caret"><i class="fas fa-chevron-down"></i></span>
+              </a>
+              <ul class="customer-submenu" id="lee-high-sports-submenu">
+                <li><a href="#" class="customer-filter" data-customer="lee-high"><i class="fas fa-chevron-right"></i> Football</a></li>
+                <li><a href="#" class="customer-filter" data-customer="lee-high-track"><i class="fas fa-chevron-right"></i> Track</a></li>
+                <li><a href="#" class="customer-filter" data-customer="lee-high-baseball"><i class="fas fa-chevron-right"></i> Baseball</a></li>
+                <li><a href="#" class="customer-filter" data-customer="lee-high"><i class="fas fa-chevron-right"></i> Basketball</a></li>
+                <li><a href="#" class="customer-filter" data-customer="lee-high-softball"><i class="fas fa-chevron-right"></i> Softball</a></li>
+              </ul>
+            </li>
+            <li><a href="#" class="customer-filter" data-customer="union-high"><i class="fas fa-chevron-right"></i> Union High School</a></li>
             <li><a href="#" class="customer-filter" data-customer="thomas-walker"><i class="fas fa-chevron-right"></i> Thomas Walker High School</a></li>
             <li><a href="#" class="customer-filter" data-customer="pennington-middle"><i class="fas fa-chevron-right"></i> Pennington Middle School</a></li>
             <li><a href="#" class="customer-filter" data-customer="jonesville-middle"><i class="fas fa-chevron-right"></i> Jonesville Middle School</a></li>
@@ -68,7 +80,14 @@
           <h4><i class="fas fa-baseball-ball"></i> Sports & Teams</h4>
           <ul>
             <li><a href="#" class="customer-filter" data-customer="travel-ball"><i class="fas fa-chevron-right"></i> Travel Ball</a></li>
-            <li><a href="#" class="customer-filter" data-customer="sports-general"><i class="fas fa-chevron-right"></i> Sports Shirts</a></li>
+            <li class="customer-has-submenu">
+              <a href="#" class="customer-filter customer-submenu-toggle" data-customer="sports-general" data-submenu-target="sports-shirts-submenu">
+                <i class="fas fa-chevron-right"></i> Sports Shirts <span class="submenu-caret"><i class="fas fa-chevron-down"></i></span>
+              </a>
+              <ul class="customer-submenu" id="sports-shirts-submenu">
+                <li><a href="#" class="customer-filter" data-customer="sports-general-soccer"><i class="fas fa-chevron-right"></i> Soccer</a></li>
+              </ul>
+            </li>
           </ul>
         </div>
       </nav>
@@ -81,8 +100,8 @@
       </section>
 
       <section class="products">
-        <!-- All manual shop items removed; Shopify embeds can be added here -->
 
+        <!-- ===================== DRYDEN ELEMENTARY ===================== -->
         <div class="products-grid" id="dryden-products-grid">
           <h2 class="category-header" data-customer="dryden-elementary">Dryden Elementary School</h2>
 
@@ -99,10 +118,11 @@
             <button class="view-shirt-btn" data-image="../images/2ndDrydenE.webp" data-title="Kids Tee — Crusaders Blue & Yellow Vintage Sports Logo">
               <i class="fas fa-eye"></i> View Shirt
             </button>
-            <div id='product-component-1770610672695'></div>
+            <div id="product-component-1770610672695"></div>
           </div>
         </div>
 
+        <!-- ===================== ST. CHARLES ELEMENTARY ===================== -->
         <div class="products-grid" id="stcharles-products-grid">
           <h2 class="category-header" data-customer="st-charles-elementary">St. Charles Elementary School</h2>
 
@@ -119,10 +139,11 @@
             <button class="view-shirt-btn" data-image="../images/2ndCharlesE.webp" data-title="St. Charles Elementary Tee">
               <i class="fas fa-eye"></i> View Shirt
             </button>
-            <div id='product-component-1770610159550'></div>
+            <div id="product-component-1770610159550"></div>
           </div>
         </div>
 
+        <!-- ===================== ELK KNOB ELEMENTARY ===================== -->
         <div class="products-grid" id="elkknob-products-grid">
           <h2 class="category-header" data-customer="elk-knob-elementary">Elk Knob Elementary School</h2>
 
@@ -139,10 +160,11 @@
             <button class="view-shirt-btn" data-image="../images/2ndElkKnobE.webp" data-title="Elk Knob Elementary Tee">
               <i class="fas fa-eye"></i> View Shirt
             </button>
-            <div id="product-component-1770609581854"></div>
+            <div id="product-component-1771816787450"></div>
           </div>
         </div>
 
+        <!-- ===================== ROSE HILL ELEMENTARY ===================== -->
         <div class="products-grid" id="rosehill-products-grid">
           <h2 class="category-header" data-customer="rose-hill-elementary">Rose Hill Elementary School</h2>
 
@@ -155,6 +177,7 @@
           </div>
         </div>
 
+        <!-- ===================== FLATWOODS ELEMENTARY ===================== -->
         <div class="products-grid" id="flatwoods-products-grid">
           <h2 class="category-header" data-customer="flatwoods-elementary">Flatwoods Elementary School</h2>
 
@@ -171,10 +194,11 @@
             <button class="view-shirt-btn" data-image="../images/2ndFlatwoodsE.webp" data-title="Flatwoods Elementary Tee">
               <i class="fas fa-eye"></i> View Shirt
             </button>
-            <div id='product-component-1770609968234'></div>
+            <div id="product-component-1771816956641"></div>
           </div>
         </div>
 
+        <!-- ===================== LEE HIGH SCHOOL ===================== -->
         <div class="products-grid" id="leehigh-products-grid">
           <h2 class="category-header" data-customer="lee-high">Lee High School</h2>
 
@@ -186,23 +210,34 @@
             <div id="product-component-1770598655623"></div>
           </div>
 
-          <div class="product" data-customer="lee-high">
-            <h3>Lee High School Tee</h3>
-            <button class="view-shirt-btn" data-image="../images/2ndLeeHigh.webp" data-title="Lee High School Tee">
+          <div class="product" data-customer="lee-high-track">
+            <h3>Lee High Track Tee</h3>
+            <button class="view-shirt-btn" data-image="../images/LeeHighTrack.webp" data-title="Lee High Track Tee">
               <i class="fas fa-eye"></i> View Shirt
             </button>
-            <div id='product-component-1770610526380'></div>
+            <div id="product-component-1771815607826"></div>
           </div>
 
-          <div class="product" data-customer="lee-high">
-            <h3>Lee High School Tee</h3>
-            <button class="view-shirt-btn" data-image="../images/3rdLeeHigh.webp" data-title="Lee High School Tee">
+          <div class="product" data-customer="lee-high-softball">
+            <h3>Unisex Softstyle T-Shirt Generals Softball</h3>
+            <p>Regular price $19.76</p>
+            <button class="view-shirt-btn" data-image="../images/2ndLeeHigh.webp" data-title="Unisex Softstyle T-Shirt Generals Softball">
               <i class="fas fa-eye"></i> View Shirt
             </button>
-            <div id='product-component-1770610600007'></div>
+            <div id="product-component-1771815247230"></div>
+          </div>
+
+          <div class="product" data-customer="lee-high-baseball">
+            <h3>Generals Baseball T&#8209;Shirt — Vintage Team Logo Tee</h3>
+            <p>Regular price $19.76</p>
+            <button class="view-shirt-btn" data-image="../images/3rdLeeHigh.webp" data-title="Generals Baseball T-Shirt — Vintage Team Logo Tee">
+              <i class="fas fa-eye"></i> View Shirt
+            </button>
+            <div id="product-component-1771821534909"></div>
           </div>
         </div>
 
+        <!-- ===================== PENNINGTON MIDDLE ===================== -->
         <div class="products-grid" id="pennington-products-grid">
           <h2 class="category-header" data-customer="pennington-middle">Pennington Middle School</h2>
 
@@ -215,6 +250,20 @@
           </div>
         </div>
 
+        <!-- ===================== UNION HIGH ===================== -->
+        <div class="products-grid" id="unionhigh-products-grid">
+          <h2 class="category-header" data-customer="union-high">Union High School</h2>
+
+          <div class="product" data-customer="union-high">
+            <h3>Union High School Tee</h3>
+            <button class="view-shirt-btn" data-image="../images/1stUnionH.webp" data-title="Union High School Tee">
+              <i class="fas fa-eye"></i> View Shirt
+            </button>
+            <div id="product-component-1771811939856"></div>
+          </div>
+        </div>
+
+        <!-- ===================== THOMAS WALKER HIGH ===================== -->
         <div class="products-grid" id="thomaswalker-products-grid">
           <h2 class="category-header" data-customer="thomas-walker">Thomas Walker High School</h2>
 
@@ -227,6 +276,7 @@
           </div>
         </div>
 
+        <!-- ===================== JONESVILLE MIDDLE ===================== -->
         <div class="products-grid" id="jonesville-products-grid">
           <h2 class="category-header" data-customer="jonesville-middle">Jonesville Middle School</h2>
 
@@ -239,6 +289,7 @@
           </div>
         </div>
 
+        <!-- ===================== FAITH-BASED APPAREL ===================== -->
         <div class="products-grid" id="faithbased-products-grid">
           <h2 class="category-header" data-customer="religious-general">Faith-Based Apparel</h2>
 
@@ -247,10 +298,19 @@
             <button class="view-shirt-btn" data-image="../images/1stFaith.webp" data-title="Faith-Based Apparel Tee">
               <i class="fas fa-eye"></i> View Shirt
             </button>
-            <div id="product-component-1770598284135"></div>
+            <div id="product-component-1771818925661"></div>
+          </div>
+
+          <div class="product" data-customer="religious-general">
+            <h3>Faith-Based Apparel Tee</h3>
+            <button class="view-shirt-btn" data-image="../images/Faith2nd.webp" data-title="Faith-Based Apparel Tee">
+              <i class="fas fa-eye"></i> View Shirt
+            </button>
+            <div id="product-component-1771818407716"></div>
           </div>
         </div>
 
+        <!-- ===================== ELYDALE MIDDLE ===================== -->
         <div class="products-grid" id="elydale-products-grid">
           <h2 class="category-header" data-customer="ely-dale-elementary">Elydale middle school</h2>
 
@@ -258,211 +318,13 @@
             <button class="view-shirt-btn" data-image="../images/1stElydaleMiddleSchool.webp" data-title="Elydale middle school Tee">
               <i class="fas fa-eye"></i> View Shirt
             </button>
-            <div id='product-component-1771214148142'></div>
-            <script type="text/javascript">
-            /*<![CDATA[*/
-            (function () {
-              var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
-              if (window.ShopifyBuy) {
-                if (window.ShopifyBuy.UI) {
-                  ShopifyBuyInit();
-                } else {
-                  loadScript();
-                }
-              } else {
-                loadScript();
-              }
-              function loadScript() {
-                var script = document.createElement('script');
-                script.async = true;
-                script.src = scriptURL;
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
-                script.onload = ShopifyBuyInit;
-              }
-              function ShopifyBuyInit() {
-                var client = ShopifyBuy.buildClient({
-                  domain: 'r8wbcp-ye.myshopify.com',
-                  storefrontAccessToken: '968f930c39778640f35f569d25e967b1',
-                });
-                ShopifyBuy.UI.onReady(client).then(function (ui) {
-                  ui.createComponent('product', {
-                    id: '7453534158919',
-                    node: document.getElementById('product-component-1771214148142'),
-                    moneyFormat: '%24%7B%7Bamount%7D%7D',
-                    options: {
-              "product": {
-                "styles": {
-                  "product": {
-                    "@media (min-width: 601px)": {
-                      "max-width": "100%",
-                      "margin-left": "0",
-                      "margin-bottom": "50px"
-                    },
-                    "text-align": "left"
-                  },
-                  "title": {
-                    "font-size": "26px",
-                    "color": "#000000"
-                  },
-                  "button": {
-                    "font-family": "Arial, sans-serif",
-                    ":hover": {
-                      "background-color": "#e60000"
-                    },
-                    "background-color": "#ff0000",
-                    ":focus": {
-                      "background-color": "#e60000"
-                    },
-                    "border-radius": "31px",
-                    "padding-left": "88px",
-                    "padding-right": "88px"
-                  },
-                  "price": {
-                    "font-size": "18px"
-                  },
-                  "compareAt": {
-                    "font-size": "15.299999999999999px"
-                  },
-                  "unitPrice": {
-                    "font-size": "15.299999999999999px"
-                  }
-                },
-                "layout": "horizontal",
-                "contents": {
-                  "img": false,
-                  "imgWithCarousel": true,
-                  "button": false,
-                  "buttonWithQuantity": true,
-                  "description": true
-                },
-                "width": "100%",
-                "text": {
-                  "button": "Add to cart"
-                }
-              },
-              "productSet": {
-                "styles": {
-                  "products": {
-                    "@media (min-width: 601px)": {
-                      "margin-left": "-20px"
-                    }
-                  }
-                }
-              },
-              "modalProduct": {
-                "contents": {
-                  "img": false,
-                  "imgWithCarousel": true,
-                  "button": false,
-                  "buttonWithQuantity": true
-                },
-                "styles": {
-                  "product": {
-                    "@media (min-width: 601px)": {
-                      "max-width": "100%",
-                      "margin-left": "0px",
-                      "margin-bottom": "0px"
-                    }
-                  },
-                  "button": {
-                    "font-family": "Arial, sans-serif",
-                    ":hover": {
-                      "background-color": "#e60000"
-                    },
-                    "background-color": "#ff0000",
-                    ":focus": {
-                      "background-color": "#e60000"
-                    },
-                    "border-radius": "31px",
-                    "padding-left": "88px",
-                    "padding-right": "88px"
-                  },
-                  "title": {
-                    "font-family": "Helvetica Neue, sans-serif",
-                    "font-weight": "bold",
-                    "font-size": "26px",
-                    "color": "#4c4c4c"
-                  },
-                  "price": {
-                    "font-family": "Helvetica Neue, sans-serif",
-                    "font-weight": "normal",
-                    "font-size": "18px",
-                    "color": "#4c4c4c"
-                  },
-                  "compareAt": {
-                    "font-family": "Helvetica Neue, sans-serif",
-                    "font-weight": "normal",
-                    "font-size": "15.299999999999999px",
-                    "color": "#4c4c4c"
-                  },
-                  "unitPrice": {
-                    "font-family": "Helvetica Neue, sans-serif",
-                    "font-weight": "normal",
-                    "font-size": "15.299999999999999px",
-                    "color": "#4c4c4c"
-                  }
-                },
-                "text": {
-                  "button": "Add to cart"
-                }
-              },
-              "option": {
-                "styles": {
-                  "label": {
-                    "font-family": "Gill Sans, sans-serif"
-                  },
-                  "select": {
-                    "font-family": "Gill Sans, sans-serif"
-                  }
-                }
-              },
-              "cart": {
-                "styles": {
-                  "button": {
-                    "font-family": "Arial, sans-serif",
-                    ":hover": {
-                      "background-color": "#e60000"
-                    },
-                    "background-color": "#ff0000",
-                    ":focus": {
-                      "background-color": "#e60000"
-                    },
-                    "border-radius": "31px"
-                  }
-                },
-                "text": {
-                  "total": "Subtotal",
-                  "button": "Checkout"
-                },
-                "popup": false
-              },
-              "toggle": {
-                "styles": {
-                  "toggle": {
-                    "font-family": "Arial, sans-serif",
-                    "background-color": "#ff0000",
-                    ":hover": {
-                      "background-color": "#e60000"
-                    },
-                    ":focus": {
-                      "background-color": "#e60000"
-                    }
-                  }
-                }
-              }
-            },
-                  });
-                });
-              }
-            })();
-            /*]]>*/
-            </script>
+            <div id="product-component-1771214148142"></div>
           </div>
         </div>
 
+        <!-- ===================== COMING SOON SECTIONS ===================== -->
         <div class="products-grid" id="drydenfire-products-grid">
           <h2 class="category-header" data-customer="dryden-fire">Dryden Fire Department</h2>
-
           <div class="product" data-customer="dryden-fire">
             <h3>Coming Soon</h3>
             <p>Dryden Fire Department apparel is coming soon.</p>
@@ -471,7 +333,6 @@
 
         <div class="products-grid" id="deptcorrections-products-grid">
           <h2 class="category-header" data-customer="dept-corrections">Department of Corrections</h2>
-
           <div class="product" data-customer="dept-corrections">
             <h3>Coming Soon</h3>
             <p>Department of Corrections gear is coming soon.</p>
@@ -480,7 +341,6 @@
 
         <div class="products-grid" id="jtownbeach-products-grid">
           <h2 class="category-header" data-customer="jtown-beach">J-Town Beach</h2>
-
           <div class="product" data-customer="jtown-beach">
             <h3>Coming Soon</h3>
             <p>J-Town Beach items are coming soon.</p>
@@ -489,7 +349,6 @@
 
         <div class="products-grid" id="jumpsporting-products-grid">
           <h2 class="category-header" data-customer="jump-sporting">Jump Sporting Goods</h2>
-
           <div class="product" data-customer="jump-sporting">
             <h3>Coming Soon</h3>
             <p>Jump Sporting Goods merchandise is coming soon.</p>
@@ -498,3254 +357,57 @@
 
         <div class="products-grid" id="travelball-products-grid">
           <h2 class="category-header" data-customer="travel-ball">Travel Ball</h2>
-
           <div class="product" data-customer="travel-ball">
             <h3>Coming Soon</h3>
             <p>Travel Ball uniforms and gear are coming soon.</p>
           </div>
         </div>
 
+        <!-- ===================== SPORTS SHIRTS / SOCCER ===================== -->
         <div class="products-grid" id="sportsgeneral-products-grid">
           <h2 class="category-header" data-customer="sports-general">Sports Shirts</h2>
 
-          <div class="product" data-customer="sports-general">
-            <h3>Coming Soon</h3>
-            <p>Sports shirts and fan gear are coming soon.</p>
+          <div class="product" data-customer="sports-general-soccer">
+            <h3>Soccer Shirt</h3>
+            <button class="view-shirt-btn" data-image="../images/1stSoccer.webp" data-title="Soccer Shirt">
+              <i class="fas fa-eye"></i> View Shirt
+            </button>
+            <div id="product-component-1771813188943"></div>
           </div>
         </div>
 
-        <!-- Shopify Buy Button for Dryden Elementary School Tee -->
-        <script type="text/javascript">
-        /*<![CDATA[*/
-        (function () {
-          var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
-          if (window.ShopifyBuy) {
-            if (window.ShopifyBuy.UI) {
-              ShopifyBuyInitDryden();
-            } else {
-              loadScript();
-            }
-          } else {
-            loadScript();
-          }
-          function loadScript() {
-            var script = document.createElement('script');
-            script.async = true;
-            script.src = scriptURL;
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
-            script.onload = ShopifyBuyInitDryden;
-          }
-          function ShopifyBuyInitDryden() {
-            var client = ShopifyBuy.buildClient({
-              domain: 'r8wbcp-ye.myshopify.com',
-              storefrontAccessToken: '968f930c39778640f35f569d25e967b1',
-            });
-            ShopifyBuy.UI.onReady(client).then(function (ui) {
-              ui.createComponent('product', {
-                id: '7414664888391',
-                node: document.getElementById('product-component-1770597565385'),
-                moneyFormat: '%24%7B%7Bamount%7D%7D',
-                options: {
-  "product": {
-    "styles": {
-      "product": {
-        "@media (min-width: 601px)": {
-          "max-width": "100%",
-          "margin-left": "0",
-          "margin-bottom": "50px"
-        },
-        "text-align": "left"
-      },
-      "title": {
-        "font-size": "26px",
-        "color": "#000000"
-      },
-      "button": {
-        "font-family": "Arial, sans-serif",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        "background-color": "#ff0000",
-        ":focus": {
-          "background-color": "#e60000"
-        },
-        "border-radius": "31px",
-        "padding-left": "88px",
-        "padding-right": "88px"
-      },
-      "price": {
-        "font-size": "18px"
-      },
-      "compareAt": {
-        "font-size": "15.299999999999999px"
-      },
-      "unitPrice": {
-        "font-size": "15.299999999999999px"
-      }
-    },
-    "layout": "horizontal",
-    "contents": {
-      "img": false,
-      "imgWithCarousel": true,
-      "button": false,
-      "buttonWithQuantity": true,
-      "description": true
-    },
-    "width": "100%",
-    "text": {
-      "button": "Add to cart"
-    }
-  },
-  "productSet": {
-    "styles": {
-      "products": {
-        "@media (min-width: 601px)": {
-          "margin-left": "-20px"
-        }
-      }
-    }
-  },
-  "modalProduct": {
-    "contents": {
-      "img": false,
-      "imgWithCarousel": true,
-      "button": false,
-      "buttonWithQuantity": true
-    },
-    "styles": {
-      "product": {
-        "@media (min-width: 601px)": {
-          "max-width": "100%",
-          "margin-left": "0px",
-          "margin-bottom": "0px"
-        }
-      },
-      "button": {
-        "font-family": "Arial, sans-serif",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        "background-color": "#ff0000",
-        ":focus": {
-          "background-color": "#e60000"
-        },
-        "border-radius": "31px",
-        "padding-left": "88px",
-        "padding-right": "88px"
-      },
-      "title": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "bold",
-        "font-size": "26px",
-        "color": "#4c4c4c"
-      },
-      "price": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "normal",
-        "font-size": "18px",
-        "color": "#4c4c4c"
-      },
-      "compareAt": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "normal",
-        "font-size": "15.299999999999999px",
-        "color": "#4c4c4c"
-      },
-      "unitPrice": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "normal",
-        "font-size": "15.299999999999999px",
-        "color": "#4c4c4c"
-      }
-    },
-    "text": {
-      "button": "Add to cart"
-    }
-  },
-  "option": {
-    "styles": {
-      "label": {
-        "font-family": "Gill Sans, sans-serif"
-      },
-      "select": {
-        "font-family": "Gill Sans, sans-serif"
-      }
-    }
-  },
-  "cart": {
-    "styles": {
-      "button": {
-        "font-family": "Arial, sans-serif",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        "background-color": "#ff0000",
-        ":focus": {
-          "background-color": "#e60000"
-        },
-        "border-radius": "31px"
-      }
-    },
-    "text": {
-      "total": "Subtotal",
-      "button": "Checkout"
-    },
-    "popup": false
-  },
-  "toggle": {
-    "styles": {
-      "toggle": {
-        "font-family": "Arial, sans-serif",
-        "background-color": "#ff0000",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        ":focus": {
-          "background-color": "#e60000"
-        }
-      }
-    }
-  }
-},
-              });
-            });
-          }
-        })();
-        /*]]>*/
-        </script>
-
-        <!-- Additional Shopify Buy Button for Dryden Elementary Tee -->
-        <script type="text/javascript">
-        /*<![CDATA[*/
-        (function () {
-          var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
-          if (window.ShopifyBuy) {
-            if (window.ShopifyBuy.UI) {
-              ShopifyBuyInit();
-            } else {
-              loadScript();
-            }
-          } else {
-            loadScript();
-          }
-          function loadScript() {
-            var script = document.createElement('script');
-            script.async = true;
-            script.src = scriptURL;
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
-            script.onload = ShopifyBuyInit;
-          }
-          function ShopifyBuyInit() {
-            var client = ShopifyBuy.buildClient({
-              domain: 'r8wbcp-ye.myshopify.com',
-              storefrontAccessToken: '968f930c39778640f35f569d25e967b1',
-            });
-            ShopifyBuy.UI.onReady(client).then(function (ui) {
-              ui.createComponent('product', {
-                id: '7446206873671',
-                node: document.getElementById('product-component-1770610672695'),
-                moneyFormat: '%24%7B%7Bamount%7D%7D',
-                options: {
-  "product": {
-    "styles": {
-      "product": {
-        "@media (min-width: 601px)": {
-          "max-width": "100%",
-          "margin-left": "0",
-          "margin-bottom": "50px"
-        },
-        "text-align": "left"
-      },
-      "title": {
-        "font-size": "26px",
-        "color": "#000000"
-      },
-      "button": {
-        "font-family": "Arial, sans-serif",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        "background-color": "#ff0000",
-        ":focus": {
-          "background-color": "#e60000"
-        },
-        "border-radius": "31px",
-        "padding-left": "88px",
-        "padding-right": "88px"
-      },
-      "price": {
-        "font-size": "18px"
-      },
-      "compareAt": {
-        "font-size": "15.299999999999999px"
-      },
-      "unitPrice": {
-        "font-size": "15.299999999999999px"
-      }
-    },
-    "layout": "horizontal",
-    "contents": {
-      "img": false,
-      "imgWithCarousel": true,
-      "button": false,
-      "buttonWithQuantity": true,
-      "description": true
-    },
-    "width": "100%",
-    "text": {
-      "button": "Add to cart"
-    }
-  },
-  "productSet": {
-    "styles": {
-      "products": {
-        "@media (min-width: 601px)": {
-          "margin-left": "-20px"
-        }
-      }
-    }
-  },
-  "modalProduct": {
-    "contents": {
-      "img": false,
-      "imgWithCarousel": true,
-      "button": false,
-      "buttonWithQuantity": true
-    },
-    "styles": {
-      "product": {
-        "@media (min-width: 601px)": {
-          "max-width": "100%",
-          "margin-left": "0px",
-          "margin-bottom": "0px"
-        }
-      },
-      "button": {
-        "font-family": "Arial, sans-serif",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        "background-color": "#ff0000",
-        ":focus": {
-          "background-color": "#e60000"
-        },
-        "border-radius": "31px",
-        "padding-left": "88px",
-        "padding-right": "88px"
-      },
-      "title": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "bold",
-        "font-size": "26px",
-        "color": "#4c4c4c"
-      },
-      "price": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "normal",
-        "font-size": "18px",
-        "color": "#4c4c4c"
-      },
-      "compareAt": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "normal",
-        "font-size": "15.299999999999999px",
-        "color": "#4c4c4c"
-      },
-      "unitPrice": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "normal",
-        "font-size": "15.299999999999999px",
-        "color": "#4c4c4c"
-      }
-    },
-    "text": {
-      "button": "Add to cart"
-    }
-  },
-  "option": {
-    "styles": {
-      "label": {
-        "font-family": "Gill Sans, sans-serif"
-      },
-      "select": {
-        "font-family": "Gill Sans, sans-serif"
-      }
-    }
-  },
-  "cart": {
-    "styles": {
-      "button": {
-        "font-family": "Arial, sans-serif",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        "background-color": "#ff0000",
-        ":focus": {
-          "background-color": "#e60000"
-        },
-        "border-radius": "31px"
-      }
-    },
-    "text": {
-      "total": "Subtotal",
-      "button": "Checkout"
-    },
-    "popup": false
-  },
-  "toggle": {
-    "styles": {
-      "toggle": {
-        "font-family": "Arial, sans-serif",
-        "background-color": "#ff0000",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        ":focus": {
-          "background-color": "#e60000"
-        }
-      }
-    }
-  }
-},
-              });
-            });
-          }
-        })();
-        /*]]>*/
-        </script>
-
-        <!-- Additional Shopify Buy Button for Flatwoods Elementary Tee -->
-        <script type="text/javascript">
-        /*<![CDATA[*/
-        (function () {
-          var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
-          if (window.ShopifyBuy) {
-            if (window.ShopifyBuy.UI) {
-              ShopifyBuyInit();
-            } else {
-              loadScript();
-            }
-          } else {
-            loadScript();
-          }
-          function loadScript() {
-            var script = document.createElement('script');
-            script.async = true;
-            script.src = scriptURL;
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
-            script.onload = ShopifyBuyInit;
-          }
-          function ShopifyBuyInit() {
-            var client = ShopifyBuy.buildClient({
-              domain: 'r8wbcp-ye.myshopify.com',
-              storefrontAccessToken: '968f930c39778640f35f569d25e967b1',
-            });
-            ShopifyBuy.UI.onReady(client).then(function (ui) {
-              ui.createComponent('product', {
-                id: '7418580140103',
-                node: document.getElementById('product-component-1770609968234'),
-                moneyFormat: '%24%7B%7Bamount%7D%7D',
-                options: {
-  "product": {
-    "styles": {
-      "product": {
-        "@media (min-width: 601px)": {
-          "max-width": "100%",
-          "margin-left": "0",
-          "margin-bottom": "50px"
-        },
-        "text-align": "left"
-      },
-      "title": {
-        "font-size": "26px",
-        "color": "#000000"
-      },
-      "button": {
-        "font-family": "Arial, sans-serif",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        "background-color": "#ff0000",
-        ":focus": {
-          "background-color": "#e60000"
-        },
-        "border-radius": "31px",
-        "padding-left": "88px",
-        "padding-right": "88px"
-      },
-      "price": {
-        "font-size": "18px"
-      },
-      "compareAt": {
-        "font-size": "15.299999999999999px"
-      },
-      "unitPrice": {
-        "font-size": "15.299999999999999px"
-      }
-    },
-    "layout": "horizontal",
-    "contents": {
-      "img": false,
-      "imgWithCarousel": true,
-      "button": false,
-      "buttonWithQuantity": true,
-      "description": true
-    },
-    "width": "100%",
-    "text": {
-      "button": "Add to cart"
-    }
-  },
-  "productSet": {
-    "styles": {
-      "products": {
-        "@media (min-width: 601px)": {
-          "margin-left": "-20px"
-        }
-      }
-    }
-  },
-  "modalProduct": {
-    "contents": {
-      "img": false,
-      "imgWithCarousel": true,
-      "button": false,
-      "buttonWithQuantity": true
-    },
-    "styles": {
-      "product": {
-        "@media (min-width: 601px)": {
-          "max-width": "100%",
-          "margin-left": "0px",
-          "margin-bottom": "0px"
-        }
-      },
-      "button": {
-        "font-family": "Arial, sans-serif",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        "background-color": "#ff0000",
-        ":focus": {
-          "background-color": "#e60000"
-        },
-        "border-radius": "31px",
-        "padding-left": "88px",
-        "padding-right": "88px"
-      },
-      "title": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "bold",
-        "font-size": "26px",
-        "color": "#4c4c4c"
-      },
-      "price": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "normal",
-        "font-size": "18px",
-        "color": "#4c4c4c"
-      },
-      "compareAt": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "normal",
-        "font-size": "15.299999999999999px",
-        "color": "#4c4c4c"
-      },
-      "unitPrice": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "normal",
-        "font-size": "15.299999999999999px",
-        "color": "#4c4c4c"
-      }
-    },
-    "text": {
-      "button": "Add to cart"
-    }
-  },
-  "option": {
-    "styles": {
-      "label": {
-        "font-family": "Gill Sans, sans-serif"
-      },
-      "select": {
-        "font-family": "Gill Sans, sans-serif"
-      }
-    }
-  },
-  "cart": {
-    "styles": {
-      "button": {
-        "font-family": "Arial, sans-serif",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        "background-color": "#ff0000",
-        ":focus": {
-          "background-color": "#e60000"
-        },
-        "border-radius": "31px"
-      }
-    },
-    "text": {
-      "total": "Subtotal",
-      "button": "Checkout"
-    },
-    "popup": false
-  },
-  "toggle": {
-    "styles": {
-      "toggle": {
-        "font-family": "Arial, sans-serif",
-        "background-color": "#ff0000",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        ":focus": {
-          "background-color": "#e60000"
-        }
-      }
-    }
-  }
-},
-              });
-            });
-          }
-        })();
-        /*]]>*/
-        </script>
-
-        <!-- Shopify Buy Button for Pennington Middle School Tee -->
-        <script type="text/javascript">
-        /*<![CDATA[*/
-        (function () {
-          var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
-          if (window.ShopifyBuy) {
-            if (window.ShopifyBuy.UI) {
-              ShopifyBuyInitPennington();
-            } else {
-              loadScript();
-            }
-          } else {
-            loadScript();
-          }
-          function loadScript() {
-            var script = document.createElement('script');
-            script.async = true;
-            script.src = scriptURL;
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
-            script.onload = ShopifyBuyInitPennington;
-          }
-          function ShopifyBuyInitPennington() {
-            var client = ShopifyBuy.buildClient({
-              domain: 'r8wbcp-ye.myshopify.com',
-              storefrontAccessToken: '968f930c39778640f35f569d25e967b1',
-            });
-            ShopifyBuy.UI.onReady(client).then(function (ui) {
-              ui.createComponent('product', {
-                id: '7414680387655',
-                node: document.getElementById('product-component-1770598074869'),
-                moneyFormat: '%24%7B%7Bamount%7D%7D',
-                options: {
-  "product": {
-    "styles": {
-      "product": {
-        "@media (min-width: 601px)": {
-          "max-width": "100%",
-          "margin-left": "0",
-          "margin-bottom": "50px"
-        },
-        "text-align": "left"
-      },
-      "title": {
-        "font-size": "26px",
-        "color": "#000000"
-      },
-      "button": {
-        "font-family": "Arial, sans-serif",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        "background-color": "#ff0000",
-        ":focus": {
-          "background-color": "#e60000"
-        },
-        "border-radius": "31px",
-        "padding-left": "88px",
-        "padding-right": "88px"
-      },
-      "price": {
-        "font-size": "18px"
-      },
-      "compareAt": {
-        "font-size": "15.299999999999999px"
-      },
-      "unitPrice": {
-        "font-size": "15.299999999999999px"
-      }
-    },
-    "layout": "horizontal",
-    "contents": {
-      "img": false,
-      "imgWithCarousel": true,
-      "button": false,
-      "buttonWithQuantity": true,
-      "description": true
-    },
-    "width": "100%",
-    "text": {
-      "button": "Add to cart"
-    }
-  },
-  "productSet": {
-    "styles": {
-      "products": {
-        "@media (min-width: 601px)": {
-          "margin-left": "-20px"
-        }
-      }
-    }
-  },
-  "modalProduct": {
-    "contents": {
-      "img": false,
-      "imgWithCarousel": true,
-      "button": false,
-      "buttonWithQuantity": true
-    },
-    "styles": {
-      "product": {
-        "@media (min-width: 601px)": {
-          "max-width": "100%",
-          "margin-left": "0px",
-          "margin-bottom": "0px"
-        }
-      },
-      "button": {
-        "font-family": "Arial, sans-serif",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        "background-color": "#ff0000",
-        ":focus": {
-          "background-color": "#e60000"
-        },
-        "border-radius": "31px",
-        "padding-left": "88px",
-        "padding-right": "88px"
-      },
-      "title": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "bold",
-        "font-size": "26px",
-        "color": "#4c4c4c"
-      },
-      "price": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "normal",
-        "font-size": "18px",
-        "color": "#4c4c4c"
-      },
-      "compareAt": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "normal",
-        "font-size": "15.299999999999999px",
-        "color": "#4c4c4c"
-      },
-      "unitPrice": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "normal",
-        "font-size": "15.299999999999999px",
-        "color": "#4c4c4c"
-      }
-    },
-    "text": {
-      "button": "Add to cart"
-    }
-  },
-  "option": {
-    "styles": {
-      "label": {
-        "font-family": "Gill Sans, sans-serif"
-      },
-      "select": {
-        "font-family": "Gill Sans, sans-serif"
-      }
-    }
-  },
-  "cart": {
-    "styles": {
-      "button": {
-        "font-family": "Arial, sans-serif",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        "background-color": "#ff0000",
-        ":focus": {
-          "background-color": "#e60000"
-        },
-        "border-radius": "31px"
-      }
-    },
-    "text": {
-      "total": "Subtotal",
-      "button": "Checkout"
-    },
-    "popup": false
-  },
-  "toggle": {
-    "styles": {
-      "toggle": {
-        "font-family": "Arial, sans-serif",
-        "background-color": "#ff0000",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        ":focus": {
-          "background-color": "#e60000"
-        }
-      }
-    }
-  }
-},
-              });
-            });
-          }
-        })();
-        /*]]>*/
-        </script>
-
-        <!-- Shopify Buy Button for Jonesville Middle School Tee -->
-        <script type="text/javascript">
-        /*<![CDATA[*/
-        (function () {
-          var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
-          if (window.ShopifyBuy) {
-            if (window.ShopifyBuy.UI) {
-              ShopifyBuyInitJonesville();
-            } else {
-              loadScript();
-            }
-          } else {
-            loadScript();
-          }
-          function loadScript() {
-            var script = document.createElement('script');
-            script.async = true;
-            script.src = scriptURL;
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
-            script.onload = ShopifyBuyInitJonesville;
-          }
-          function ShopifyBuyInitJonesville() {
-            var client = ShopifyBuy.buildClient({
-              domain: 'r8wbcp-ye.myshopify.com',
-              storefrontAccessToken: '968f930c39778640f35f569d25e967b1',
-            });
-            ShopifyBuy.UI.onReady(client).then(function (ui) {
-              ui.createComponent('product', {
-                id: '7418508509255',
-                node: document.getElementById('product-component-1770598155984'),
-                moneyFormat: '%24%7B%7Bamount%7D%7D',
-                options: {
-  "product": {
-    "styles": {
-      "product": {
-        "@media (min-width: 601px)": {
-          "max-width": "100%",
-          "margin-left": "0",
-          "margin-bottom": "50px"
-        },
-        "text-align": "left"
-      },
-      "title": {
-        "font-size": "26px",
-        "color": "#000000"
-      },
-      "button": {
-        "font-family": "Arial, sans-serif",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        "background-color": "#ff0000",
-        ":focus": {
-          "background-color": "#e60000"
-        },
-        "border-radius": "31px",
-        "padding-left": "88px",
-        "padding-right": "88px"
-      },
-      "price": {
-        "font-size": "18px"
-      },
-      "compareAt": {
-        "font-size": "15.299999999999999px"
-      },
-      "unitPrice": {
-        "font-size": "15.299999999999999px"
-      }
-    },
-    "layout": "horizontal",
-    "contents": {
-      "img": false,
-      "imgWithCarousel": true,
-      "button": false,
-      "buttonWithQuantity": true,
-      "description": true
-    },
-    "width": "100%",
-    "text": {
-      "button": "Add to cart"
-    }
-  },
-  "productSet": {
-    "styles": {
-      "products": {
-        "@media (min-width: 601px)": {
-          "margin-left": "-20px"
-        }
-      }
-    }
-  },
-  "modalProduct": {
-    "contents": {
-      "img": false,
-      "imgWithCarousel": true,
-      "button": false,
-      "buttonWithQuantity": true
-    },
-    "styles": {
-      "product": {
-        "@media (min-width: 601px)": {
-          "max-width": "100%",
-          "margin-left": "0px",
-          "margin-bottom": "0px"
-        }
-      },
-      "button": {
-        "font-family": "Arial, sans-serif",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        "background-color": "#ff0000",
-        ":focus": {
-          "background-color": "#e60000"
-        },
-        "border-radius": "31px",
-        "padding-left": "88px",
-        "padding-right": "88px"
-      },
-      "title": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "bold",
-        "font-size": "26px",
-        "color": "#4c4c4c"
-      },
-      "price": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "normal",
-        "font-size": "18px",
-        "color": "#4c4c4c"
-      },
-      "compareAt": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "normal",
-        "font-size": "15.299999999999999px",
-        "color": "#4c4c4c"
-      },
-      "unitPrice": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "normal",
-        "font-size": "15.299999999999999px",
-        "color": "#4c4c4c"
-      }
-    },
-    "text": {
-      "button": "Add to cart"
-    }
-  },
-  "option": {
-    "styles": {
-      "label": {
-        "font-family": "Gill Sans, sans-serif"
-      },
-      "select": {
-        "font-family": "Gill Sans, sans-serif"
-      }
-    }
-  },
-  "cart": {
-    "styles": {
-      "button": {
-        "font-family": "Arial, sans-serif",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        "background-color": "#ff0000",
-        ":focus": {
-          "background-color": "#e60000"
-        },
-        "border-radius": "31px"
-      }
-    },
-    "text": {
-      "total": "Subtotal",
-      "button": "Checkout"
-    },
-    "popup": false
-  },
-  "toggle": {
-    "styles": {
-      "toggle": {
-        "font-family": "Arial, sans-serif",
-        "background-color": "#ff0000",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        ":focus": {
-          "background-color": "#e60000"
-        }
-      }
-    }
-  }
-},
-              });
-            });
-          }
-        })();
-        /*]]>*/
-        </script>
-
-        <!-- Shopify Buy Button for Flatwoods Elementary Tee -->
-        <script type="text/javascript">
-        /*<![CDATA[*/
-        (function () {
-          var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
-          if (window.ShopifyBuy) {
-            if (window.ShopifyBuy.UI) {
-              ShopifyBuyInitFlatwoods();
-            } else {
-              loadScript();
-            }
-          } else {
-            loadScript();
-          }
-          function loadScript() {
-            var script = document.createElement('script');
-            script.async = true;
-            script.src = scriptURL;
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
-            script.onload = ShopifyBuyInitFlatwoods;
-          }
-          function ShopifyBuyInitFlatwoods() {
-            var client = ShopifyBuy.buildClient({
-              domain: 'r8wbcp-ye.myshopify.com',
-              storefrontAccessToken: '968f930c39778640f35f569d25e967b1',
-            });
-            ShopifyBuy.UI.onReady(client).then(function (ui) {
-              ui.createComponent('product', {
-                id: '7414678650951',
-                node: document.getElementById('product-component-1770597995105'),
-                moneyFormat: '%24%7B%7Bamount%7D%7D',
-                options: {
-  "product": {
-    "styles": {
-      "product": {
-        "@media (min-width: 601px)": {
-          "max-width": "100%",
-          "margin-left": "0",
-          "margin-bottom": "50px"
-        },
-        "text-align": "left"
-      },
-      "title": {
-        "font-size": "26px",
-        "color": "#000000"
-      },
-      "button": {
-        "font-family": "Arial, sans-serif",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        "background-color": "#ff0000",
-        ":focus": {
-          "background-color": "#e60000"
-        },
-        "border-radius": "31px",
-        "padding-left": "88px",
-        "padding-right": "88px"
-      },
-      "price": {
-        "font-size": "18px"
-      },
-      "compareAt": {
-        "font-size": "15.299999999999999px"
-      },
-      "unitPrice": {
-        "font-size": "15.299999999999999px"
-      }
-    },
-    "layout": "horizontal",
-    "contents": {
-      "img": false,
-      "imgWithCarousel": true,
-      "button": false,
-      "buttonWithQuantity": true,
-      "description": true
-    },
-    "width": "100%",
-    "text": {
-      "button": "Add to cart"
-    }
-  },
-  "productSet": {
-    "styles": {
-      "products": {
-        "@media (min-width: 601px)": {
-          "margin-left": "-20px"
-        }
-      }
-    }
-  },
-  "modalProduct": {
-    "contents": {
-      "img": false,
-      "imgWithCarousel": true,
-      "button": false,
-      "buttonWithQuantity": true
-    },
-    "styles": {
-      "product": {
-        "@media (min-width: 601px)": {
-          "max-width": "100%",
-          "margin-left": "0px",
-          "margin-bottom": "0px"
-        }
-      },
-      "button": {
-        "font-family": "Arial, sans-serif",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        "background-color": "#ff0000",
-        ":focus": {
-          "background-color": "#e60000"
-        },
-        "border-radius": "31px",
-        "padding-left": "88px",
-        "padding-right": "88px"
-      },
-      "title": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "bold",
-        "font-size": "26px",
-        "color": "#4c4c4c"
-      },
-      "price": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "normal",
-        "font-size": "18px",
-        "color": "#4c4c4c"
-      },
-      "compareAt": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "normal",
-        "font-size": "15.299999999999999px",
-        "color": "#4c4c4c"
-      },
-      "unitPrice": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "normal",
-        "font-size": "15.299999999999999px",
-        "color": "#4c4c4c"
-      }
-    },
-    "text": {
-      "button": "Add to cart"
-    }
-  },
-  "option": {
-    "styles": {
-      "label": {
-        "font-family": "Gill Sans, sans-serif"
-      },
-      "select": {
-        "font-family": "Gill Sans, sans-serif"
-      }
-    }
-  },
-  "cart": {
-    "styles": {
-      "button": {
-        "font-family": "Arial, sans-serif",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        "background-color": "#ff0000",
-        ":focus": {
-          "background-color": "#e60000"
-        },
-        "border-radius": "31px"
-      }
-    },
-    "text": {
-      "total": "Subtotal",
-      "button": "Checkout"
-    },
-    "popup": false
-  },
-  "toggle": {
-    "styles": {
-      "toggle": {
-        "font-family": "Arial, sans-serif",
-        "background-color": "#ff0000",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        ":focus": {
-          "background-color": "#e60000"
-        }
-      }
-    }
-  }
-},
-              });
-            });
-          }
-        })();
-        /*]]>*/
-        </script>
-
-        <!-- Shopify Buy Button for St. Charles Elementary Tee -->
-        <script type="text/javascript">
-        /*<![CDATA[*/
-        (function () {
-          var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
-          if (window.ShopifyBuy) {
-            if (window.ShopifyBuy.UI) {
-              ShopifyBuyInitStCharles();
-            } else {
-              loadScript();
-            }
-          } else {
-            loadScript();
-          }
-          function loadScript() {
-            var script = document.createElement('script');
-            script.async = true;
-            script.src = scriptURL;
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
-            script.onload = ShopifyBuyInitStCharles;
-          }
-          function ShopifyBuyInitStCharles() {
-            var client = ShopifyBuy.buildClient({
-              domain: 'r8wbcp-ye.myshopify.com',
-              storefrontAccessToken: '968f930c39778640f35f569d25e967b1',
-            });
-            ShopifyBuy.UI.onReady(client).then(function (ui) {
-              ui.createComponent('product', {
-                id: '7414665412679',
-                node: document.getElementById('product-component-1770597605669'),
-                moneyFormat: '%24%7B%7Bamount%7D%7D',
-                options: {
-  "product": {
-    "styles": {
-      "product": {
-        "@media (min-width: 601px)": {
-          "max-width": "100%",
-          "margin-left": "0",
-          "margin-bottom": "50px"
-        },
-        "text-align": "left"
-      },
-      "title": {
-        "font-size": "26px",
-        "color": "#000000"
-      },
-      "button": {
-        "font-family": "Arial, sans-serif",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        "background-color": "#ff0000",
-        ":focus": {
-          "background-color": "#e60000"
-        },
-        "border-radius": "31px",
-        "padding-left": "88px",
-        "padding-right": "88px"
-      },
-      "price": {
-        "font-size": "18px"
-      },
-      "compareAt": {
-        "font-size": "15.299999999999999px"
-      },
-      "unitPrice": {
-        "font-size": "15.299999999999999px"
-      }
-    },
-    "layout": "horizontal",
-    "contents": {
-      "img": false,
-      "imgWithCarousel": true,
-      "button": false,
-      "buttonWithQuantity": true,
-      "description": true
-    },
-    "width": "100%",
-    "text": {
-      "button": "Add to cart"
-    }
-  },
-  "productSet": {
-    "styles": {
-      "products": {
-        "@media (min-width: 601px)": {
-          "margin-left": "-20px"
-        }
-      }
-    }
-  },
-  "modalProduct": {
-    "contents": {
-      "img": false,
-      "imgWithCarousel": true,
-      "button": false,
-      "buttonWithQuantity": true
-    },
-    "styles": {
-      "product": {
-        "@media (min-width: 601px)": {
-          "max-width": "100%",
-          "margin-left": "0px",
-          "margin-bottom": "0px"
-        }
-      },
-      "button": {
-        "font-family": "Arial, sans-serif",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        "background-color": "#ff0000",
-        ":focus": {
-          "background-color": "#e60000"
-        },
-        "border-radius": "31px",
-        "padding-left": "88px",
-        "padding-right": "88px"
-      },
-      "title": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "bold",
-        "font-size": "26px",
-        "color": "#4c4c4c"
-      },
-      "price": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "normal",
-        "font-size": "18px",
-        "color": "#4c4c4c"
-      },
-      "compareAt": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "normal",
-        "font-size": "15.299999999999999px",
-        "color": "#4c4c4c"
-      },
-      "unitPrice": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "normal",
-        "font-size": "15.299999999999999px",
-        "color": "#4c4c4c"
-      }
-    },
-    "text": {
-      "button": "Add to cart"
-    }
-  },
-  "option": {
-    "styles": {
-      "label": {
-        "font-family": "Gill Sans, sans-serif"
-      },
-      "select": {
-        "font-family": "Gill Sans, sans-serif"
-      }
-    }
-  },
-  "cart": {
-    "styles": {
-      "button": {
-        "font-family": "Arial, sans-serif",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        "background-color": "#ff0000",
-        ":focus": {
-          "background-color": "#e60000"
-        },
-        "border-radius": "31px"
-      }
-    },
-    "text": {
-      "total": "Subtotal",
-      "button": "Checkout"
-    },
-    "popup": false
-  },
-  "toggle": {
-    "styles": {
-      "toggle": {
-        "font-family": "Arial, sans-serif",
-        "background-color": "#ff0000",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        ":focus": {
-          "background-color": "#e60000"
-        }
-      }
-    }
-  }
-},
-              });
-            });
-          }
-        })();
-        /*]]>*/
-        </script>
-
-        <!-- Additional Shopify Buy Button for St. Charles Elementary Tee -->
-        <script type="text/javascript">
-        /*<![CDATA[*/
-        (function () {
-          var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
-          if (window.ShopifyBuy) {
-            if (window.ShopifyBuy.UI) {
-              ShopifyBuyInit();
-            } else {
-              loadScript();
-            }
-          } else {
-            loadScript();
-          }
-          function loadScript() {
-            var script = document.createElement('script');
-            script.async = true;
-            script.src = scriptURL;
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
-            script.onload = ShopifyBuyInit;
-          }
-          function ShopifyBuyInit() {
-            var client = ShopifyBuy.buildClient({
-              domain: 'r8wbcp-ye.myshopify.com',
-              storefrontAccessToken: '968f930c39778640f35f569d25e967b1',
-            });
-            ShopifyBuy.UI.onReady(client).then(function (ui) {
-              ui.createComponent('product', {
-                id: '7446067478599',
-                node: document.getElementById('product-component-1770610159550'),
-                moneyFormat: '%24%7B%7Bamount%7D%7D',
-                options: {
-  "product": {
-    "styles": {
-      "product": {
-        "@media (min-width: 601px)": {
-          "max-width": "100%",
-          "margin-left": "0",
-          "margin-bottom": "50px"
-        },
-        "text-align": "left"
-      },
-      "title": {
-        "font-size": "26px",
-        "color": "#000000"
-      },
-      "button": {
-        "font-family": "Arial, sans-serif",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        "background-color": "#ff0000",
-        ":focus": {
-          "background-color": "#e60000"
-        },
-        "border-radius": "31px",
-        "padding-left": "88px",
-        "padding-right": "88px"
-      },
-      "price": {
-        "font-size": "18px"
-      },
-      "compareAt": {
-        "font-size": "15.299999999999999px"
-      },
-      "unitPrice": {
-        "font-size": "15.299999999999999px"
-      }
-    },
-    "layout": "horizontal",
-    "contents": {
-      "img": false,
-      "imgWithCarousel": true,
-      "button": false,
-      "buttonWithQuantity": true,
-      "description": true
-    },
-    "width": "100%",
-    "text": {
-      "button": "Add to cart"
-    }
-  },
-  "productSet": {
-    "styles": {
-      "products": {
-        "@media (min-width: 601px)": {
-          "margin-left": "-20px"
-        }
-      }
-    }
-  },
-  "modalProduct": {
-    "contents": {
-      "img": false,
-      "imgWithCarousel": true,
-      "button": false,
-      "buttonWithQuantity": true
-    },
-    "styles": {
-      "product": {
-        "@media (min-width: 601px)": {
-          "max-width": "100%",
-          "margin-left": "0px",
-          "margin-bottom": "0px"
-        }
-      },
-      "button": {
-        "font-family": "Arial, sans-serif",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        "background-color": "#ff0000",
-        ":focus": {
-          "background-color": "#e60000"
-        },
-        "border-radius": "31px",
-        "padding-left": "88px",
-        "padding-right": "88px"
-      },
-      "title": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "bold",
-        "font-size": "26px",
-        "color": "#4c4c4c"
-      },
-      "price": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "normal",
-        "font-size": "18px",
-        "color": "#4c4c4c"
-      },
-      "compareAt": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "normal",
-        "font-size": "15.299999999999999px",
-        "color": "#4c4c4c"
-      },
-      "unitPrice": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "normal",
-        "font-size": "15.299999999999999px",
-        "color": "#4c4c4c"
-      }
-    },
-    "text": {
-      "button": "Add to cart"
-    }
-  },
-  "option": {
-    "styles": {
-      "label": {
-        "font-family": "Gill Sans, sans-serif"
-      },
-      "select": {
-        "font-family": "Gill Sans, sans-serif"
-      }
-    }
-  },
-  "cart": {
-    "styles": {
-      "button": {
-        "font-family": "Arial, sans-serif",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        "background-color": "#ff0000",
-        ":focus": {
-          "background-color": "#e60000"
-        },
-        "border-radius": "31px"
-      }
-    },
-    "text": {
-      "total": "Subtotal",
-      "button": "Checkout"
-    },
-    "popup": false
-  },
-  "toggle": {
-    "styles": {
-      "toggle": {
-        "font-family": "Arial, sans-serif",
-        "background-color": "#ff0000",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        ":focus": {
-          "background-color": "#e60000"
-        }
-      }
-    }
-  }
-},
-              });
-            });
-          }
-        })();
-        /*]]>*/
-        </script>
-
-        <!-- Shopify Buy Button for Elk Knob Elementary Tee -->
-        <script type="text/javascript">
-        /*<![CDATA[*/
-        (function () {
-          var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
-          if (window.ShopifyBuy) {
-            if (window.ShopifyBuy.UI) {
-              ShopifyBuyInitElkKnob();
-            } else {
-              loadScript();
-            }
-          } else {
-            loadScript();
-          }
-          function loadScript() {
-            var script = document.createElement('script');
-            script.async = true;
-            script.src = scriptURL;
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
-            script.onload = ShopifyBuyInitElkKnob;
-          }
-          function ShopifyBuyInitElkKnob() {
-            var client = ShopifyBuy.buildClient({
-              domain: 'r8wbcp-ye.myshopify.com',
-              storefrontAccessToken: '968f930c39778640f35f569d25e967b1',
-            });
-            ShopifyBuy.UI.onReady(client).then(function (ui) {
-              ui.createComponent('product', {
-                id: '7414666166343',
-                node: document.getElementById('product-component-1770598827337'),
-                moneyFormat: '%24%7B%7Bamount%7D%7D',
-                options: {
-  "product": {
-    "styles": {
-      "product": {
-        "@media (min-width: 601px)": {
-          "max-width": "100%",
-          "margin-left": "0",
-          "margin-bottom": "50px"
-        },
-        "text-align": "left"
-      },
-      "title": {
-        "font-size": "26px",
-        "color": "#000000"
-      },
-      "button": {
-        "font-family": "Arial, sans-serif",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        "background-color": "#ff0000",
-        ":focus": {
-          "background-color": "#e60000"
-        },
-        "border-radius": "31px",
-        "padding-left": "88px",
-        "padding-right": "88px"
-      },
-      "price": {
-        "font-size": "18px"
-      },
-      "compareAt": {
-        "font-size": "15.299999999999999px"
-      },
-      "unitPrice": {
-        "font-size": "15.299999999999999px"
-      }
-    },
-    "layout": "horizontal",
-    "contents": {
-      "img": false,
-      "imgWithCarousel": true,
-      "button": false,
-      "buttonWithQuantity": true,
-      "description": true
-    },
-    "width": "100%",
-    "text": {
-      "button": "Add to cart"
-    }
-  },
-  "productSet": {
-    "styles": {
-      "products": {
-        "@media (min-width: 601px)": {
-          "margin-left": "-20px"
-        }
-      }
-    }
-  },
-  "modalProduct": {
-    "contents": {
-      "img": false,
-      "imgWithCarousel": true,
-      "button": false,
-      "buttonWithQuantity": true
-    },
-    "styles": {
-      "product": {
-        "@media (min-width: 601px)": {
-          "max-width": "100%",
-          "margin-left": "0px",
-          "margin-bottom": "0px"
-        }
-      },
-      "button": {
-        "font-family": "Arial, sans-serif",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        "background-color": "#ff0000",
-        ":focus": {
-          "background-color": "#e60000"
-        },
-        "border-radius": "31px",
-        "padding-left": "88px",
-        "padding-right": "88px"
-      },
-      "title": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "bold",
-        "font-size": "26px",
-        "color": "#4c4c4c"
-      },
-      "price": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "normal",
-        "font-size": "18px",
-        "color": "#4c4c4c"
-      },
-      "compareAt": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "normal",
-        "font-size": "15.299999999999999px",
-        "color": "#4c4c4c"
-      },
-      "unitPrice": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "normal",
-        "font-size": "15.299999999999999px",
-        "color": "#4c4c4c"
-      }
-    },
-    "text": {
-      "button": "Add to cart"
-    }
-  },
-  "option": {
-    "styles": {
-      "label": {
-        "font-family": "Gill Sans, sans-serif"
-      },
-      "select": {
-        "font-family": "Gill Sans, sans-serif"
-      }
-    }
-  },
-  "cart": {
-    "styles": {
-      "button": {
-        "font-family": "Arial, sans-serif",
-        ":hover": {
-          "background-color": "e60000"
-        },
-        "background-color": "#ff0000",
-        ":focus": {
-          "background-color": "#e60000"
-        },
-        "border-radius": "31px"
-      }
-    },
-    "text": {
-      "total": "Subtotal",
-      "button": "Checkout"
-    },
-    "popup": false
-  },
-  "toggle": {
-    "styles": {
-      "toggle": {
-        "font-family": "Arial, sans-serif",
-        "background-color": "#ff0000",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        ":focus": {
-          "background-color": "#e60000"
-        }
-      }
-    }
-  }
-},
-              });
-            });
-          }
-        })();
-        /*]]>*/
-        </script>
-
-        <!-- Additional Shopify Buy Button for Elk Knob Elementary Tee -->
-        <script type="text/javascript">
-        /*<![CDATA[*/
-        (function () {
-          var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
-          if (window.ShopifyBuy) {
-            if (window.ShopifyBuy.UI) {
-              ShopifyBuyInit();
-            } else {
-              loadScript();
-            }
-          } else {
-            loadScript();
-          }
-          function loadScript() {
-            var script = document.createElement('script');
-            script.async = true;
-            script.src = scriptURL;
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
-            script.onload = ShopifyBuyInit;
-          }
-          function ShopifyBuyInit() {
-            var client = ShopifyBuy.buildClient({
-              domain: 'r8wbcp-ye.myshopify.com',
-              storefrontAccessToken: '968f930c39778640f35f569d25e967b1',
-            });
-            ShopifyBuy.UI.onReady(client).then(function (ui) {
-              ui.createComponent('product', {
-                id: '7418571358279',
-                node: document.getElementById('product-component-1770609581854'),
-                moneyFormat: '%24%7B%7Bamount%7D%7D',
-                options: {
-  "product": {
-    "styles": {
-      "product": {
-        "@media (min-width: 601px)": {
-          "max-width": "100%",
-          "margin-left": "0",
-          "margin-bottom": "50px"
-        },
-        "text-align": "left"
-      },
-      "title": {
-        "font-size": "26px",
-        "color": "#000000"
-      },
-      "button": {
-        "font-family": "Arial, sans-serif",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        "background-color": "#ff0000",
-        ":focus": {
-          "background-color": "#e60000"
-        },
-        "border-radius": "31px",
-        "padding-left": "88px",
-        "padding-right": "88px"
-      },
-      "price": {
-        "font-size": "18px"
-      },
-      "compareAt": {
-        "font-size": "15.299999999999999px"
-      },
-      "unitPrice": {
-        "font-size": "15.299999999999999px"
-      }
-    },
-    "layout": "horizontal",
-    "contents": {
-      "img": false,
-      "imgWithCarousel": true,
-      "button": false,
-      "buttonWithQuantity": true,
-      "description": true
-    },
-    "width": "100%",
-    "text": {
-      "button": "Add to cart"
-    }
-  },
-  "productSet": {
-    "styles": {
-      "products": {
-        "@media (min-width: 601px)": {
-          "margin-left": "-20px"
-        }
-      }
-    }
-  },
-  "modalProduct": {
-    "contents": {
-      "img": false,
-      "imgWithCarousel": true,
-      "button": false,
-      "buttonWithQuantity": true
-    },
-    "styles": {
-      "product": {
-        "@media (min-width: 601px)": {
-          "max-width": "100%",
-          "margin-left": "0px",
-          "margin-bottom": "0px"
-        }
-      },
-      "button": {
-        "font-family": "Arial, sans-serif",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        "background-color": "#ff0000",
-        ":focus": {
-          "background-color": "#e60000"
-        },
-        "border-radius": "31px",
-        "padding-left": "88px",
-        "padding-right": "88px"
-      },
-      "title": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "bold",
-        "font-size": "26px",
-        "color": "#4c4c4c"
-      },
-      "price": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "normal",
-        "font-size": "18px",
-        "color": "#4c4c4c"
-      },
-      "compareAt": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "normal",
-        "font-size": "15.299999999999999px",
-        "color": "#4c4c4c"
-      },
-      "unitPrice": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "normal",
-        "font-size": "15.299999999999999px",
-        "color": "#4c4c4c"
-      }
-    },
-    "text": {
-      "button": "Add to cart"
-    }
-  },
-  "option": {
-    "styles": {
-      "label": {
-        "font-family": "Gill Sans, sans-serif"
-      },
-      "select": {
-        "font-family": "Gill Sans, sans-serif"
-      }
-    }
-  },
-  "cart": {
-    "styles": {
-      "button": {
-        "font-family": "Arial, sans-serif",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        "background-color": "#ff0000",
-        ":focus": {
-          "background-color": "#e60000"
-        },
-        "border-radius": "31px"
-      }
-    },
-    "text": {
-      "total": "Subtotal",
-      "button": "Checkout"
-    },
-    "popup": false
-  },
-  "toggle": {
-    "styles": {
-      "toggle": {
-        "font-family": "Arial, sans-serif",
-        "background-color": "#ff0000",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        ":focus": {
-          "background-color": "#e60000"
-        }
-      }
-    }
-  }
-},
-              });
-            });
-          }
-        })();
-        /*]]>*/
-        </script>
-
-        <!-- Shopify Buy Button for Rose Hill Elementary Tee -->
-        <script type="text/javascript">
-        /*<![CDATA[*/
-        (function () {
-          var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
-          if (window.ShopifyBuy) {
-            if (window.ShopifyBuy.UI) {
-              ShopifyBuyInitRoseHill();
-            } else {
-              loadScript();
-            }
-          } else {
-            loadScript();
-          }
-          function loadScript() {
-            var script = document.createElement('script');
-            script.async = true;
-            script.src = scriptURL;
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
-            script.onload = ShopifyBuyInitRoseHill;
-          }
-          function ShopifyBuyInitRoseHill() {
-            var client = ShopifyBuy.buildClient({
-              domain: 'r8wbcp-ye.myshopify.com',
-              storefrontAccessToken: '968f930c39778640f35f569d25e967b1',
-            });
-            ShopifyBuy.UI.onReady(client).then(function (ui) {
-              ui.createComponent('product', {
-                id: '7418571817031',
-                node: document.getElementById('product-component-1770598897967'),
-                moneyFormat: '%24%7B%7Bamount%7D%7D',
-                options: {
-  "product": {
-    "styles": {
-      "product": {
-        "@media (min-width: 601px)": {
-          "max-width": "100%",
-          "margin-left": "0",
-          "margin-bottom": "50px"
-        },
-        "text-align": "left"
-      },
-      "title": {
-        "font-size": "26px",
-        "color": "#000000"
-      },
-      "button": {
-        "font-family": "Arial, sans-serif",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        "background-color": "#ff0000",
-        ":focus": {
-          "background-color": "#e60000"
-        },
-        "border-radius": "31px",
-        "padding-left": "88px",
-        "padding-right": "88px"
-      },
-      "price": {
-        "font-size": "18px"
-      },
-      "compareAt": {
-        "font-size": "15.299999999999999px"
-      },
-      "unitPrice": {
-        "font-size": "15.299999999999999px"
-      }
-    },
-    "layout": "horizontal",
-    "contents": {
-      "img": false,
-      "imgWithCarousel": true,
-      "button": false,
-      "buttonWithQuantity": true,
-      "description": true
-    },
-    "width": "100%",
-    "text": {
-      "button": "Add to cart"
-    }
-  },
-  "productSet": {
-    "styles": {
-      "products": {
-        "@media (min-width: 601px)": {
-          "margin-left": "-20px"
-        }
-      }
-    }
-  },
-  "modalProduct": {
-    "contents": {
-      "img": false,
-      "imgWithCarousel": true,
-      "button": false,
-      "buttonWithQuantity": true
-    },
-    "styles": {
-      "product": {
-        "@media (min-width: 601px)": {
-          "max-width": "100%",
-          "margin-left": "0px",
-          "margin-bottom": "0px"
-        }
-      },
-      "button": {
-        "font-family": "Arial, sans-serif",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        "background-color": "#ff0000",
-        ":focus": {
-          "background-color": "#e60000"
-        },
-        "border-radius": "31px",
-        "padding-left": "88px",
-        "padding-right": "88px"
-      },
-      "title": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "bold",
-        "font-size": "26px",
-        "color": "#4c4c4c"
-      },
-      "price": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "normal",
-        "font-size": "18px",
-        "color": "#4c4c4c"
-      },
-      "compareAt": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "normal",
-        "font-size": "15.299999999999999px",
-        "color": "#4c4c4c"
-      },
-      "unitPrice": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "normal",
-        "font-size": "15.299999999999999px",
-        "color": "#4c4c4c"
-      }
-    },
-    "text": {
-      "button": "Add to cart"
-    }
-  },
-  "option": {
-    "styles": {
-      "label": {
-        "font-family": "Gill Sans, sans-serif"
-      },
-      "select": {
-        "font-family": "Gill Sans, sans-serif"
-      }
-    }
-  },
-  "cart": {
-    "styles": {
-      "button": {
-        "font-family": "Arial, sans-serif",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        "background-color": "#ff0000",
-        ":focus": {
-          "background-color": "#e60000"
-        },
-        "border-radius": "31px"
-      }
-    },
-    "text": {
-      "total": "Subtotal",
-      "button": "Checkout"
-    },
-    "popup": false
-  },
-  "toggle": {
-    "styles": {
-      "toggle": {
-        "font-family": "Arial, sans-serif",
-        "background-color": "#ff0000",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        ":focus": {
-          "background-color": "#e60000"
-        }
-      }
-    }
-  }
-},
-              });
-            });
-          }
-        })();
-        /*]]>*/
-        </script>
-
-
-        <!-- Shopify Buy Button for Faith-Based Apparel Tee -->
-        <script type="text/javascript">
-        /*<![CDATA[*/
-        (function () {
-          var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
-          if (window.ShopifyBuy) {
-            if (window.ShopifyBuy.UI) {
-              ShopifyBuyInitFaithBased();
-            } else {
-              loadScript();
-            }
-          } else {
-            loadScript();
-          }
-          function loadScript() {
-            var script = document.createElement('script');
-            script.async = true;
-            script.src = scriptURL;
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
-            script.onload = ShopifyBuyInitFaithBased;
-          }
-          function ShopifyBuyInitFaithBased() {
-            var client = ShopifyBuy.buildClient({
-              domain: 'r8wbcp-ye.myshopify.com',
-              storefrontAccessToken: '968f930c39778640f35f569d25e967b1',
-            });
-            ShopifyBuy.UI.onReady(client).then(function (ui) {
-              ui.createComponent('product', {
-                id: '7418559037511',
-                node: document.getElementById('product-component-1770598284135'),
-                moneyFormat: '%24%7B%7Bamount%7D%7D',
-                options: {
-  "product": {
-    "styles": {
-      "product": {
-        "@media (min-width: 601px)": {
-          "max-width": "100%",
-          "margin-left": "0",
-          "margin-bottom": "50px"
-        },
-        "text-align": "left"
-      },
-      "title": {
-        "font-size": "26px",
-        "color": "#000000"
-      },
-      "button": {
-        "font-family": "Arial, sans-serif",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        "background-color": "#ff0000",
-        ":focus": {
-          "background-color": "#e60000"
-        },
-        "border-radius": "31px",
-        "padding-left": "88px",
-        "padding-right": "88px"
-      },
-      "price": {
-        "font-size": "18px"
-      },
-      "compareAt": {
-        "font-size": "15.299999999999999px"
-      },
-      "unitPrice": {
-        "font-size": "15.299999999999999px"
-      }
-    },
-    "layout": "horizontal",
-    "contents": {
-      "img": false,
-      "imgWithCarousel": true,
-      "button": false,
-      "buttonWithQuantity": true,
-      "description": true
-    },
-    "width": "100%",
-    "text": {
-      "button": "Add to cart"
-    }
-  },
-  "productSet": {
-    "styles": {
-      "products": {
-        "@media (min-width: 601px)": {
-          "margin-left": "-20px"
-        }
-      }
-    }
-  },
-  "modalProduct": {
-    "contents": {
-      "img": false,
-      "imgWithCarousel": true,
-      "button": false,
-      "buttonWithQuantity": true
-    },
-    "styles": {
-      "product": {
-        "@media (min-width: 601px)": {
-          "max-width": "100%",
-          "margin-left": "0px",
-          "margin-bottom": "0px"
-        }
-      },
-      "button": {
-        "font-family": "Arial, sans-serif",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        "background-color": "#ff0000",
-        ":focus": {
-          "background-color": "#e60000"
-        },
-        "border-radius": "31px",
-        "padding-left": "88px",
-        "padding-right": "88px"
-      },
-      "title": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "bold",
-        "font-size": "26px",
-        "color": "#4c4c4c"
-      },
-      "price": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "normal",
-        "font-size": "18px",
-        "color": "#4c4c4c"
-      },
-      "compareAt": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "normal",
-        "font-size": "15.299999999999999px",
-        "color": "#4c4c4c"
-      },
-      "unitPrice": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "normal",
-        "font-size": "15.299999999999999px",
-        "color": "#4c4c4c"
-      }
-    },
-    "text": {
-      "button": "Add to cart"
-    }
-  },
-  "option": {
-    "styles": {
-      "label": {
-        "font-family": "Gill Sans, sans-serif"
-      },
-      "select": {
-        "font-family": "Gill Sans, sans-serif"
-      }
-    }
-  },
-  "cart": {
-    "styles": {
-      "button": {
-        "font-family": "Arial, sans-serif",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        "background-color": "#ff0000",
-        ":focus": {
-          "background-color": "#e60000"
-        },
-        "border-radius": "31px"
-      }
-    },
-    "text": {
-      "total": "Subtotal",
-      "button": "Checkout"
-    },
-    "popup": false
-  },
-  "toggle": {
-    "styles": {
-      "toggle": {
-        "font-family": "Arial, sans-serif",
-        "background-color": "#ff0000",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        ":focus": {
-          "background-color": "#e60000"
-        }
-      }
-    }
-  }
-},
-              });
-            });
-          }
-        })();
-        /*]]>*/
-        </script>
-
-        <!-- Shopify Buy Button for Thomas Walker High School Tee -->
-        <script type="text/javascript">
-        /*<![CDATA[*/
-        (function () {
-          var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
-          if (window.ShopifyBuy) {
-            if (window.ShopifyBuy.UI) {
-              ShopifyBuyInitThomasWalker();
-            } else {
-              loadScript();
-            }
-          } else {
-            loadScript();
-          }
-          function loadScript() {
-            var script = document.createElement('script');
-            script.async = true;
-            script.src = scriptURL;
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
-            script.onload = ShopifyBuyInitThomasWalker;
-          }
-          function ShopifyBuyInitThomasWalker() {
-            var client = ShopifyBuy.buildClient({
-              domain: 'r8wbcp-ye.myshopify.com',
-              storefrontAccessToken: '968f930c39778640f35f569d25e967b1',
-            });
-            ShopifyBuy.UI.onReady(client).then(function (ui) {
-              ui.createComponent('product', {
-                id: '7418567721031',
-                node: document.getElementById('product-component-1770598573840'),
-                moneyFormat: '%24%7B%7Bamount%7D%7D',
-                options: {
-  "product": {
-    "styles": {
-      "product": {
-        "@media (min-width: 601px)": {
-          "max-width": "100%",
-          "margin-left": "0",
-          "margin-bottom": "50px"
-        },
-        "text-align": "left"
-      },
-      "title": {
-        "font-size": "26px",
-        "color": "#000000"
-      },
-      "button": {
-        "font-family": "Arial, sans-serif",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        "background-color": "#ff0000",
-        ":focus": {
-          "background-color": "#e60000"
-        },
-        "border-radius": "31px",
-        "padding-left": "88px",
-        "padding-right": "88px"
-      },
-      "price": {
-        "font-size": "18px"
-      },
-      "compareAt": {
-        "font-size": "15.299999999999999px"
-      },
-      "unitPrice": {
-        "font-size": "15.299999999999999px"
-      }
-    },
-    "layout": "horizontal",
-    "contents": {
-      "img": false,
-      "imgWithCarousel": true,
-      "button": false,
-      "buttonWithQuantity": true,
-      "description": true
-    },
-    "width": "100%",
-    "text": {
-      "button": "Add to cart"
-    }
-  },
-  "productSet": {
-    "styles": {
-      "products": {
-        "@media (min-width: 601px)": {
-          "margin-left": "-20px"
-        }
-      }
-    }
-  },
-  "modalProduct": {
-    "contents": {
-      "img": false,
-      "imgWithCarousel": true,
-      "button": false,
-      "buttonWithQuantity": true
-    },
-    "styles": {
-      "product": {
-        "@media (min-width: 601px)": {
-          "max-width": "100%",
-          "margin-left": "0px",
-          "margin-bottom": "0px"
-        }
-      },
-      "button": {
-        "font-family": "Arial, sans-serif",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        "background-color": "#ff0000",
-        ":focus": {
-          "background-color": "#e60000"
-        },
-        "border-radius": "31px",
-        "padding-left": "88px",
-        "padding-right": "88px"
-      },
-      "title": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "bold",
-        "font-size": "26px",
-        "color": "#4c4c4c"
-      },
-      "price": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "normal",
-        "font-size": "18px",
-        "color": "#4c4c4c"
-      },
-      "compareAt": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "normal",
-        "font-size": "15.299999999999999px",
-        "color": "#4c4c4c"
-      },
-      "unitPrice": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "normal",
-        "font-size": "15.299999999999999px",
-        "color": "#4c4c4c"
-      }
-    },
-    "text": {
-      "button": "Add to cart"
-    }
-  },
-  "option": {
-    "styles": {
-      "label": {
-        "font-family": "Gill Sans, sans-serif"
-      },
-      "select": {
-        "font-family": "Gill Sans, sans-serif"
-      }
-    }
-  },
-  "cart": {
-    "styles": {
-      "button": {
-        "font-family": "Arial, sans-serif",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        "background-color": "#ff0000",
-        ":focus": {
-          "background-color": "#e60000"
-        },
-        "border-radius": "31px"
-      }
-    },
-    "text": {
-      "total": "Subtotal",
-      "button": "Checkout"
-    },
-    "popup": false
-  },
-  "toggle": {
-    "styles": {
-      "toggle": {
-        "font-family": "Arial, sans-serif",
-        "background-color": "#ff0000",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        ":focus": {
-          "background-color": "#e60000"
-        }
-      }
-    }
-  }
-},
-              });
-            });
-          }
-        })();
-        /*]]>*/
-        </script>
-
-        <!-- Shopify Buy Button for Lee High School Tee -->
-        <script type="text/javascript">
-        /*<![CDATA[*/
-        (function () {
-          var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
-          if (window.ShopifyBuy) {
-            if (window.ShopifyBuy.UI) {
-              ShopifyBuyInitLeeHigh();
-            } else {
-              loadScript();
-            }
-          } else {
-            loadScript();
-          }
-          function loadScript() {
-            var script = document.createElement('script');
-            script.async = true;
-            script.src = scriptURL;
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
-            script.onload = ShopifyBuyInitLeeHigh;
-          }
-          function ShopifyBuyInitLeeHigh() {
-            var client = ShopifyBuy.buildClient({
-              domain: 'r8wbcp-ye.myshopify.com',
-              storefrontAccessToken: '968f930c39778640f35f569d25e967b1',
-            });
-            ShopifyBuy.UI.onReady(client).then(function (ui) {
-              ui.createComponent('product', {
-                id: '7418570473543',
-                node: document.getElementById('product-component-1770598655623'),
-                moneyFormat: '%24%7B%7Bamount%7D%7D',
-                options: {
-  "product": {
-    "styles": {
-      "product": {
-        "@media (min-width: 601px)": {
-          "max-width": "100%",
-          "margin-left": "0",
-          "margin-bottom": "50px"
-        },
-        "text-align": "left"
-      },
-      "title": {
-        "font-size": "26px",
-        "color": "#000000"
-      },
-      "button": {
-        "font-family": "Arial, sans-serif",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        "background-color": "#ff0000",
-        ":focus": {
-          "background-color": "#e60000"
-        },
-        "border-radius": "31px",
-        "padding-left": "88px",
-        "padding-right": "88px"
-      },
-      "price": {
-        "font-size": "18px"
-      },
-      "compareAt": {
-        "font-size": "15.299999999999999px"
-      },
-      "unitPrice": {
-        "font-size": "15.299999999999999px"
-      }
-    },
-    "layout": "horizontal",
-    "contents": {
-      "img": false,
-      "imgWithCarousel": true,
-      "button": false,
-      "buttonWithQuantity": true,
-      "description": true
-    },
-    "width": "100%",
-    "text": {
-      "button": "Add to cart"
-    }
-  },
-  "productSet": {
-    "styles": {
-      "products": {
-        "@media (min-width: 601px)": {
-          "margin-left": "-20px"
-        }
-      }
-    }
-  },
-  "modalProduct": {
-    "contents": {
-      "img": false,
-      "imgWithCarousel": true,
-      "button": false,
-      "buttonWithQuantity": true
-    },
-    "styles": {
-      "product": {
-        "@media (min-width: 601px)": {
-          "max-width": "100%",
-          "margin-left": "0px",
-          "margin-bottom": "0px"
-        }
-      },
-      "button": {
-        "font-family": "Arial, sans-serif",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        "background-color": "#ff0000",
-        ":focus": {
-          "background-color": "#e60000"
-        },
-        "border-radius": "31px",
-        "padding-left": "88px",
-        "padding-right": "88px"
-      },
-      "title": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "bold",
-        "font-size": "26px",
-        "color": "#4c4c4c"
-      },
-      "price": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "normal",
-        "font-size": "18px",
-        "color": "#4c4c4c"
-      },
-      "compareAt": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "normal",
-        "font-size": "15.299999999999999px",
-        "color": "#4c4c4c"
-      },
-      "unitPrice": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "normal",
-        "font-size": "15.299999999999999px",
-        "color": "#4c4c4c"
-      }
-    },
-    "text": {
-      "button": "Add to cart"
-    }
-  },
-  "option": {
-    "styles": {
-      "label": {
-        "font-family": "Gill Sans, sans-serif"
-      },
-      "select": {
-        "font-family": "Gill Sans, sans-serif"
-      }
-    }
-  },
-  "cart": {
-    "styles": {
-      "button": {
-        "font-family": "Arial, sans-serif",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        "background-color": "#ff0000",
-        ":focus": {
-          "background-color": "#e60000"
-        },
-        "border-radius": "31px"
-      }
-    },
-    "text": {
-      "total": "Subtotal",
-      "button": "Checkout"
-    },
-    "popup": false
-  },
-  "toggle": {
-    "styles": {
-      "toggle": {
-        "font-family": "Arial, sans-serif",
-        "background-color": "#ff0000",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        ":focus": {
-          "background-color": "#e60000"
-        }
-      }
-    }
-  }
-},
-              });
-            });
-          }
-        })();
-        /*]]>*/
-        </script>
-
-        <!-- Additional Shopify Buy Button for Lee High School Tee -->
-        <script type="text/javascript">
-        /*<![CDATA[*/
-        (function () {
-          var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
-          if (window.ShopifyBuy) {
-            if (window.ShopifyBuy.UI) {
-              ShopifyBuyInit();
-            } else {
-              loadScript();
-            }
-          } else {
-            loadScript();
-          }
-          function loadScript() {
-            var script = document.createElement('script');
-            script.async = true;
-            script.src = scriptURL;
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
-            script.onload = ShopifyBuyInit;
-          }
-          function ShopifyBuyInit() {
-            var client = ShopifyBuy.buildClient({
-              domain: 'r8wbcp-ye.myshopify.com',
-              storefrontAccessToken: '968f930c39778640f35f569d25e967b1',
-            });
-            ShopifyBuy.UI.onReady(client).then(function (ui) {
-              ui.createComponent('product', {
-                id: '7446082027591',
-                node: document.getElementById('product-component-1770610526380'),
-                moneyFormat: '%24%7B%7Bamount%7D%7D',
-                options: {
-  "product": {
-    "styles": {
-      "product": {
-        "@media (min-width: 601px)": {
-          "max-width": "100%",
-          "margin-left": "0",
-          "margin-bottom": "50px"
-        },
-        "text-align": "left"
-      },
-      "title": {
-        "font-size": "26px",
-        "color": "#000000"
-      },
-      "button": {
-        "font-family": "Arial, sans-serif",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        "background-color": "#ff0000",
-        ":focus": {
-          "background-color": "#e60000"
-        },
-        "border-radius": "31px",
-        "padding-left": "88px",
-        "padding-right": "88px"
-      },
-      "price": {
-        "font-size": "18px"
-      },
-      "compareAt": {
-        "font-size": "15.299999999999999px"
-      },
-      "unitPrice": {
-        "font-size": "15.299999999999999px"
-      }
-    },
-    "layout": "horizontal",
-    "contents": {
-      "img": false,
-      "imgWithCarousel": true,
-      "button": false,
-      "buttonWithQuantity": true,
-      "description": true
-    },
-    "width": "100%",
-    "text": {
-      "button": "Add to cart"
-    }
-  },
-  "productSet": {
-    "styles": {
-      "products": {
-        "@media (min-width: 601px)": {
-          "margin-left": "-20px"
-        }
-      }
-    }
-  },
-  "modalProduct": {
-    "contents": {
-      "img": false,
-      "imgWithCarousel": true,
-      "button": false,
-      "buttonWithQuantity": true
-    },
-    "styles": {
-      "product": {
-        "@media (min-width: 601px)": {
-          "max-width": "100%",
-          "margin-left": "0px",
-          "margin-bottom": "0px"
-        }
-      },
-      "button": {
-        "font-family": "Arial, sans-serif",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        "background-color": "#ff0000",
-        ":focus": {
-          "background-color": "#e60000"
-        },
-        "border-radius": "31px",
-        "padding-left": "88px",
-        "padding-right": "88px"
-      },
-      "title": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "bold",
-        "font-size": "26px",
-        "color": "#4c4c4c"
-      },
-      "price": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "normal",
-        "font-size": "18px",
-        "color": "#4c4c4c"
-      },
-      "compareAt": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "normal",
-        "font-size": "15.299999999999999px",
-        "color": "#4c4c4c"
-      },
-      "unitPrice": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "normal",
-        "font-size": "15.299999999999999px",
-        "color": "#4c4c4c"
-      }
-    },
-    "text": {
-      "button": "Add to cart"
-    }
-  },
-  "option": {
-    "styles": {
-      "label": {
-        "font-family": "Gill Sans, sans-serif"
-      },
-      "select": {
-        "font-family": "Gill Sans, sans-serif"
-      }
-    }
-  },
-  "cart": {
-    "styles": {
-      "button": {
-        "font-family": "Arial, sans-serif",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        "background-color": "#ff0000",
-        ":focus": {
-          "background-color": "#e60000"
-        },
-        "border-radius": "31px"
-      }
-    },
-    "text": {
-      "total": "Subtotal",
-      "button": "Checkout"
-    },
-    "popup": false
-  },
-  "toggle": {
-    "styles": {
-      "toggle": {
-        "font-family": "Arial, sans-serif",
-        "background-color": "#ff0000",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        ":focus": {
-          "background-color": "#e60000"
-        }
-      }
-    }
-  }
-},
-              });
-            });
-          }
-        })();
-        /*]]>*/
-        </script>
-
-        <!-- Third Shopify Buy Button for Lee High School Tee -->
-        <script type="text/javascript">
-        /*<![CDATA[*/
-        (function () {
-          var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
-          if (window.ShopifyBuy) {
-            if (window.ShopifyBuy.UI) {
-              ShopifyBuyInit();
-            } else {
-              loadScript();
-            }
-          } else {
-            loadScript();
-          }
-          function loadScript() {
-            var script = document.createElement('script');
-            script.async = true;
-            script.src = scriptURL;
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
-            script.onload = ShopifyBuyInit;
-          }
-          function ShopifyBuyInit() {
-            var client = ShopifyBuy.buildClient({
-              domain: 'r8wbcp-ye.myshopify.com',
-              storefrontAccessToken: '968f930c39778640f35f569d25e967b1',
-            });
-            ShopifyBuy.UI.onReady(client).then(function (ui) {
-              ui.createComponent('product', {
-                id: '7446169059399',
-                node: document.getElementById('product-component-1770610600007'),
-                moneyFormat: '%24%7B%7Bamount%7D%7D',
-                options: {
-  "product": {
-    "styles": {
-      "product": {
-        "@media (min-width: 601px)": {
-          "max-width": "100%",
-          "margin-left": "0",
-          "margin-bottom": "50px"
-        },
-        "text-align": "left"
-      },
-      "title": {
-        "font-size": "26px",
-        "color": "#000000"
-      },
-      "button": {
-        "font-family": "Arial, sans-serif",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        "background-color": "#ff0000",
-        ":focus": {
-          "background-color": "#e60000"
-        },
-        "border-radius": "31px",
-        "padding-left": "88px",
-        "padding-right": "88px"
-      },
-      "price": {
-        "font-size": "18px"
-      },
-      "compareAt": {
-        "font-size": "15.299999999999999px"
-      },
-      "unitPrice": {
-        "font-size": "15.299999999999999px"
-      }
-    },
-    "layout": "horizontal",
-    "contents": {
-      "img": false,
-      "imgWithCarousel": true,
-      "button": false,
-      "buttonWithQuantity": true,
-      "description": true
-    },
-    "width": "100%",
-    "text": {
-      "button": "Add to cart"
-    }
-  },
-  "productSet": {
-    "styles": {
-      "products": {
-        "@media (min-width: 601px)": {
-          "margin-left": "-20px"
-        }
-      }
-    }
-  },
-  "modalProduct": {
-    "contents": {
-      "img": false,
-      "imgWithCarousel": true,
-      "button": false,
-      "buttonWithQuantity": true
-    },
-    "styles": {
-      "product": {
-        "@media (min-width: 601px)": {
-          "max-width": "100%",
-          "margin-left": "0px",
-          "margin-bottom": "0px"
-        }
-      },
-      "button": {
-        "font-family": "Arial, sans-serif",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        "background-color": "#ff0000",
-        ":focus": {
-          "background-color": "#e60000"
-        },
-        "border-radius": "31px",
-        "padding-left": "88px",
-        "padding-right": "88px"
-      },
-      "title": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "bold",
-        "font-size": "26px",
-        "color": "#4c4c4c"
-      },
-      "price": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "normal",
-        "font-size": "18px",
-        "color": "#4c4c4c"
-      },
-      "compareAt": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "normal",
-        "font-size": "15.299999999999999px",
-        "color": "#4c4c4c"
-      },
-      "unitPrice": {
-        "font-family": "Helvetica Neue, sans-serif",
-        "font-weight": "normal",
-        "font-size": "15.299999999999999px",
-        "color": "#4c4c4c"
-      }
-    },
-    "text": {
-      "button": "Add to cart"
-    }
-  },
-  "option": {
-    "styles": {
-      "label": {
-        "font-family": "Gill Sans, sans-serif"
-      },
-      "select": {
-        "font-family": "Gill Sans, sans-serif"
-      }
-    }
-  },
-  "cart": {
-    "styles": {
-      "button": {
-        "font-family": "Arial, sans-serif",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        "background-color": "#ff0000",
-        ":focus": {
-          "background-color": "#e60000"
-        },
-        "border-radius": "31px"
-      }
-    },
-    "text": {
-      "total": "Subtotal",
-      "button": "Checkout"
-    },
-    "popup": false
-  },
-  "toggle": {
-    "styles": {
-      "toggle": {
-        "font-family": "Arial, sans-serif",
-        "background-color": "#ff0000",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        ":focus": {
-          "background-color": "#e60000"
-        }
-      }
-    }
-  }
-},
-              });
-            });
-          }
-        })();
-        /*]]>*/
-        </script>
       </section>
 
-  <section class="coming-soon">
-    <h2>More Items Coming Soon</h2>
-    <ul>
-      <li>Hats</li>
-      <li>Cups</li>
-      <li>Sports Equipment</li>
-      <li>Car Window Stickers</li>
-    </ul>
-  </section>
+      <section class="coming-soon">
+        <h2>More Items Coming Soon</h2>
+        <ul>
+          <li>Hats</li>
+          <li>Cups</li>
+          <li>Sports Equipment</li>
+          <li>Car Window Stickers</li>
+        </ul>
+      </section>
 
-  <section class="contact">
-    <h2>Get In Touch</h2>
-    <div class="contact-info">
-      <div class="contact-item">
-        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-        <h3>Location</h3>
-        <p>164 Cross Creek<br>Dryden, VA 24243</p>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
-        <h3>Phone</h3>
-        <p><a href="tel:276-870-6583">276-870-6583</a></p>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-        <h3>Email</h3>
-        <p><a href="mailto:jump2010@yahoo.com">jump2010@yahoo.com</a></p>
-      </div>
-    </div>
-  </section>
+      <section class="contact">
+        <h2>Get In Touch</h2>
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <h3>Location</h3>
+            <p>164 Cross Creek<br>Dryden, VA 24243</p>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+            <h3>Phone</h3>
+            <p><a href="tel:276-870-6583">276-870-6583</a></p>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <h3>Email</h3>
+            <p><a href="mailto:jump2010@yahoo.com">jump2010@yahoo.com</a></p>
+          </div>
+        </div>
+      </section>
     </main>
   </div>
 
@@ -3769,6 +431,141 @@
       <i class="fab fa-cc-discover"></i>
     </div>
   </footer>
+
+  <!-- ============================================================
+       ALL SHOPIFY BUY BUTTON EMBEDS
+       Each uses a unique function name to prevent conflicts.
+  ============================================================ -->
+  <script type="text/javascript">
+  /*<![CDATA[*/
+  (function () {
+
+    var DOMAIN = 'r8wbcp-ye.myshopify.com';
+    var TOKEN  = '968f930c39778640f35f569d25e967b1';
+
+    // Shared default options for every product embed
+    function defaultOptions() {
+      return {
+        product: {
+          styles: {
+            product: {
+              "@media (min-width: 601px)": { "max-width": "100%", "margin-left": "0", "margin-bottom": "50px" },
+              "text-align": "left"
+            },
+            title:      { "font-size": "26px", "color": "#000000" },
+            button:     { "font-family": "Arial, sans-serif", "background-color": "#ff0000", ":hover": { "background-color": "#e60000" }, ":focus": { "background-color": "#e60000" }, "border-radius": "31px", "padding-left": "88px", "padding-right": "88px" },
+            price:      { "font-size": "18px" },
+            compareAt:  { "font-size": "15.3px" },
+            unitPrice:  { "font-size": "15.3px" }
+          },
+          layout: "horizontal",
+          width: "100%",
+          contents: { img: false, imgWithCarousel: true, button: false, buttonWithQuantity: true, description: true },
+          text: { button: "Add to cart" }
+        },
+        modalProduct: {
+          contents: { img: false, imgWithCarousel: true, button: false, buttonWithQuantity: true },
+          styles: {
+            product: { "@media (min-width: 601px)": { "max-width": "100%", "margin-left": "0px", "margin-bottom": "0px" } },
+            button:    { "font-family": "Arial, sans-serif", "background-color": "#ff0000", ":hover": { "background-color": "#e60000" }, ":focus": { "background-color": "#e60000" }, "border-radius": "31px", "padding-left": "88px", "padding-right": "88px" },
+            title:     { "font-family": "Helvetica Neue, sans-serif", "font-weight": "bold", "font-size": "26px", "color": "#4c4c4c" },
+            price:     { "font-family": "Helvetica Neue, sans-serif", "font-weight": "normal", "font-size": "18px", "color": "#4c4c4c" },
+            compareAt: { "font-family": "Helvetica Neue, sans-serif", "font-weight": "normal", "font-size": "15.3px", "color": "#4c4c4c" },
+            unitPrice: { "font-family": "Helvetica Neue, sans-serif", "font-weight": "normal", "font-size": "15.3px", "color": "#4c4c4c" }
+          },
+          text: { button: "Add to cart" }
+        },
+        option: {
+          styles: {
+            label:  { "font-family": "Gill Sans, sans-serif" },
+            select: { "font-family": "Gill Sans, sans-serif" }
+          }
+        },
+        cart: {
+          styles: {
+            button: { "font-family": "Arial, sans-serif", "background-color": "#ff0000", ":hover": { "background-color": "#e60000" }, ":focus": { "background-color": "#e60000" }, "border-radius": "31px" }
+          },
+          text: { total: "Subtotal", button: "Checkout" },
+          popup: false
+        },
+        toggle: {
+          styles: {
+            toggle: { "font-family": "Arial, sans-serif", "background-color": "#ff0000", ":hover": { "background-color": "#e60000" }, ":focus": { "background-color": "#e60000" } }
+          }
+        }
+      };
+    }
+
+    // All products: [ productId, nodeId ]
+    var products = [
+      // Dryden Elementary
+      ['7414664888391', 'product-component-1770597565385'],
+      ['7446206873671', 'product-component-1770610672695'],
+      // St. Charles Elementary
+      ['7414665412679', 'product-component-1770597605669'],
+      ['7446067478599', 'product-component-1770610159550'],
+      // Elk Knob Elementary
+      ['7414666166343', 'product-component-1770598827337'],
+      ['7418571358279', 'product-component-1771816787450'],
+      // Rose Hill Elementary
+      ['7418571817031', 'product-component-1770598897967'],
+      // Flatwoods Elementary
+      ['7414678650951', 'product-component-1770597995105'],
+      ['7418580140103', 'product-component-1771816956641'],
+      // Lee High School
+      ['7418570473543', 'product-component-1770598655623'],
+      ['7457970651207', 'product-component-1771815607826'],  // Track
+      ['7446082027591', 'product-component-1771815247230'],  // Softball
+      ['7446169059399', 'product-component-1771821534909'],  // Baseball
+      // Pennington Middle
+      ['7414680387655', 'product-component-1770598074869'],
+      // Union High
+      ['7457972551751', 'product-component-1771811939856'],
+      // Thomas Walker High
+      ['7418567721031', 'product-component-1770598573840'],
+      // Jonesville Middle
+      ['7418508509255', 'product-component-1770598155984'],
+      // Faith-Based
+      ['7418559037511', 'product-component-1771818925661'],
+      ['7455028936775', 'product-component-1771818407716'],
+      // Elydale Middle
+      ['7453534158919', 'product-component-1771214148142'],
+      // Soccer
+      ['7459267510343', 'product-component-1771813188943'],
+    ];
+
+    function initShopify() {
+      var client = ShopifyBuy.buildClient({ domain: DOMAIN, storefrontAccessToken: TOKEN });
+      ShopifyBuy.UI.onReady(client).then(function (ui) {
+        products.forEach(function (p) {
+          var productId = p[0];
+          var nodeId    = p[1];
+          var node = document.getElementById(nodeId);
+          if (!node) return;
+          ui.createComponent('product', {
+            id: productId,
+            node: node,
+            moneyFormat: '%24%7B%7Bamount%7D%7D',
+            options: defaultOptions()
+          });
+        });
+      });
+    }
+
+    if (window.ShopifyBuy && window.ShopifyBuy.UI) {
+      initShopify();
+    } else {
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+      script.onload = initShopify;
+      (document.head || document.body).appendChild(script);
+    }
+
+  })();
+  /*]]>*/
+  </script>
+
   <script src="../js/script.js"></script>
 </body>
 </html>

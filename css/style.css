@@ -208,6 +208,82 @@ header h1 {
   color: #e31837;
 }
 
+.customer-has-submenu .customer-submenu-toggle {
+  justify-content: space-between;
+}
+
+.customer-has-submenu .submenu-caret {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+}
+
+.customer-has-submenu .submenu-caret i {
+  font-size: 0.75em;
+  transform: rotate(0deg);
+  transition: transform 0.2s ease;
+}
+
+.customer-submenu {
+  display: none;
+  padding-left: 12px;
+  margin: 4px 0 8px;
+}
+
+.customer-has-submenu.open .customer-submenu {
+  display: block;
+}
+
+.customer-has-submenu.open .submenu-caret i {
+  transform: rotate(180deg);
+}
+
+.customer-submenu a {
+  font-size: 0.86em;
+  padding: 8px 20px;
+}
+
+.shopify-buy__btn,
+.shopify-buy__btn--cart-checkout,
+.shopify-buy__cart-toggle {
+  background-color: #ff0000 !important;
+  border-radius: 31px !important;
+  width: auto !important;
+  margin: 8px 0 0 0 !important;
+  padding: 10px 18px !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  display: inline-flex !important;
+}
+
+.shopify-buy__btn:hover,
+.shopify-buy__btn:focus,
+.shopify-buy__btn--cart-checkout:hover,
+.shopify-buy__btn--cart-checkout:focus,
+.shopify-buy__cart-toggle:hover,
+.shopify-buy__cart-toggle:focus {
+  background-color: #e60000 !important;
+}
+
+.shopify-buy__quantity,
+.shopify-buy__quantity-increment,
+.shopify-buy__quantity-decrement,
+.shopify-buy__quantity input,
+.shopify-buy__quantity-container button {
+  width: auto !important;
+  margin: 0 !important;
+  padding: 6px 10px !important;
+  min-width: 34px !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+}
+
+.shopify-buy__quantity-container {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+
 .main-content {
   flex: 1;
   overflow-y: auto;
@@ -1426,4 +1502,22 @@ footer p {
   #imageCaption {
     font-size: 16px;
   }
+}
+/* ─── Filter system: use visibility instead of display:none ───────────────
+   Using display:none breaks Shopify Buy Button embeds because the SDK
+   won't render into hidden elements. This class hides visually while
+   keeping elements in the layout flow so Shopify can always render.
+   script.js adds/removes .filter-hidden instead of toggling display. */
+
+.filter-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+  pointer-events: none !important;
 }
