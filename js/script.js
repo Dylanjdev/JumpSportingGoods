@@ -1,5 +1,6 @@
 // Shopping Cart System
 let cart = JSON.parse(localStorage.getItem('jumpCart')) || [];
+let imageModalScrollY = 0;
 
 // Update cart count in header
 function updateCartCount() {
@@ -238,6 +239,28 @@ function addToCartFromModal() {
 // MAIN INIT
 // ─────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
+
+  function lockImageModalScroll() {
+    if (document.body.classList.contains('image-modal-open')) return;
+    imageModalScrollY = window.scrollY || window.pageYOffset || 0;
+    document.body.classList.add('image-modal-open');
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${imageModalScrollY}px`;
+    document.body.style.left = '0';
+    document.body.style.right = '0';
+    document.body.style.width = '100%';
+  }
+
+  function unlockImageModalScroll() {
+    if (!document.body.classList.contains('image-modal-open')) return;
+    document.body.classList.remove('image-modal-open');
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.left = '';
+    document.body.style.right = '';
+    document.body.style.width = '';
+    window.scrollTo(0, imageModalScrollY);
+  }
 
   updateCartCount();
 
@@ -504,15 +527,27 @@ document.addEventListener('DOMContentLoaded', () => {
   const captionText = document.getElementById('imageCaption');
   const imageCloseBtn = document.querySelector('.image-modal-close');
 
+  function openImageModal(imageUrl, caption = '') {
+    if (!imageModal || !modalImg || !captionText) return;
+    modalImg.src = imageUrl;
+    captionText.textContent = caption;
+    imageModal.classList.add('show');
+    lockImageModalScroll();
+  }
+
+  function closeImageModal() {
+    if (!imageModal) return;
+    imageModal.classList.remove('show');
+    unlockImageModalScroll();
+  }
+
   document.addEventListener('click', function(e) {
     if (e.target.closest('.view-shirt-btn')) {
       const btn = e.target.closest('.view-shirt-btn');
       const imageUrl = btn.getAttribute('data-image');
       const title = btn.getAttribute('data-title');
       if (imageUrl && imageUrl.trim() !== '') {
-        imageModal.style.display = 'block';
-        modalImg.src = imageUrl;
-        captionText.textContent = title || '';
+        openImageModal(imageUrl, title || '');
       } else {
         alert('Image not available yet. Please contact us for product images.');
       }
@@ -521,23 +556,22 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.target.tagName === 'IMG' && e.target.closest('.product')) {
       const img = e.target;
       if (img.naturalWidth > 100 && img.naturalHeight > 100 && !e.target.closest('.view-shirt-btn')) {
-        imageModal.style.display = 'block';
-        modalImg.src = img.src;
         const product = img.closest('.product');
-        captionText.textContent = product ? (product.querySelector('h3')?.textContent || '') : '';
+        const caption = product ? (product.querySelector('h3')?.textContent || '') : '';
+        openImageModal(img.src, caption);
       }
     }
   });
 
   if (imageCloseBtn) {
-    imageCloseBtn.addEventListener('click', () => { imageModal.style.display = 'none'; });
+    imageCloseBtn.addEventListener('click', closeImageModal);
   }
   if (imageModal) {
-    imageModal.addEventListener('click', (e) => { if (e.target === imageModal) imageModal.style.display = 'none'; });
+    imageModal.addEventListener('click', (e) => { if (e.target === imageModal) closeImageModal(); });
   }
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && imageModal && imageModal.style.display === 'block') {
-      imageModal.style.display = 'none';
+    if (e.key === 'Escape' && imageModal && imageModal.classList.contains('show')) {
+      closeImageModal();
     }
   });
 
