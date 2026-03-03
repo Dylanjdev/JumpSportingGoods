@@ -279,8 +279,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (targetCustomer === 'lee-high') {
       return customerData === 'lee-high' || customerData.startsWith('lee-high-');
     }
+    if (targetCustomer === 'trinity-high') {
+      return customerData === 'trinity-high' || customerData.startsWith('trinity-high-');
+    }
     if (targetCustomer === 'sports-general') {
       return customerData === 'sports-general' || customerData.startsWith('sports-general-');
+    }
+    if (targetCustomer === 'dept-corrections') {
+      return customerData === 'dept-corrections' || customerData.startsWith('dept-corrections-');
     }
     return customerData === targetCustomer;
   }

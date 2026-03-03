@@ -33,13 +33,25 @@
               </a>
               <ul class="customer-submenu" id="lee-high-sports-submenu">
                 <li><a href="#" class="customer-filter" data-customer="lee-high"><i class="fas fa-chevron-right"></i> Football</a></li>
+                <li><a href="#" class="customer-filter" data-customer="lee-high-items"><i class="fas fa-chevron-right"></i> Items</a></li>
                 <li><a href="#" class="customer-filter" data-customer="lee-high-track"><i class="fas fa-chevron-right"></i> Track</a></li>
                 <li><a href="#" class="customer-filter" data-customer="lee-high-baseball"><i class="fas fa-chevron-right"></i> Baseball</a></li>
                 <li><a href="#" class="customer-filter" data-customer="lee-high"><i class="fas fa-chevron-right"></i> Basketball</a></li>
+                <li><a href="#" class="customer-filter" data-customer="lee-high-soccer"><i class="fas fa-chevron-right"></i> Soccer</a></li>
                 <li><a href="#" class="customer-filter" data-customer="lee-high-softball"><i class="fas fa-chevron-right"></i> Softball</a></li>
               </ul>
             </li>
             <li><a href="#" class="customer-filter" data-customer="union-high"><i class="fas fa-chevron-right"></i> Union High School</a></li>
+            <li class="customer-has-submenu">
+              <a href="#" class="customer-filter customer-submenu-toggle" data-customer="trinity-high" data-submenu-target="trinity-high-sports-submenu">
+                <i class="fas fa-chevron-right"></i> Trinity High School <span class="submenu-caret"><i class="fas fa-chevron-down"></i></span>
+              </a>
+              <ul class="customer-submenu" id="trinity-high-sports-submenu">
+                <li><a href="#" class="customer-filter" data-customer="trinity-high-track"><i class="fas fa-chevron-right"></i> Track</a></li>
+              </ul>
+            </li>
+            <li><a href="#" class="customer-filter" data-customer="east-side-high"><i class="fas fa-chevron-right"></i> East Side High School</a></li>
+            <li><a href="#" class="customer-filter" data-customer="rye-cove"><i class="fas fa-chevron-right"></i> Rye Cove</a></li>
             <li><a href="#" class="customer-filter" data-customer="thomas-walker"><i class="fas fa-chevron-right"></i> Thomas Walker High School</a></li>
             <li><a href="#" class="customer-filter" data-customer="pennington-middle"><i class="fas fa-chevron-right"></i> Pennington Middle School</a></li>
             <li><a href="#" class="customer-filter" data-customer="jonesville-middle"><i class="fas fa-chevron-right"></i> Jonesville Middle School</a></li>
@@ -60,7 +72,14 @@
         <div class="customer-category" id="municipal">
           <h4><i class="fas fa-landmark"></i> Municipal & Government</h4>
           <ul>
-            <li><a href="#" class="customer-filter" data-customer="dept-corrections"><i class="fas fa-chevron-right"></i> Department of Corrections</a></li>
+            <li class="customer-has-submenu">
+              <a href="#" class="customer-filter customer-submenu-toggle" data-customer="dept-corrections" data-submenu-target="dept-corrections-submenu">
+                <i class="fas fa-chevron-right"></i> Department of Corrections <span class="submenu-caret"><i class="fas fa-chevron-down"></i></span>
+              </a>
+              <ul class="customer-submenu" id="dept-corrections-submenu">
+                <li><a href="#" class="customer-filter" data-customer="dept-corrections-items"><i class="fas fa-chevron-right"></i> Items</a></li>
+              </ul>
+            </li>
           </ul>
         </div>
         <div class="customer-category" id="recreation">
@@ -86,6 +105,7 @@
               </a>
               <ul class="customer-submenu" id="sports-shirts-submenu">
                 <li><a href="#" class="customer-filter" data-customer="sports-general-soccer"><i class="fas fa-chevron-right"></i> Soccer</a></li>
+                <li><a href="#" class="customer-filter" data-customer="sports-general-tennis"><i class="fas fa-chevron-right"></i> Tennis</a></li>
               </ul>
             </li>
           </ul>
@@ -203,11 +223,19 @@
           <h2 class="category-header" data-customer="lee-high">Lee High School</h2>
 
           <div class="product" data-customer="lee-high">
-            <h3>Lee High School Tee</h3>
-            <button class="view-shirt-btn" data-image="../images/1stLeeHigh.webp" data-title="Lee High School Tee">
+            <h3>Copy of Generals Star Logo T-Shirt — Military-Inspired Team Tee</h3>
+            <button class="view-shirt-btn" data-image="../images/1stLeeHigh.webp" data-title="Copy of Generals Star Logo T-Shirt — Military-Inspired Team Tee">
               <i class="fas fa-eye"></i> View Shirt
             </button>
             <div id="product-component-1770598655623"></div>
+          </div>
+
+          <div class="product" data-customer="lee-high-items">
+            <h3>Lee High Clock</h3>
+            <button class="view-shirt-btn" data-image="../images/LeeHighClock.webp" data-title="Lee High Clock">
+              <i class="fas fa-eye"></i> View Item
+            </button>
+            <div id="product-component-1772502621227"></div>
           </div>
 
           <div class="product" data-customer="lee-high-track">
@@ -235,6 +263,22 @@
             </button>
             <div id="product-component-1771821534909"></div>
           </div>
+
+          <div class="product" data-customer="lee-high-baseball">
+            <h3>Lee High Baseball Hat</h3>
+            <button class="view-shirt-btn" data-image="../images/LeeHighBaseballHat.webp" data-title="Lee High Baseball Hat">
+              <i class="fas fa-eye"></i> View Hat
+            </button>
+            <div id="product-component-1772502888537"></div>
+          </div>
+
+          <div class="product" data-customer="lee-high-soccer">
+            <h3>Lee High Soccer Shirt</h3>
+            <button class="view-shirt-btn" data-image="../images/LeehighSoccor.webp" data-title="Lee High Soccer Shirt">
+              <i class="fas fa-eye"></i> View Shirt
+            </button>
+            <div id="product-component-1772501691279"></div>
+          </div>
         </div>
 
         <!-- ===================== PENNINGTON MIDDLE ===================== -->
@@ -260,6 +304,53 @@
               <i class="fas fa-eye"></i> View Shirt
             </button>
             <div id="product-component-1771811939856"></div>
+          </div>
+        </div>
+
+        <!-- ===================== EAST SIDE HIGH ===================== -->
+        <div class="products-grid" id="eastsidehigh-products-grid">
+          <h2 class="category-header" data-customer="east-side-high">East Side High School</h2>
+
+          <div class="product" data-customer="east-side-high">
+            <h3>East Side High School Shirt</h3>
+            <button class="view-shirt-btn" data-image="../images/Spartan.webp" data-title="East Side High School Shirt">
+              <i class="fas fa-eye"></i> View Shirt
+            </button>
+            <div id="product-component-1772501944697"></div>
+          </div>
+        </div>
+
+        <!-- ===================== RYE COVE ===================== -->
+        <div class="products-grid" id="ryecove-products-grid">
+          <h2 class="category-header" data-customer="rye-cove">Rye Cove</h2>
+
+          <div class="product" data-customer="rye-cove">
+            <h3>Rye Cove Shirt</h3>
+            <button class="view-shirt-btn" data-image="../images/RyeCove.webp" data-title="Rye Cove Shirt">
+              <i class="fas fa-eye"></i> View Shirt
+            </button>
+            <div id="product-component-1772502143125"></div>
+          </div>
+        </div>
+
+        <!-- ===================== TRINITY HIGH ===================== -->
+        <div class="products-grid" id="trinityhigh-products-grid">
+          <h2 class="category-header" data-customer="trinity-high">Trinity High School</h2>
+
+          <div class="product" data-customer="trinity-high-track">
+            <h3>Trinity High Track Shirt</h3>
+            <button class="view-shirt-btn" data-image="../images/TrinityTrack.webp" data-title="Trinity High Track Shirt">
+              <i class="fas fa-eye"></i> View Shirt
+            </button>
+            <div id="product-component-1772500971939"></div>
+          </div>
+
+          <div class="product" data-customer="trinity-high">
+            <h3>Trinity High Saint Patrick Shirt</h3>
+            <button class="view-shirt-btn" data-image="../images/trinitysaintpatrick.webp" data-title="Trinity High Saint Patrick Shirt">
+              <i class="fas fa-eye"></i> View Shirt
+            </button>
+            <div id="product-component-1772501243970"></div>
           </div>
         </div>
 
@@ -333,9 +424,12 @@
 
         <div class="products-grid" id="deptcorrections-products-grid">
           <h2 class="category-header" data-customer="dept-corrections">Department of Corrections</h2>
-          <div class="product" data-customer="dept-corrections">
-            <h3>Coming Soon</h3>
-            <p>Department of Corrections gear is coming soon.</p>
+          <div class="product" data-customer="dept-corrections-items">
+            <h3>Department of Corrections Item</h3>
+            <button class="view-shirt-btn" data-image="../images/DOCClock.webp" data-title="Department of Corrections Item">
+              <i class="fas fa-eye"></i> View Item
+            </button>
+            <div id="product-component-1772502360055"></div>
           </div>
         </div>
 
@@ -373,6 +467,14 @@
               <i class="fas fa-eye"></i> View Shirt
             </button>
             <div id="product-component-1771813188943"></div>
+          </div>
+
+          <div class="product" data-customer="sports-general-tennis">
+            <h3>Tennis Shirt</h3>
+            <button class="view-shirt-btn" data-image="../images/SportTennis.webp" data-title="Tennis Shirt">
+              <i class="fas fa-eye"></i> View Shirt
+            </button>
+            <div id="product-component-1772501462629"></div>
           </div>
         </div>
 
@@ -514,13 +616,23 @@
       ['7418580140103', 'product-component-1771816956641'],
       // Lee High School
       ['7418570473543', 'product-component-1770598655623'],
+      ['7460345053255', 'product-component-1772502621227'],  // Items
       ['7457970651207', 'product-component-1771815607826'],  // Track
       ['7446082027591', 'product-component-1771815247230'],  // Softball
       ['7446169059399', 'product-component-1771821534909'],  // Baseball
+      ['7460266344519', 'product-component-1772502888537'],  // Baseball Hat
+      ['7462039814215', 'product-component-1772501691279'],  // Soccer
       // Pennington Middle
       ['7414680387655', 'product-component-1770598074869'],
       // Union High
       ['7457972551751', 'product-component-1771811939856'],
+      // East Side High
+      ['7460763467847', 'product-component-1772501944697'],
+      // Rye Cove
+      ['7460756717639', 'product-component-1772502143125'],
+      // Trinity High Track
+      ['7462039552071', 'product-component-1772500971939'],
+      ['7463230898247', 'product-component-1772501243970'],
       // Thomas Walker High
       ['7418567721031', 'product-component-1770598573840'],
       // Jonesville Middle
@@ -530,8 +642,12 @@
       ['7455028936775', 'product-component-1771818407716'],
       // Elydale Middle
       ['7453534158919', 'product-component-1771214148142'],
+      // Department of Corrections
+      ['7460424843335', 'product-component-1772502360055'],
       // Soccer
       ['7459267510343', 'product-component-1771813188943'],
+      // Tennis
+      ['7462183993415', 'product-component-1772501462629'],
     ];
 
     function initShopify() {
