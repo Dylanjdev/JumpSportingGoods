@@ -1040,6 +1040,40 @@
       ['7462183993415', 'product-component-1772501462629'],
     ];
 
+    function isComingSoonPlaceholderCard(card) {
+      if (!card) return false;
+      if (card.querySelector('.view-shirt-btn')) return false;
+      if (card.querySelector('[id^="product-component-"]')) return false;
+
+      var paragraphs = Array.from(card.querySelectorAll('p'));
+      if (paragraphs.length === 0) return false;
+
+      return paragraphs.every(function (p) {
+        var text = (p.textContent || '').trim().toLowerCase();
+        return text.indexOf('coming soon') !== -1;
+      });
+    }
+
+    function clearPlaceholdersInPopulatedGrids() {
+      var grids = document.querySelectorAll('.products-grid');
+      grids.forEach(function (grid) {
+        var cards = Array.from(grid.querySelectorAll('.product'));
+        if (cards.length === 0) return;
+
+        var hasRealProduct = cards.some(function (card) {
+          return !isComingSoonPlaceholderCard(card);
+        });
+
+        if (!hasRealProduct) return;
+
+        cards.forEach(function (card) {
+          if (isComingSoonPlaceholderCard(card)) {
+            card.remove();
+          }
+        });
+      });
+    }
+
     function initShopify() {
       var client = ShopifyBuy.buildClient({ domain: DOMAIN, storefrontAccessToken: TOKEN });
       ShopifyBuy.UI.onReady(client).then(function (ui) {
@@ -1064,7 +1098,7 @@
 
           // Remove old placeholder text once product is wired in
           card.querySelectorAll('p').forEach(function (p) {
-            if (p.textContent && p.textContent.trim().toLowerCase() === 'coming soon.') p.remove();
+            if ((p.textContent || '').trim().toLowerCase().indexOf('coming soon') !== -1) p.remove();
           });
 
           var previewBtn = card.querySelector('.view-shirt-btn');
@@ -1091,6 +1125,8 @@
             options: defaultOptions()
           });
         });
+
+        clearPlaceholdersInPopulatedGrids();
       });
     }
 
