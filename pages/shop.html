@@ -23,6 +23,10 @@
       <div style="margin-bottom: 1rem;">
         <a href="#" class="filter-link" data-filter="all" style="display: block; padding: 0.5rem; background: #e60000; color: white; text-align: center; border-radius: 5px; text-decoration: none; margin-bottom: 1rem;"><i class="fas fa-th"></i> Show All Products</a>
       </div>
+      <div class="shop-search-wrap">
+        <label for="shopSearch" class="shop-search-label">Search Products</label>
+        <input id="shopSearch" class="shop-search-input" type="search" placeholder="Search schools, sports, or products" aria-label="Search products and schools" />
+      </div>
       <nav class="customer-menu">
         <div class="customer-category" id="schools">
           <h4><i class="fas fa-graduation-cap"></i> Education</h4>
@@ -33,34 +37,173 @@
               </a>
               <ul class="customer-submenu" id="lee-high-sports-submenu">
                 <li><a href="#" class="customer-filter" data-customer="lee-high"><i class="fas fa-chevron-right"></i> Football</a></li>
-                <li><a href="#" class="customer-filter" data-customer="lee-high-items"><i class="fas fa-chevron-right"></i> Items</a></li>
                 <li><a href="#" class="customer-filter" data-customer="lee-high-track"><i class="fas fa-chevron-right"></i> Track</a></li>
                 <li><a href="#" class="customer-filter" data-customer="lee-high-baseball"><i class="fas fa-chevron-right"></i> Baseball</a></li>
                 <li><a href="#" class="customer-filter" data-customer="lee-high"><i class="fas fa-chevron-right"></i> Basketball</a></li>
                 <li><a href="#" class="customer-filter" data-customer="lee-high-soccer"><i class="fas fa-chevron-right"></i> Soccer</a></li>
+                <li><a href="#" class="customer-filter" data-customer="lee-high-tennis"><i class="fas fa-chevron-right"></i> Tennis</a></li>
                 <li><a href="#" class="customer-filter" data-customer="lee-high-softball"><i class="fas fa-chevron-right"></i> Softball</a></li>
+                <li><a href="#" class="customer-filter" data-customer="lee-high-teachers"><i class="fas fa-chevron-right"></i> Teachers</a></li>
               </ul>
             </li>
-            <li><a href="#" class="customer-filter" data-customer="union-high"><i class="fas fa-chevron-right"></i> Union High School</a></li>
+            <li class="customer-has-submenu">
+              <a href="#" class="customer-filter customer-submenu-toggle" data-customer="wise-central-high" data-submenu-target="wise-central-sports-submenu">
+                <i class="fas fa-chevron-right"></i> Wise Central High School <span class="submenu-caret"><i class="fas fa-chevron-down"></i></span>
+              </a>
+              <ul class="customer-submenu" id="wise-central-sports-submenu">
+                <li><a href="#" class="customer-filter" data-customer="wise-central-softball"><i class="fas fa-chevron-right"></i> Softball</a></li>
+                <li><a href="#" class="customer-filter" data-customer="wise-central-high-teachers"><i class="fas fa-chevron-right"></i> Teachers</a></li>
+              </ul>
+            </li>
+            <li class="customer-has-submenu">
+              <a href="#" class="customer-filter customer-submenu-toggle" data-customer="union-high" data-submenu-target="union-high-submenu">
+                <i class="fas fa-chevron-right"></i> Union High School <span class="submenu-caret"><i class="fas fa-chevron-down"></i></span>
+              </a>
+              <ul class="customer-submenu" id="union-high-submenu">
+                <li><a href="#" class="customer-filter" data-customer="union-high-teachers"><i class="fas fa-chevron-right"></i> Teachers</a></li>
+              </ul>
+            </li>
+            <li class="customer-has-submenu">
+              <a href="#" class="customer-filter customer-submenu-toggle" data-customer="gate-city-high" data-submenu-target="gate-city-submenu">
+                <i class="fas fa-chevron-right"></i> Gate City High School <span class="submenu-caret"><i class="fas fa-chevron-down"></i></span>
+              </a>
+              <ul class="customer-submenu" id="gate-city-submenu">
+                <li><a href="#" class="customer-filter" data-customer="gate-city-high-soccer"><i class="fas fa-chevron-right"></i> Soccer</a></li>
+                <li><a href="#" class="customer-filter" data-customer="gate-city-high-teachers"><i class="fas fa-chevron-right"></i> Teachers</a></li>
+              </ul>
+            </li>
+            <li class="customer-has-submenu">
+              <a href="#" class="customer-filter customer-submenu-toggle" data-customer="ridgeview-high" data-submenu-target="ridgeview-submenu">
+                <i class="fas fa-chevron-right"></i> Ridgeview High School <span class="submenu-caret"><i class="fas fa-chevron-down"></i></span>
+              </a>
+              <ul class="customer-submenu" id="ridgeview-submenu">
+                <li><a href="#" class="customer-filter" data-customer="ridgeview-high-teachers"><i class="fas fa-chevron-right"></i> Teachers</a></li>
+              </ul>
+            </li>
+            <li class="customer-has-submenu">
+              <a href="#" class="customer-filter customer-submenu-toggle" data-customer="abingdon-high" data-submenu-target="abingdon-submenu">
+                <i class="fas fa-chevron-right"></i> Abingdon High School <span class="submenu-caret"><i class="fas fa-chevron-down"></i></span>
+              </a>
+              <ul class="customer-submenu" id="abingdon-submenu">
+                <li><a href="#" class="customer-filter" data-customer="abingdon-high-teachers"><i class="fas fa-chevron-right"></i> Teachers</a></li>
+              </ul>
+            </li>
+            <li class="customer-has-submenu">
+              <a href="#" class="customer-filter customer-submenu-toggle" data-customer="john-battle-high" data-submenu-target="john-battle-submenu">
+                <i class="fas fa-chevron-right"></i> John Battle High School <span class="submenu-caret"><i class="fas fa-chevron-down"></i></span>
+              </a>
+              <ul class="customer-submenu" id="john-battle-submenu">
+                <li><a href="#" class="customer-filter" data-customer="john-battle-high-teachers"><i class="fas fa-chevron-right"></i> Teachers</a></li>
+              </ul>
+            </li>
+            <li class="customer-has-submenu">
+              <a href="#" class="customer-filter customer-submenu-toggle" data-customer="ji-burton-high" data-submenu-target="ji-burton-submenu">
+                <i class="fas fa-chevron-right"></i> J.I. Burton High School <span class="submenu-caret"><i class="fas fa-chevron-down"></i></span>
+              </a>
+              <ul class="customer-submenu" id="ji-burton-submenu">
+                <li><a href="#" class="customer-filter" data-customer="ji-burton-high-teachers"><i class="fas fa-chevron-right"></i> Teachers</a></li>
+              </ul>
+            </li>
             <li class="customer-has-submenu">
               <a href="#" class="customer-filter customer-submenu-toggle" data-customer="trinity-high" data-submenu-target="trinity-high-sports-submenu">
                 <i class="fas fa-chevron-right"></i> Trinity High School <span class="submenu-caret"><i class="fas fa-chevron-down"></i></span>
               </a>
               <ul class="customer-submenu" id="trinity-high-sports-submenu">
                 <li><a href="#" class="customer-filter" data-customer="trinity-high-track"><i class="fas fa-chevron-right"></i> Track</a></li>
+                <li><a href="#" class="customer-filter" data-customer="trinity-high-teachers"><i class="fas fa-chevron-right"></i> Teachers</a></li>
               </ul>
             </li>
-            <li><a href="#" class="customer-filter" data-customer="east-side-high"><i class="fas fa-chevron-right"></i> East Side High School</a></li>
-            <li><a href="#" class="customer-filter" data-customer="rye-cove"><i class="fas fa-chevron-right"></i> Rye Cove</a></li>
-            <li><a href="#" class="customer-filter" data-customer="thomas-walker"><i class="fas fa-chevron-right"></i> Thomas Walker High School</a></li>
-            <li><a href="#" class="customer-filter" data-customer="pennington-middle"><i class="fas fa-chevron-right"></i> Pennington Middle School</a></li>
-            <li><a href="#" class="customer-filter" data-customer="jonesville-middle"><i class="fas fa-chevron-right"></i> Jonesville Middle School</a></li>
-            <li><a href="#" class="customer-filter" data-customer="dryden-elementary"><i class="fas fa-chevron-right"></i> Dryden Elementary School</a></li>
-            <li><a href="#" class="customer-filter" data-customer="elk-knob-elementary"><i class="fas fa-chevron-right"></i> Elk Knob Elementary School</a></li>
-            <li><a href="#" class="customer-filter" data-customer="st-charles-elementary"><i class="fas fa-chevron-right"></i> St. Charles Elementary School</a></li>
-            <li><a href="#" class="customer-filter" data-customer="flatwoods-elementary"><i class="fas fa-chevron-right"></i> Flatwoods Elementary School</a></li>
-            <li><a href="#" class="customer-filter" data-customer="rose-hill-elementary"><i class="fas fa-chevron-right"></i> Rose Hill Elementary School</a></li>
-            <li><a href="#" class="customer-filter" data-customer="ely-dale-elementary"><i class="fas fa-chevron-right"></i> Elydale middle school</a></li>
+            <li class="customer-has-submenu">
+              <a href="#" class="customer-filter customer-submenu-toggle" data-customer="east-side-high" data-submenu-target="east-side-submenu">
+                <i class="fas fa-chevron-right"></i> East Side High School <span class="submenu-caret"><i class="fas fa-chevron-down"></i></span>
+              </a>
+              <ul class="customer-submenu" id="east-side-submenu">
+                <li><a href="#" class="customer-filter" data-customer="east-side-high-teachers"><i class="fas fa-chevron-right"></i> Teachers</a></li>
+              </ul>
+            </li>
+            <li class="customer-has-submenu">
+              <a href="#" class="customer-filter customer-submenu-toggle" data-customer="rye-cove" data-submenu-target="rye-cove-submenu">
+                <i class="fas fa-chevron-right"></i> Rye Cove <span class="submenu-caret"><i class="fas fa-chevron-down"></i></span>
+              </a>
+              <ul class="customer-submenu" id="rye-cove-submenu">
+                <li><a href="#" class="customer-filter" data-customer="rye-cove-softball"><i class="fas fa-chevron-right"></i> Softball</a></li>
+                <li><a href="#" class="customer-filter" data-customer="rye-cove-teachers"><i class="fas fa-chevron-right"></i> Teachers</a></li>
+              </ul>
+            </li>
+            <li class="customer-has-submenu">
+              <a href="#" class="customer-filter customer-submenu-toggle" data-customer="thomas-walker" data-submenu-target="thomas-walker-submenu">
+                <i class="fas fa-chevron-right"></i> Thomas Walker High School <span class="submenu-caret"><i class="fas fa-chevron-down"></i></span>
+              </a>
+              <ul class="customer-submenu" id="thomas-walker-submenu">
+                <li><a href="#" class="customer-filter" data-customer="thomas-walker-teachers"><i class="fas fa-chevron-right"></i> Teachers</a></li>
+              </ul>
+            </li>
+            <li class="customer-has-submenu">
+              <a href="#" class="customer-filter customer-submenu-toggle" data-customer="pennington-middle" data-submenu-target="pennington-submenu">
+                <i class="fas fa-chevron-right"></i> Pennington Middle School <span class="submenu-caret"><i class="fas fa-chevron-down"></i></span>
+              </a>
+              <ul class="customer-submenu" id="pennington-submenu">
+                <li><a href="#" class="customer-filter" data-customer="pennington-middle-teachers"><i class="fas fa-chevron-right"></i> Teachers</a></li>
+              </ul>
+            </li>
+            <li class="customer-has-submenu">
+              <a href="#" class="customer-filter customer-submenu-toggle" data-customer="jonesville-middle" data-submenu-target="jonesville-submenu">
+                <i class="fas fa-chevron-right"></i> Jonesville Middle School <span class="submenu-caret"><i class="fas fa-chevron-down"></i></span>
+              </a>
+              <ul class="customer-submenu" id="jonesville-submenu">
+                <li><a href="#" class="customer-filter" data-customer="jonesville-middle-teachers"><i class="fas fa-chevron-right"></i> Teachers</a></li>
+              </ul>
+            </li>
+            <li class="customer-has-submenu">
+              <a href="#" class="customer-filter customer-submenu-toggle" data-customer="dryden-elementary" data-submenu-target="dryden-submenu">
+                <i class="fas fa-chevron-right"></i> Dryden Elementary School <span class="submenu-caret"><i class="fas fa-chevron-down"></i></span>
+              </a>
+              <ul class="customer-submenu" id="dryden-submenu">
+                <li><a href="#" class="customer-filter" data-customer="dryden-elementary-teachers"><i class="fas fa-chevron-right"></i> Teachers</a></li>
+              </ul>
+            </li>
+            <li class="customer-has-submenu">
+              <a href="#" class="customer-filter customer-submenu-toggle" data-customer="elk-knob-elementary" data-submenu-target="elk-knob-submenu">
+                <i class="fas fa-chevron-right"></i> Elk Knob Elementary School <span class="submenu-caret"><i class="fas fa-chevron-down"></i></span>
+              </a>
+              <ul class="customer-submenu" id="elk-knob-submenu">
+                <li><a href="#" class="customer-filter" data-customer="elk-knob-elementary-teachers"><i class="fas fa-chevron-right"></i> Teachers</a></li>
+              </ul>
+            </li>
+            <li class="customer-has-submenu">
+              <a href="#" class="customer-filter customer-submenu-toggle" data-customer="st-charles-elementary" data-submenu-target="st-charles-submenu">
+                <i class="fas fa-chevron-right"></i> St. Charles Elementary School <span class="submenu-caret"><i class="fas fa-chevron-down"></i></span>
+              </a>
+              <ul class="customer-submenu" id="st-charles-submenu">
+                <li><a href="#" class="customer-filter" data-customer="st-charles-elementary-teachers"><i class="fas fa-chevron-right"></i> Teachers</a></li>
+              </ul>
+            </li>
+            <li class="customer-has-submenu">
+              <a href="#" class="customer-filter customer-submenu-toggle" data-customer="flatwoods-elementary" data-submenu-target="flatwoods-submenu">
+                <i class="fas fa-chevron-right"></i> Flatwoods Elementary School <span class="submenu-caret"><i class="fas fa-chevron-down"></i></span>
+              </a>
+              <ul class="customer-submenu" id="flatwoods-submenu">
+                <li><a href="#" class="customer-filter" data-customer="flatwoods-elementary-softball"><i class="fas fa-chevron-right"></i> Softball</a></li>
+                <li><a href="#" class="customer-filter" data-customer="flatwoods-elementary-teachers"><i class="fas fa-chevron-right"></i> Teachers</a></li>
+              </ul>
+            </li>
+            <li class="customer-has-submenu">
+              <a href="#" class="customer-filter customer-submenu-toggle" data-customer="rose-hill-elementary" data-submenu-target="rose-hill-submenu">
+                <i class="fas fa-chevron-right"></i> Rose Hill Elementary School <span class="submenu-caret"><i class="fas fa-chevron-down"></i></span>
+              </a>
+              <ul class="customer-submenu" id="rose-hill-submenu">
+                <li><a href="#" class="customer-filter" data-customer="rose-hill-elementary-teachers"><i class="fas fa-chevron-right"></i> Teachers</a></li>
+              </ul>
+            </li>
+            <li class="customer-has-submenu">
+              <a href="#" class="customer-filter customer-submenu-toggle" data-customer="ely-dale-elementary" data-submenu-target="ely-dale-submenu">
+                <i class="fas fa-chevron-right"></i> Elydale middle school <span class="submenu-caret"><i class="fas fa-chevron-down"></i></span>
+              </a>
+              <ul class="customer-submenu" id="ely-dale-submenu">
+                <li><a href="#" class="customer-filter" data-customer="ely-dale-elementary-softball"><i class="fas fa-chevron-right"></i> Softball</a></li>
+                <li><a href="#" class="customer-filter" data-customer="ely-dale-elementary-teachers"><i class="fas fa-chevron-right"></i> Teachers</a></li>
+              </ul>
+            </li>
           </ul>
         </div>
         <div class="customer-category" id="religious">
@@ -93,6 +236,7 @@
           <h4><i class="fas fa-fire-extinguisher"></i> Emergency Services</h4>
           <ul>
             <li><a href="#" class="customer-filter" data-customer="dryden-fire"><i class="fas fa-chevron-right"></i> Dryden Fire Department</a></li>
+            <li><a href="#" class="customer-filter" data-customer="nurses"><i class="fas fa-chevron-right"></i> Nurses</a></li>
           </ul>
         </div>
         <div class="customer-category" id="sports">
@@ -105,7 +249,6 @@
               </a>
               <ul class="customer-submenu" id="sports-shirts-submenu">
                 <li><a href="#" class="customer-filter" data-customer="sports-general-soccer"><i class="fas fa-chevron-right"></i> Soccer</a></li>
-                <li><a href="#" class="customer-filter" data-customer="sports-general-tennis"><i class="fas fa-chevron-right"></i> Tennis</a></li>
               </ul>
             </li>
           </ul>
@@ -140,6 +283,11 @@
             </button>
             <div id="product-component-1770610672695"></div>
           </div>
+
+          <div class="product" data-customer="dryden-elementary-teachers">
+            <h3>Dryden Elementary School Teachers</h3>
+            <p>Coming soon.</p>
+          </div>
         </div>
 
         <!-- ===================== ST. CHARLES ELEMENTARY ===================== -->
@@ -160,6 +308,11 @@
               <i class="fas fa-eye"></i> View Shirt
             </button>
             <div id="product-component-1770610159550"></div>
+          </div>
+
+          <div class="product" data-customer="st-charles-elementary-teachers">
+            <h3>St. Charles Elementary School Teachers</h3>
+            <p>Coming soon.</p>
           </div>
         </div>
 
@@ -182,6 +335,11 @@
             </button>
             <div id="product-component-1771816787450"></div>
           </div>
+
+          <div class="product" data-customer="elk-knob-elementary-teachers">
+            <h3>Elk Knob Elementary School Teachers</h3>
+            <p>Coming soon.</p>
+          </div>
         </div>
 
         <!-- ===================== ROSE HILL ELEMENTARY ===================== -->
@@ -194,6 +352,11 @@
               <i class="fas fa-eye"></i> View Shirt
             </button>
             <div id="product-component-1770598897967"></div>
+          </div>
+
+          <div class="product" data-customer="rose-hill-elementary-teachers">
+            <h3>Rose Hill Elementary School Teachers</h3>
+            <p>Coming soon.</p>
           </div>
         </div>
 
@@ -216,6 +379,19 @@
             </button>
             <div id="product-component-1771816956641"></div>
           </div>
+
+          <div class="product" data-customer="flatwoods-elementary-softball">
+            <h3>Eagles Softball Tee - Vintage Crossed Bats & Ball Team Shirt</h3>
+            <button class="view-shirt-btn" data-image="../images/Eaglessoft1.webp" data-title="Eagles Softball Tee - Vintage Crossed Bats & Ball Team Shirt">
+              <i class="fas fa-eye"></i> View Shirt
+            </button>
+            <div id="product-component-1773258450890"></div>
+          </div>
+
+          <div class="product" data-customer="flatwoods-elementary-teachers">
+            <h3>Flatwoods Elementary School Teachers</h3>
+            <p>Coming soon.</p>
+          </div>
         </div>
 
         <!-- ===================== LEE HIGH SCHOOL ===================== -->
@@ -228,14 +404,6 @@
               <i class="fas fa-eye"></i> View Shirt
             </button>
             <div id="product-component-1770598655623"></div>
-          </div>
-
-          <div class="product" data-customer="lee-high-items">
-            <h3>Lee High Clock</h3>
-            <button class="view-shirt-btn" data-image="../images/LeeHighClock.webp" data-title="Lee High Clock">
-              <i class="fas fa-eye"></i> View Item
-            </button>
-            <div id="product-component-1772502621227"></div>
           </div>
 
           <div class="product" data-customer="lee-high-track">
@@ -255,6 +423,15 @@
             <div id="product-component-1771815247230"></div>
           </div>
 
+          <div class="product" data-customer="lee-high-softball">
+            <h3>Unisex Softstyle T-Shirt Generals Softball</h3>
+            <p>Regular price $19.76</p>
+            <button class="view-shirt-btn" data-image="../images/LeeHighSoftball2.webp" data-title="Unisex Softstyle T-Shirt Generals Softball">
+              <i class="fas fa-eye"></i> View Shirt
+            </button>
+            <div id="product-component-1773256432980"></div>
+          </div>
+
           <div class="product" data-customer="lee-high-baseball">
             <h3>Generals Baseball T&#8209;Shirt — Vintage Team Logo Tee</h3>
             <p>Regular price $19.76</p>
@@ -262,6 +439,14 @@
               <i class="fas fa-eye"></i> View Shirt
             </button>
             <div id="product-component-1771821534909"></div>
+          </div>
+
+          <div class="product" data-customer="lee-high-baseball">
+            <h3>Lee High Baseball Shirt</h3>
+            <button class="view-shirt-btn" data-image="../images/LeeHighBaseball2.webp" data-title="Lee High Baseball Shirt">
+              <i class="fas fa-eye"></i> View Shirt
+            </button>
+            <div id="product-component-1773257055907"></div>
           </div>
 
           <div class="product" data-customer="lee-high-baseball">
@@ -279,6 +464,109 @@
             </button>
             <div id="product-component-1772501691279"></div>
           </div>
+
+          <div class="product" data-customer="lee-high-teachers">
+            <h3>Lee High School Teachers</h3>
+            <p>Coming soon.</p>
+          </div>
+        </div>
+
+        <!-- ===================== WISE CENTRAL HIGH SCHOOL ===================== -->
+        <div class="products-grid" id="wisecentral-products-grid">
+          <h2 class="category-header" data-customer="wise-central-high">Wise Central High School</h2>
+
+          <div class="product" data-customer="wise-central-softball">
+            <h3>Wise Central High School Softball</h3>
+            <p>Coming soon.</p>
+          </div>
+
+          <div class="product" data-customer="wise-central-high-teachers">
+            <h3>Wise Central High School Teachers</h3>
+            <p>Coming soon.</p>
+          </div>
+        </div>
+
+        <!-- ===================== GATE CITY HIGH ===================== -->
+        <div class="products-grid" id="gatecity-products-grid">
+          <h2 class="category-header" data-customer="gate-city-high">Gate City High School</h2>
+
+          <div class="product" data-customer="gate-city-high">
+            <h3>Gate City High School</h3>
+            <p>Coming soon.</p>
+          </div>
+
+          <div class="product" data-customer="gate-city-high-soccer">
+            <h3>Gate City High School Soccer</h3>
+            <button class="view-shirt-btn" data-image="../images/GateCityHigh1.webp" data-title="Gate City High School Soccer">
+              <i class="fas fa-eye"></i> View Shirt
+            </button>
+            <div id="product-component-1773257985205"></div>
+          </div>
+
+          <div class="product" data-customer="gate-city-high-teachers">
+            <h3>Gate City High School Teachers</h3>
+            <p>Coming soon.</p>
+          </div>
+        </div>
+
+        <!-- ===================== RIDGEVIEW HIGH ===================== -->
+        <div class="products-grid" id="ridgeview-products-grid">
+          <h2 class="category-header" data-customer="ridgeview-high">Ridgeview High School</h2>
+
+          <div class="product" data-customer="ridgeview-high">
+            <h3>Ridgeview High School</h3>
+            <p>Coming soon.</p>
+          </div>
+
+          <div class="product" data-customer="ridgeview-high-teachers">
+            <h3>Ridgeview High School Teachers</h3>
+            <p>Coming soon.</p>
+          </div>
+        </div>
+
+        <!-- ===================== ABINGDON HIGH ===================== -->
+        <div class="products-grid" id="abingdon-products-grid">
+          <h2 class="category-header" data-customer="abingdon-high">Abingdon High School</h2>
+
+          <div class="product" data-customer="abingdon-high">
+            <h3>Abingdon High School</h3>
+            <p>Coming soon.</p>
+          </div>
+
+          <div class="product" data-customer="abingdon-high-teachers">
+            <h3>Abingdon High School Teachers</h3>
+            <p>Coming soon.</p>
+          </div>
+        </div>
+
+        <!-- ===================== JOHN BATTLE HIGH ===================== -->
+        <div class="products-grid" id="johnbattle-products-grid">
+          <h2 class="category-header" data-customer="john-battle-high">John Battle High School</h2>
+
+          <div class="product" data-customer="john-battle-high">
+            <h3>John Battle High School</h3>
+            <p>Coming soon.</p>
+          </div>
+
+          <div class="product" data-customer="john-battle-high-teachers">
+            <h3>John Battle High School Teachers</h3>
+            <p>Coming soon.</p>
+          </div>
+        </div>
+
+        <!-- ===================== J.I. BURTON HIGH ===================== -->
+        <div class="products-grid" id="jiburton-products-grid">
+          <h2 class="category-header" data-customer="ji-burton-high">J.I. Burton High School</h2>
+
+          <div class="product" data-customer="ji-burton-high">
+            <h3>J.I. Burton High School</h3>
+            <p>Coming soon.</p>
+          </div>
+
+          <div class="product" data-customer="ji-burton-high-teachers">
+            <h3>J.I. Burton High School Teachers</h3>
+            <p>Coming soon.</p>
+          </div>
         </div>
 
         <!-- ===================== PENNINGTON MIDDLE ===================== -->
@@ -291,6 +579,11 @@
               <i class="fas fa-eye"></i> View Shirt
             </button>
             <div id="product-component-1770598074869"></div>
+          </div>
+
+          <div class="product" data-customer="pennington-middle-teachers">
+            <h3>Pennington Middle School Teachers</h3>
+            <p>Coming soon.</p>
           </div>
         </div>
 
@@ -305,6 +598,11 @@
             </button>
             <div id="product-component-1771811939856"></div>
           </div>
+
+          <div class="product" data-customer="union-high-teachers">
+            <h3>Union High School Teachers</h3>
+            <p>Coming soon.</p>
+          </div>
         </div>
 
         <!-- ===================== EAST SIDE HIGH ===================== -->
@@ -318,6 +616,11 @@
             </button>
             <div id="product-component-1772501944697"></div>
           </div>
+
+          <div class="product" data-customer="east-side-high-teachers">
+            <h3>East Side High School Teachers</h3>
+            <p>Coming soon.</p>
+          </div>
         </div>
 
         <!-- ===================== RYE COVE ===================== -->
@@ -330,6 +633,19 @@
               <i class="fas fa-eye"></i> View Shirt
             </button>
             <div id="product-component-1772502143125"></div>
+          </div>
+
+          <div class="product" data-customer="rye-cove-softball">
+            <h3>Rye Cove Softball</h3>
+            <button class="view-shirt-btn" data-image="../images/RyeCove2.webp" data-title="Rye Cove Softball">
+              <i class="fas fa-eye"></i> View Shirt
+            </button>
+            <div id="product-component-1773257425184"></div>
+          </div>
+
+          <div class="product" data-customer="rye-cove-teachers">
+            <h3>Rye Cove Teachers</h3>
+            <p>Coming soon.</p>
           </div>
         </div>
 
@@ -345,12 +661,25 @@
             <div id="product-component-1772500971939"></div>
           </div>
 
+          <div class="product" data-customer="trinity-high-track">
+            <h3>Trinity High Track Shirt</h3>
+            <button class="view-shirt-btn" data-image="../images/Trinity3.webp" data-title="Trinity High Track Shirt">
+              <i class="fas fa-eye"></i> View Shirt
+            </button>
+            <div id="product-component-1773257233122"></div>
+          </div>
+
           <div class="product" data-customer="trinity-high">
             <h3>Trinity High Saint Patrick Shirt</h3>
             <button class="view-shirt-btn" data-image="../images/trinitysaintpatrick.webp" data-title="Trinity High Saint Patrick Shirt">
               <i class="fas fa-eye"></i> View Shirt
             </button>
             <div id="product-component-1772501243970"></div>
+          </div>
+
+          <div class="product" data-customer="trinity-high-teachers">
+            <h3>Trinity High School Teachers</h3>
+            <p>Coming soon.</p>
           </div>
         </div>
 
@@ -365,6 +694,11 @@
             </button>
             <div id="product-component-1770598573840"></div>
           </div>
+
+          <div class="product" data-customer="thomas-walker-teachers">
+            <h3>Thomas Walker High School Teachers</h3>
+            <p>Coming soon.</p>
+          </div>
         </div>
 
         <!-- ===================== JONESVILLE MIDDLE ===================== -->
@@ -377,6 +711,11 @@
               <i class="fas fa-eye"></i> View Shirt
             </button>
             <div id="product-component-1770598155984"></div>
+          </div>
+
+          <div class="product" data-customer="jonesville-middle-teachers">
+            <h3>Jonesville Middle School Teachers</h3>
+            <p>Coming soon.</p>
           </div>
         </div>
 
@@ -399,6 +738,14 @@
             </button>
             <div id="product-component-1771818407716"></div>
           </div>
+
+          <div class="product" data-customer="religious-general">
+            <h3>Faith-Based Apparel Tee</h3>
+            <button class="view-shirt-btn" data-image="../images/faith3.webp" data-title="Faith-Based Apparel Tee">
+              <i class="fas fa-eye"></i> View Shirt
+            </button>
+            <div id="product-component-1773258126484"></div>
+          </div>
         </div>
 
         <!-- ===================== ELYDALE MIDDLE ===================== -->
@@ -411,6 +758,27 @@
             </button>
             <div id="product-component-1771214148142"></div>
           </div>
+
+          <div class="product" data-customer="ely-dale-elementary-softball">
+            <h3>Elydale Middle School Softball</h3>
+            <button class="view-shirt-btn" data-image="../images/warriers.webp" data-title="Elydale Middle School Softball">
+              <i class="fas fa-eye"></i> View Shirt
+            </button>
+            <div id="product-component-1773257705629"></div>
+          </div>
+
+          <div class="product" data-customer="ely-dale-elementary-softball">
+            <h3>Elydale Middle School Softball</h3>
+            <button class="view-shirt-btn" data-image="../images/warriersoft2.webp" data-title="Elydale Middle School Softball">
+              <i class="fas fa-eye"></i> View Shirt
+            </button>
+            <div id="product-component-1773258555164"></div>
+          </div>
+
+          <div class="product" data-customer="ely-dale-elementary-teachers">
+            <h3>Elydale Middle School Teachers</h3>
+            <p>Coming soon.</p>
+          </div>
         </div>
 
         <!-- ===================== COMING SOON SECTIONS ===================== -->
@@ -419,6 +787,17 @@
           <div class="product" data-customer="dryden-fire">
             <h3>Coming Soon</h3>
             <p>Dryden Fire Department apparel is coming soon.</p>
+          </div>
+        </div>
+
+        <div class="products-grid" id="nurses-products-grid">
+          <h2 class="category-header" data-customer="nurses">Nurses</h2>
+          <div class="product" data-customer="nurses">
+            <h3>Nurses Shirt</h3>
+            <button class="view-shirt-btn" data-image="../images/NurseShirt1.webp" data-title="Nurses Shirt">
+              <i class="fas fa-eye"></i> View Shirt
+            </button>
+            <div id="product-component-1773255570824"></div>
           </div>
         </div>
 
@@ -469,7 +848,7 @@
             <div id="product-component-1771813188943"></div>
           </div>
 
-          <div class="product" data-customer="sports-general-tennis">
+          <div class="product" data-customer="lee-high-tennis">
             <h3>Tennis Shirt</h3>
             <button class="view-shirt-btn" data-image="../images/SportTennis.webp" data-title="Tennis Shirt">
               <i class="fas fa-eye"></i> View Shirt
@@ -551,7 +930,7 @@
         product: {
           styles: {
             product: {
-              "@media (min-width: 601px)": { "max-width": "100%", "margin-left": "0", "margin-bottom": "50px" },
+              "@media (min-width: 601px)": { "max-width": "100%", "margin-left": "0", "margin-bottom": "8px" },
               "text-align": "left"
             },
             title:      { "font-size": "26px", "color": "#000000" },
@@ -614,24 +993,30 @@
       // Flatwoods Elementary
       ['7414678650951', 'product-component-1770597995105'],
       ['7418580140103', 'product-component-1771816956641'],
+      ['7475115360327', 'product-component-1773258450890'],  // Softball
       // Lee High School
       ['7418570473543', 'product-component-1770598655623'],
-      ['7460345053255', 'product-component-1772502621227'],  // Items
       ['7457970651207', 'product-component-1771815607826'],  // Track
       ['7446082027591', 'product-component-1771815247230'],  // Softball
+      ['7470914666567', 'product-component-1773256432980'],  // Softball
       ['7446169059399', 'product-component-1771821534909'],  // Baseball
+      ['7470926757959', 'product-component-1773257055907'],  // Baseball
       ['7460266344519', 'product-component-1772502888537'],  // Baseball Hat
       ['7462039814215', 'product-component-1772501691279'],  // Soccer
       // Pennington Middle
       ['7414680387655', 'product-component-1770598074869'],
       // Union High
       ['7457972551751', 'product-component-1771811939856'],
+      // Gate City High Soccer
+      ['7471460220999', 'product-component-1773257985205'],
       // East Side High
       ['7460763467847', 'product-component-1772501944697'],
       // Rye Cove
       ['7460756717639', 'product-component-1772502143125'],
+      ['7471301394503', 'product-component-1773257425184'],  // Softball
       // Trinity High Track
       ['7462039552071', 'product-component-1772500971939'],
+      ['7471015624775', 'product-component-1773257233122'],
       ['7463230898247', 'product-component-1772501243970'],
       // Thomas Walker High
       ['7418567721031', 'product-component-1770598573840'],
@@ -640,10 +1025,15 @@
       // Faith-Based
       ['7418559037511', 'product-component-1771818925661'],
       ['7455028936775', 'product-component-1771818407716'],
+      ['7471469887559', 'product-component-1773258126484'],
       // Elydale Middle
       ['7453534158919', 'product-component-1771214148142'],
+      ['7471306276935', 'product-component-1773257705629'],  // Softball
+      ['7475126304839', 'product-component-1773258555164'],  // Softball
       // Department of Corrections
       ['7460424843335', 'product-component-1772502360055'],
+      // Nurses
+      ['7470654947399', 'product-component-1773255570824'],
       // Soccer
       ['7459267510343', 'product-component-1771813188943'],
       // Tennis
@@ -660,6 +1050,42 @@
           if (!node) return;
           ui.createComponent('product', {
             id: productId,
+            node: node,
+            moneyFormat: '%24%7B%7Bamount%7D%7D',
+            options: defaultOptions()
+          });
+        });
+
+        // Attach one shared teacher product to every "-teachers" card
+        var teacherCards = document.querySelectorAll('.product[data-customer$="-teachers"]');
+        teacherCards.forEach(function (card, index) {
+          var title = card.querySelector('h3');
+          var cardTitle = title ? title.textContent.trim() : 'School Teachers';
+
+          // Remove old placeholder text once product is wired in
+          card.querySelectorAll('p').forEach(function (p) {
+            if (p.textContent && p.textContent.trim().toLowerCase() === 'coming soon.') p.remove();
+          });
+
+          var previewBtn = card.querySelector('.view-shirt-btn');
+          if (!previewBtn) {
+            previewBtn = document.createElement('button');
+            previewBtn.className = 'view-shirt-btn';
+            previewBtn.setAttribute('data-image', '../images/everyschoolteacher.webp');
+            previewBtn.setAttribute('data-title', cardTitle);
+            previewBtn.innerHTML = '<i class="fas fa-eye"></i> View Shirt';
+            card.appendChild(previewBtn);
+          }
+
+          var node = card.querySelector('[id^="product-component-1773257810467-"]');
+          if (!node) {
+            node = document.createElement('div');
+            node.id = 'product-component-1773257810467-' + (index + 1);
+            card.appendChild(node);
+          }
+
+          ui.createComponent('product', {
+            id: '7471458287687',
             node: node,
             moneyFormat: '%24%7B%7Bamount%7D%7D',
             options: defaultOptions()

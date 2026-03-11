@@ -276,22 +276,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function customerMatches(customerData, targetCustomer) {
     if (!customerData || !targetCustomer) return false;
-    if (targetCustomer === 'lee-high') {
-      return customerData === 'lee-high' || customerData.startsWith('lee-high-');
-    }
-    if (targetCustomer === 'trinity-high') {
-      return customerData === 'trinity-high' || customerData.startsWith('trinity-high-');
-    }
-    if (targetCustomer === 'sports-general') {
-      return customerData === 'sports-general' || customerData.startsWith('sports-general-');
-    }
-    if (targetCustomer === 'dept-corrections') {
-      return customerData === 'dept-corrections' || customerData.startsWith('dept-corrections-');
-    }
-    return customerData === targetCustomer;
+    return customerData === targetCustomer || customerData.startsWith(targetCustomer + '-');
+  }
+
+  function clearCurrentViewHighlights() {
+    document.querySelectorAll('.products-grid.current-section').forEach(g => g.classList.remove('current-section'));
+    document.querySelectorAll('.category-header.active-subsection').forEach(h => {
+      h.classList.remove('active-subsection');
+      h.removeAttribute('data-active-filter');
+    });
+  }
+
+  function highlightCurrentView(customer, matchedGrids) {
+    clearCurrentViewHighlights();
+    if (!customer || !matchedGrids || matchedGrids.size === 0) return;
+
+    const activeLink = document.querySelector(`.customer-filter[data-customer="${customer}"]`);
+    const activeFilterLabel = activeLink ? activeLink.textContent.trim() : 'Current Filter';
+
+    matchedGrids.forEach(grid => {
+      grid.classList.add('current-section');
+      const header = grid.querySelector('.category-header');
+      if (header) {
+        header.classList.add('active-subsection');
+        header.setAttribute('data-active-filter', activeFilterLabel);
+      }
+    });
   }
 
   function showAllProducts(shouldScroll = true) {
+    clearCurrentViewHighlights();
     // Remove hidden class from everything - use classes NOT display style
     document.querySelectorAll('.product').forEach(p => p.classList.remove('filter-hidden'));
     document.querySelectorAll('.category-header').forEach(h => h.classList.remove('filter-hidden'));
@@ -311,6 +325,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.products-grid').forEach(g => g.classList.add('filter-hidden'));
 
     let firstVisibleHeader = null;
+    const matchedGrids = new Set();
 
     document.querySelectorAll('.category-header').forEach(h => {
       if (customerMatches(h.getAttribute('data-customer'), customer)) {
@@ -323,9 +338,14 @@ document.addEventListener('DOMContentLoaded', () => {
       if (customerMatches(p.getAttribute('data-customer'), customer)) {
         p.classList.remove('filter-hidden');
         const parentGrid = p.closest('.products-grid');
-        if (parentGrid) parentGrid.classList.remove('filter-hidden');
+        if (parentGrid) {
+          parentGrid.classList.remove('filter-hidden');
+          matchedGrids.add(parentGrid);
+        }
       }
     });
+
+    highlightCurrentView(customer, matchedGrids);
 
     setTimeout(() => {
       const target = firstVisibleHeader || document.querySelector('.products');
@@ -336,6 +356,8 @@ document.addEventListener('DOMContentLoaded', () => {
   function filterByCategory(categoryId) {
     const categorySection = document.getElementById(categoryId);
     if (!categorySection) return false;
+
+    clearCurrentViewHighlights();
 
     const categoryCustomers = Array.from(
       categorySection.querySelectorAll(':scope > ul > li > .customer-filter[data-customer]')
@@ -389,9 +411,92 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ── Sidebar filter links ─────────────────────────────────────
   const customerLinks = document.querySelectorAll('.customer-filter');
+  const shopSearchInput = document.getElementById('shopSearch');
+
+  function resetSidebarSearchState() {
+    document.querySelectorAll('.customer-menu li').forEach(li => li.classList.remove('menu-search-hidden'));
+  }
+
+  function applySearch(term) {
+    const query = (term || '').trim().toLowerCase();
+    const cards = document.querySelectorAll('.product');
+    const headers = document.querySelectorAll('.category-header');
+    const grids = document.querySelectorAll('.products-grid');
+
+    clearCurrentViewHighlights();
+
+    if (!query) {
+      resetSidebarSearchState();
+      showAllProducts(false);
+      return;
+    }
+
+    cards.forEach(p => p.classList.add('filter-hidden'));
+    headers.forEach(h => h.classList.add('filter-hidden'));
+    grids.forEach(g => g.classList.add('filter-hidden'));
+
+    const matchedCustomers = new Set();
+
+    cards.forEach(card => {
+      const text = card.textContent.toLowerCase();
+      if (!text.includes(query)) return;
+
+      card.classList.remove('filter-hidden');
+      const customer = card.getAttribute('data-customer');
+      if (customer) matchedCustomers.add(customer);
+
+      const parentGrid = card.closest('.products-grid');
+      if (parentGrid) {
+        parentGrid.classList.remove('filter-hidden');
+        const header = parentGrid.querySelector('.category-header');
+        if (header) header.classList.remove('filter-hidden');
+      }
+    });
+
+    // Filter sidebar links by matching link text OR matching visible results.
+    const menuLinks = Array.from(document.querySelectorAll('.customer-menu .customer-filter[data-customer]'));
+    const visibleLis = new Set();
+
+    menuLinks.forEach(link => {
+      const li = link.closest('li');
+      if (!li) return;
+
+      const customer = link.getAttribute('data-customer') || '';
+      const linkText = link.textContent.toLowerCase();
+      const textMatch = linkText.includes(query);
+      const customerMatch = Array.from(matchedCustomers).some(mc => customerMatches(mc, customer) || customerMatches(customer, mc));
+
+      if (textMatch || customerMatch) {
+        visibleLis.add(li);
+        const parentSub = li.closest('.customer-submenu');
+        if (parentSub) {
+          const parentLi = parentSub.closest('.customer-has-submenu');
+          if (parentLi) {
+            visibleLis.add(parentLi);
+            parentLi.classList.add('open');
+          }
+        }
+      }
+    });
+
+    document.querySelectorAll('.customer-menu li').forEach(li => {
+      li.classList.toggle('menu-search-hidden', !visibleLis.has(li));
+    });
+  }
+
+  if (shopSearchInput) {
+    shopSearchInput.addEventListener('input', function () {
+      customerLinks.forEach(l => l.classList.remove('active'));
+      applySearch(this.value);
+    });
+  }
 
   function activateCustomer(customer) {
     if (!customer) return false;
+    if (shopSearchInput && shopSearchInput.value.trim()) {
+      shopSearchInput.value = '';
+      resetSidebarSearchState();
+    }
     const matchingLink = document.querySelector(`.customer-filter[data-customer="${customer}"]`);
     if (!matchingLink) return false;
     customerLinks.forEach(l => l.classList.remove('active'));
