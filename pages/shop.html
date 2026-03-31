@@ -221,8 +221,10 @@
               </a>
               <ul class="customer-submenu" id="dept-corrections-submenu">
                 <li><a href="#" class="customer-filter" data-customer="dept-corrections-items"><i class="fas fa-chevron-right"></i> Items</a></li>
+                <li><a href="#" class="customer-filter" data-customer="dept-corrections-srt"><i class="fas fa-chevron-right"></i> SRT</a></li>
               </ul>
             </li>
+            <li><a href="#" class="customer-filter" data-customer="k-9"><i class="fas fa-chevron-right"></i> K-9</a></li>
           </ul>
         </div>
         <div class="customer-category" id="recreation">
@@ -243,6 +245,7 @@
           <h4><i class="fas fa-baseball-ball"></i> Sports & Teams</h4>
           <ul>
             <li><a href="#" class="customer-filter" data-customer="travel-ball"><i class="fas fa-chevron-right"></i> Travel Ball</a></li>
+            <li><a href="#" class="customer-filter" data-customer="athletic-gym"><i class="fas fa-chevron-right"></i> Athletic / Gym</a></li>
             <li class="customer-has-submenu">
               <a href="#" class="customer-filter customer-submenu-toggle" data-customer="sports-general" data-submenu-target="sports-shirts-submenu">
                 <i class="fas fa-chevron-right"></i> Sports Shirts <span class="submenu-caret"><i class="fas fa-chevron-down"></i></span>
@@ -562,8 +565,11 @@
           <h2 class="category-header" data-customer="ji-burton-high">J.I. Burton High School</h2>
 
           <div class="product" data-customer="ji-burton-high">
-            <h3>J.I. Burton High School</h3>
-            <p>Coming soon.</p>
+            <h3>J.I. Burton High School Tee</h3>
+            <button class="view-shirt-btn" data-image="../images/OrangeJIBurton.webp" data-title="J.I. Burton High School Tee">
+              <i class="fas fa-eye"></i> View Shirt
+            </button>
+            <div id="product-component-1774992768131"></div>
           </div>
 
           <div class="product" data-customer="ji-burton-high-teachers">
@@ -706,6 +712,14 @@
             <div id="product-component-1770598573840"></div>
           </div>
 
+          <div class="product" data-customer="thomas-walker">
+            <h3>Thomas Walker High School Tee</h3>
+            <button class="view-shirt-btn" data-image="../images/GreyThomasWalker.webp" data-title="Thomas Walker High School Tee">
+              <i class="fas fa-eye"></i> View Shirt
+            </button>
+            <div id="product-component-1774992519983"></div>
+          </div>
+
           <div class="product" data-customer="thomas-walker-teachers">
             <h3>Thomas Walker High School Teachers</h3>
             <p>Coming soon.</p>
@@ -807,6 +821,36 @@
           </div>
         </div>
 
+        <div class="products-grid" id="docsrt-products-grid">
+          <h2 class="category-header" data-customer="dept-corrections-srt">Department of Corrections SRT</h2>
+          <div class="product" data-customer="dept-corrections-srt">
+            <h3>Department of Corrections SRT Tee</h3>
+            <button class="view-shirt-btn" data-image="../images/SRTFront.webp" data-back-image="../images/SRTBack.webp" data-title="Department of Corrections SRT Tee">
+              <i class="fas fa-eye"></i> View Shirt
+            </button>
+            <div id="product-component-1774994879011"></div>
+          </div>
+        </div>
+
+        <div class="products-grid" id="k9-products-grid">
+          <h2 class="category-header" data-customer="k-9">K-9</h2>
+          <div class="product" data-customer="k-9">
+            <h3>K-9 Tee</h3>
+            <button class="view-shirt-btn" data-image="../images/K91.webp" data-title="K-9 Tee">
+              <i class="fas fa-eye"></i> View Shirt
+            </button>
+            <div id="product-component-1774994437003"></div>
+          </div>
+
+          <div class="product" data-customer="k-9">
+            <h3>K-9 Tee</h3>
+            <button class="view-shirt-btn" data-image="../images/K92.webp" data-title="K-9 Tee">
+              <i class="fas fa-eye"></i> View Shirt
+            </button>
+            <div id="product-component-1774994569599"></div>
+          </div>
+        </div>
+
         <div class="products-grid" id="jtownbeach-products-grid">
           <h2 class="category-header" data-customer="jtown-beach">J-Town Beach</h2>
           <div class="product" data-customer="jtown-beach">
@@ -828,6 +872,25 @@
           <div class="product" data-customer="travel-ball">
             <h3>Coming Soon</h3>
             <p>Travel Ball uniforms and gear are coming soon.</p>
+          </div>
+        </div>
+
+        <div class="products-grid" id="athleticgym-products-grid">
+          <h2 class="category-header" data-customer="athletic-gym">Athletic / Gym</h2>
+          <div class="product" data-customer="athletic-gym">
+            <h3>Athletic / Gym Tee</h3>
+            <button class="view-shirt-btn" data-image="../images/GetItDone.webp" data-title="Athletic / Gym Tee">
+              <i class="fas fa-eye"></i> View Shirt
+            </button>
+            <div id="product-component-1774993861177"></div>
+          </div>
+
+          <div class="product" data-customer="athletic-gym">
+            <h3>Athletic / Gym Tee</h3>
+            <button class="view-shirt-btn" data-image="../images/DontQuit.webp" data-title="Athletic / Gym Tee">
+              <i class="fas fa-eye"></i> View Shirt
+            </button>
+            <div id="product-component-1774993988324"></div>
           </div>
         </div>
 
@@ -891,6 +954,7 @@
   <div id="imageModal" class="image-modal">
     <span class="image-modal-close">&times;</span>
     <img class="image-modal-content" id="modalImage" alt="">
+    <button id="imageModalFlipBtn" class="image-modal-toggle" type="button">View Back</button>
     <div id="imageCaption"></div>
   </div>
 
@@ -972,6 +1036,25 @@
       };
     }
 
+    function optionsForNode(nodeId) {
+      var options = defaultOptions();
+      var isMobile = window.matchMedia('(max-width: 768px)').matches;
+
+      // On mobile, Shopify description blocks create excessive empty space in cards.
+      // Keep cards compact and consistent by hiding inline descriptions.
+      if (isMobile) {
+        options.product.contents.description = false;
+      }
+
+      // Rye Cove softball cards render too tall with product descriptions;
+      // keep these two cards compact to match the rest of the grid.
+      if (nodeId === 'product-component-1773257425184' || nodeId === 'product-component-1773258450890') {
+        options.product.contents.description = false;
+      }
+
+      return options;
+    }
+
     // All products: [ productId, nodeId ]
     var products = [
       // Dryden Elementary
@@ -1015,6 +1098,9 @@
       ['7463230898247', 'product-component-1772501243970'],
       // Thomas Walker High
       ['7418567721031', 'product-component-1770598573840'],
+      ['7485173727303', 'product-component-1774992519983'],
+      // J.I. Burton High
+      ['7484475342919', 'product-component-1774992768131'],
       // Jonesville Middle
       ['7418508509255', 'product-component-1770598155984'],
       // Faith-Based
@@ -1027,6 +1113,14 @@
       ['7475126304839', 'product-component-1773258555164'],  // Softball
       // Department of Corrections
       ['7460424843335', 'product-component-1772502360055'],
+      // Department of Corrections SRT
+      ['7483464646727', 'product-component-1774994879011'],
+      // K-9
+      ['7483457306695', 'product-component-1774994437003'],
+      ['7483450130503', 'product-component-1774994569599'],
+      // Athletic / Gym
+      ['7483896692807', 'product-component-1774993861177'],
+      ['7483494072391', 'product-component-1774993988324'],
       // Nurses
       ['7470654947399', 'product-component-1773255570824'],
       // Soccer
@@ -1081,7 +1175,7 @@
             id: productId,
             node: node,
             moneyFormat: '%24%7B%7Bamount%7D%7D',
-            options: defaultOptions()
+            options: optionsForNode(nodeId)
           });
         });
 

@@ -1,5 +1,25 @@
 // Shopping Cart System
-let cart = JSON.parse(localStorage.getItem('jumpCart')) || [];
+function loadCart() {
+  try {
+    const rawCart = window.localStorage.getItem('jumpCart');
+    if (!rawCart) return [];
+    const parsed = JSON.parse(rawCart);
+    return Array.isArray(parsed) ? parsed : [];
+  } catch (error) {
+    // Some mobile browsers/private modes block storage access.
+    return [];
+  }
+}
+
+function saveCart() {
+  try {
+    window.localStorage.setItem('jumpCart', JSON.stringify(cart));
+  } catch (error) {
+    // Keep cart in memory if persistence is unavailable.
+  }
+}
+
+let cart = loadCart();
 let imageModalScrollY = 0;
 
 // Update cart count in header
@@ -38,7 +58,7 @@ function addToCart(productElement) {
     cart.push({ id: Date.now(), name, price, color, size, quantity, image });
   }
 
-  localStorage.setItem('jumpCart', JSON.stringify(cart));
+  saveCart();
   updateCartCount();
   showNotification(`${name} added to cart!`);
 }
@@ -229,7 +249,7 @@ function addToCartFromModal() {
     cart.push({ id: Date.now(), name, price, color, size, quantity, image });
   }
 
-  localStorage.setItem('jumpCart', JSON.stringify(cart));
+  saveCart();
   updateCartCount();
   showNotification(`${name} added to cart!`);
   closeProductModal();
@@ -319,6 +339,31 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function filterByCustomer(customer) {
+    function getExpandedCustomers(targetCustomer) {
+      const expanded = new Set();
+      if (!targetCustomer) return expanded;
+
+      expanded.add(targetCustomer);
+
+      const parentLink = document.querySelector(`.customer-filter.customer-submenu-toggle[data-customer="${targetCustomer}"]`);
+      if (!parentLink) return expanded;
+
+      const submenuId = parentLink.getAttribute('data-submenu-target');
+      if (!submenuId) return expanded;
+
+      const submenu = document.getElementById(submenuId);
+      if (!submenu) return expanded;
+
+      submenu.querySelectorAll('.customer-filter[data-customer]').forEach(link => {
+        const childCustomer = link.getAttribute('data-customer');
+        if (childCustomer) expanded.add(childCustomer);
+      });
+
+      return expanded;
+    }
+
+    const filterCustomers = Array.from(getExpandedCustomers(customer));
+
     // Hide everything first using CSS class (NOT display:none - that breaks Shopify)
     document.querySelectorAll('.product').forEach(p => p.classList.add('filter-hidden'));
     document.querySelectorAll('.category-header').forEach(h => h.classList.add('filter-hidden'));
@@ -328,14 +373,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const matchedGrids = new Set();
 
     document.querySelectorAll('.category-header').forEach(h => {
-      if (customerMatches(h.getAttribute('data-customer'), customer)) {
+      var headerCustomer = h.getAttribute('data-customer');
+      var matchesHeader = filterCustomers.some(function (fc) {
+        return customerMatches(headerCustomer, fc) || customerMatches(fc, headerCustomer);
+      });
+      if (matchesHeader) {
         h.classList.remove('filter-hidden');
         if (!firstVisibleHeader) firstVisibleHeader = h;
       }
     });
 
     document.querySelectorAll('.product').forEach(p => {
-      if (customerMatches(p.getAttribute('data-customer'), customer)) {
+      var matchesProduct = filterCustomers.some(function (fc) {
+        return customerMatches(p.getAttribute('data-customer'), fc);
+      });
+      if (matchesProduct) {
         p.classList.remove('filter-hidden');
         const parentGrid = p.closest('.products-grid');
         if (parentGrid) {
@@ -510,6 +562,7 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       const submenuTarget = this.getAttribute('data-submenu-target');
       const isMobileViewport = window.matchMedia('(max-width: 768px)').matches;
+      const customer = this.getAttribute('data-customer');
 
       if (submenuTarget) {
         const parentItem = this.closest('.customer-has-submenu');
@@ -522,6 +575,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (isMobileViewport) {
           customerLinks.forEach(l => l.classList.remove('active'));
           this.classList.add('active');
+          if (customer) filterByCustomer(customer);
           return;
         }
       }
@@ -529,7 +583,6 @@ document.addEventListener('DOMContentLoaded', () => {
       customerLinks.forEach(l => l.classList.remove('active'));
       this.classList.add('active');
 
-      const customer = this.getAttribute('data-customer');
       if (customer) filterByCustomer(customer);
     });
   });
@@ -637,11 +690,26 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalImg = document.getElementById('modalImage');
   const captionText = document.getElementById('imageCaption');
   const imageCloseBtn = document.querySelector('.image-modal-close');
+  const imageModalFlipBtn = document.getElementById('imageModalFlipBtn');
 
-  function openImageModal(imageUrl, caption = '') {
+  function openImageModal(imageUrl, caption = '', backImageUrl = '') {
     if (!imageModal || !modalImg || !captionText) return;
     modalImg.src = imageUrl;
+    modalImg.alt = caption || 'Product image';
     captionText.textContent = caption;
+    imageModal.dataset.frontImage = imageUrl || '';
+    imageModal.dataset.backImage = backImageUrl || '';
+    imageModal.dataset.currentSide = 'front';
+
+    if (imageModalFlipBtn) {
+      if (backImageUrl && backImageUrl.trim() !== '') {
+        imageModalFlipBtn.style.display = 'inline-flex';
+        imageModalFlipBtn.textContent = 'View Back';
+      } else {
+        imageModalFlipBtn.style.display = 'none';
+      }
+    }
+
     imageModal.classList.add('show');
     lockImageModalScroll();
   }
@@ -649,6 +717,10 @@ document.addEventListener('DOMContentLoaded', () => {
   function closeImageModal() {
     if (!imageModal) return;
     imageModal.classList.remove('show');
+    imageModal.dataset.frontImage = '';
+    imageModal.dataset.backImage = '';
+    imageModal.dataset.currentSide = 'front';
+    if (imageModalFlipBtn) imageModalFlipBtn.style.display = 'none';
     unlockImageModalScroll();
   }
 
@@ -656,9 +728,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.target.closest('.view-shirt-btn')) {
       const btn = e.target.closest('.view-shirt-btn');
       const imageUrl = btn.getAttribute('data-image');
+      const backImageUrl = btn.getAttribute('data-back-image');
       const title = btn.getAttribute('data-title');
       if (imageUrl && imageUrl.trim() !== '') {
-        openImageModal(imageUrl, title || '');
+        openImageModal(imageUrl, title || '', backImageUrl || '');
       } else {
         alert('Image not available yet. Please contact us for product images.');
       }
@@ -676,6 +749,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (imageCloseBtn) {
     imageCloseBtn.addEventListener('click', closeImageModal);
+  }
+  if (imageModalFlipBtn) {
+    imageModalFlipBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      if (!imageModal || !modalImg) return;
+
+      const frontImage = imageModal.dataset.frontImage || '';
+      const backImage = imageModal.dataset.backImage || '';
+      if (!frontImage || !backImage) return;
+
+      if (imageModal.dataset.currentSide === 'front') {
+        modalImg.src = backImage;
+        imageModal.dataset.currentSide = 'back';
+        imageModalFlipBtn.textContent = 'View Front';
+      } else {
+        modalImg.src = frontImage;
+        imageModal.dataset.currentSide = 'front';
+        imageModalFlipBtn.textContent = 'View Back';
+      }
+    });
   }
   if (imageModal) {
     imageModal.addEventListener('click', (e) => { if (e.target === imageModal) closeImageModal(); });

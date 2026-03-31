@@ -1528,6 +1528,24 @@ footer p {
   animation: zoom 0.3s;
 }
 
+.image-modal-toggle {
+  display: none;
+  background: #ff0000;
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 20px;
+  margin: 6px auto 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.image-modal-toggle:hover,
+.image-modal-toggle:focus {
+  background: #e60000;
+}
+
 @keyframes zoom {
   from {transform: scale(0.8); opacity: 0;}
   to {transform: scale(1); opacity: 1;}
@@ -1573,6 +1591,11 @@ footer p {
     max-height: calc(100dvh - 120px);
     width: auto;
     height: auto;
+  }
+
+  .image-modal-toggle {
+    padding: 9px 16px;
+    font-size: 0.9rem;
   }
   
   .image-modal-close {
